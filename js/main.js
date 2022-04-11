@@ -66,17 +66,20 @@ hamburger.addEventListener('click', () => {
 });
 
 // Анимацию про скролле
-const casesListPreview = document.querySelector('.cases__list-preview');
+// const casesItem1 = document.querySelector('.cases__list li:first-child');
+// const casesItem2 = document.querySelector('.cases__list li:nth-child(2)');
+// const casesSection = document.querySelector('.cases');
 
-if (window.matchMedia('(min-width: 992px)').matches) {
-    window.addEventListener('scroll', () => {
-        const heightWindows = window.scrollY;
-    
-        if (heightWindows > 100) {
-            casesListPreview.classList.add('_width');
-        }
-    });
-}
+// if (window.matchMedia('(min-width: 1220px)').matches) {
+//     window.addEventListener('scroll', () => {
+//         const heightWindows = window.scrollY;
+
+//         if (heightWindows > 100) {
+//             casesItem1.style.transform = 'translate(0) scale(1)';
+//             casesItem2.style.transform = 'translate(0) scale(1)';
+//         }
+//     });   
+// }
 
 // Валидация формы
 function validationForm() {
