@@ -3,6 +3,11 @@
   padding-bottom: 160px;
   background: linear-gradient(0deg, #F1F1F1, #F1F1F1), #F1F1F1;
 
+  @media (max-width: 992px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
   @media (max-width: 768px) {
     padding-top: 64px;
     padding-bottom: 64px;
@@ -11,6 +16,10 @@
 
 .brands__title {
   margin-bottom: 96px;
+
+  @media (max-width: 992px) {
+    margin-bottom: 50px;
+  }
 
   @media (max-width: 768px) {
     margin-bottom: 40px;
