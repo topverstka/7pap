@@ -65,6 +65,46 @@ hamburger.addEventListener('click', () => {
     })
 });
 
+// Слайдер на главной
+const sliderOurServices = document.querySelector('.slider-our-services__slider');
+
+let ourServicesSlider;
+
+function desktopSlider() {
+    if (window.innerWidth > 767 && sliderOurServices.dataset.desktop == 'false') {
+        ourServicesSlider = new Swiper(sliderOurServices, {
+            slidesPerView: 3,
+            spaceBetween: 52,
+        
+            breakpoints: {
+                1190: {
+                    slidesPerView: 3
+                },
+        
+                768: {
+                    slidesPerView: 2
+                }
+            },
+        });
+
+        sliderOurServices.dataset.desktop = 'true';
+    }
+
+    if (window.innerWidth < 768) {
+        sliderOurServices.dataset.desktop = 'false';
+
+        if (sliderOurServices.classList.contains('swiper-initialized')) {
+            ourServicesSlider.destroy();
+        }
+    }
+}
+
+if (sliderOurServices) desktopSlider();
+
+window.addEventListener('resize', () => {
+    desktopSlider();
+});
+
 // Анимацию про скролле
 // const casesItem1 = document.querySelector('.cases__list li:first-child');
 // const casesItem2 = document.querySelector('.cases__list li:nth-child(2)');

@@ -33,6 +33,10 @@ $mobile-s: 320px;
     --bg-page: #FFF;
     --bg-block: #F8F8F8;
     --error: #E83D3D;
+    --gradient-green: linear-gradient(154.68deg, #D7F67E -3.92%, #54E0FF 139.84%);
+    --gradient-violet: linear-gradient(318.29deg, rgba(126, 174, 255, 0.7) -8.81%, rgba(252, 166, 233, 0.7) 96.7%);
+    --gradient-yellow: linear-gradient(135deg, #F7FFA0 2.88%, #FFC683 100%);
+    --gradient-pink: linear-gradient(157.34deg, #FFE9CC -0.64%, #EF629F 158.71%);
 }
 
 $main: var(--main);

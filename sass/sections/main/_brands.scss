@@ -30,8 +30,9 @@
   flex-wrap: wrap;
   gap: 24px;
 
-  @media (max-width: 768px) {
-    gap: 0;
+  @media (max-width: 420px) {
+    gap: 12px;
+    justify-content: flex-start;
   }
 }
 

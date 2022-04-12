@@ -1,0 +1,11 @@
+.text {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+  color: #000000;
+
+  @media (max-widtH: 768px) {
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
