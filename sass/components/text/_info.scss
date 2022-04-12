@@ -1,0 +1,25 @@
+.info {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1167px;
+
+  @media (max-widtH: 992px) {
+    display: block;
+  }
+}
+
+.info__title{
+  @media (max-widtH: 992px) {
+    margin-bottom: 32px;
+  }
+}
+
+.info .text {
+  max-width: 760px;
+  transform: translateY(8px);
+
+  @media (max-widtH: 992px) {
+    max-width: none;
+    transform: translateY(0);
+  }
+}

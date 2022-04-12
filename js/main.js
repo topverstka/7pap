@@ -71,7 +71,7 @@ const sliderOurServices = document.querySelector('.slider-our-services__slider')
 let ourServicesSlider;
 
 function desktopSlider() {
-    if (window.innerWidth > 767 && sliderOurServices.dataset.desktop == 'false') {
+    if (window.innerWidth > 767 && sliderOurServices.dataset.desktop === 'false') {
         ourServicesSlider = new Swiper(sliderOurServices, {
             slidesPerView: 3,
             spaceBetween: 52,
@@ -104,6 +104,20 @@ if (sliderOurServices) desktopSlider();
 window.addEventListener('resize', () => {
     desktopSlider();
 });
+
+// Секция Наша сила
+const ourStrengthCounter = find('.our-strength__item.counter');
+const ourStrengthItemsHidden = findAll('.our-strength__item.hidden');
+
+if (ourStrengthCounter && ourStrengthItemsHidden) {
+    ourStrengthCounter.addEventListener('click', () => {
+        ourStrengthCounter.style.display = 'none';
+
+        ourStrengthItemsHidden.forEach(item => {
+            item.classList.remove('hidden');
+        });
+    });
+}
 
 // Анимацию про скролле
 // const casesItem1 = document.querySelector('.cases__list li:first-child');

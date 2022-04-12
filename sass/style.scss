@@ -75,6 +75,7 @@ body {
 // Текстовые компоненты
 @import './components/text/_text';
 @import './components/text/_titles';
+@import './components/text/_info';
 
 // Секции
 @import './sections/_header';
@@ -83,6 +84,7 @@ body {
 @import './sections/main/_brands';
 @import './sections/main/_our-services';
 @import './sections/main/_slider-our-services';
+@import './sections/main/_our-strength';
 @import './sections/_footer';
 
 // Страницы
