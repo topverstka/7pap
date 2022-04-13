@@ -913,6 +913,12 @@ body._lock {
   transition: opacity 0.3s;
 }
 
+.modal-mobile .hamburger::before,
+.modal-mobile .hamburger::after,
+.modal-mobile .hamburger__line {
+  background-color: #ffffff;
+}
+
 .modal-mobile {
   position: fixed;
   z-index: 10;
@@ -953,6 +959,10 @@ body._lock {
 }
 
 .modal-mobile__header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
   min-height: 47px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.5);
 }
