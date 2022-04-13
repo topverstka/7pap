@@ -11,7 +11,7 @@
     }
 }
 
-/* Стили анимации плавного появления текста */
+/* Стили кроссбраузерной анимации плавного появления текста */
 @-webkit-keyframes opacity {
     0% {
         opacity: 0;
@@ -19,6 +19,42 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+/* Стили анимации плавного исчезновения текста */
+@keyframes opacity_end {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    20% {
+        opacity: .6;
+    }
+    60% {
+        opacity: .2;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(49px);
+    }
+}
+
+/* Стили кроссбраузерной анимации плавного исчезновения текста */
+@-webkit-keyframes opacity_end {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    20% {
+        opacity: .6;
+    }
+    60% {
+        opacity: .2;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(49px);
     }
 }
 

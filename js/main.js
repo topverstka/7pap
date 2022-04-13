@@ -44,15 +44,26 @@ function bodyLock(con) {
 const hamburger = document.querySelector('.hamburger');
 const modalMobile = document.querySelector('.modal-mobile');
 const modalMobileWrapper = modalMobile.querySelector('.modal-mobile__wrapper');
+const modalMobileMenu = document.querySelector('.modal-mobile__menu');
+const modalMobileFooterMenu = document.querySelector('.modal-mobile__footer-menu');
 
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('_toggle');
     body.classList.toggle('_lock');
 
     if (modalMobile.classList.contains('_show')) {
-        modalMobile.classList.remove('_show');
+        modalMobileMenu.style.animation = 'opacity_end 1s linear both';
+        modalMobileFooterMenu.style.animation = 'opacity_end 1s linear both';
+        setTimeout(() => {
+            modalMobile.classList.remove('_show');
+            hamburger.classList.remove('_toggle');
+        }, 1000);
+        setTimeout(() => {
+            modalMobileMenu.style = null;
+            modalMobileFooterMenu.style = null;
+        }, 1500);
     } else {
         modalMobile.classList.add('_show');
+        hamburger.classList.add('_toggle');
     }
 
     document.addEventListener('click', (e) => {
@@ -400,7 +411,6 @@ if (window.matchMedia('(min-width: 992px)').matches) {
                 });
                 document.querySelector('.cases__list-preview').classList.add('_width');
                 indicator.turnOff();
-
             }
 
             if (e.direction === 'up') {
@@ -414,26 +424,24 @@ if (window.matchMedia('(min-width: 992px)').matches) {
         }
     });
 
-
-
     window.addEventListener('scroll', function(e) {
         if (elementObserver.offsetTop <= window.pageYOffset) {
             flage = true;
             indicator.turnOff();
             document.querySelector('.cases__list-preview').classList.add('_width');
-
         } else {
             indicator.turnOn();
+
             if (flage) {
                 window.scrollTo({
                     top: 0,
                     left: 0,
                     behavior: 'smooth'
                 });
+                
                 flage = false;
                 document.querySelector('.cases__list-preview').classList.remove('_width');
             }
         }
     });
-
 }
