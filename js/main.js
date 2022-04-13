@@ -1,15 +1,14 @@
-
 // Служебные переменные
 const d = document;
 const body = document.querySelector('body');
 
 // Служебные функции
 function find(selector) {
-	return document.querySelector(selector)
+	return document.querySelector(selector);
 }
 
 function findAll(selectors) {
-	return document.querySelectorAll(selectors)
+	return document.querySelectorAll(selectors);
 }
 
 // Удаляет у всех элементов items класс itemClass
@@ -41,6 +40,7 @@ function bodyLock(con) {
 }
 
 // Мобильное меню
+const header = document.querySelector('.header');
 const hamburger = document.querySelector('.hamburger');
 const modalMobile = document.querySelector('.modal-mobile');
 const modalMobileWrapper = modalMobile.querySelector('.modal-mobile__wrapper');
@@ -62,10 +62,12 @@ hamburger.addEventListener('click', () => {
     if (modalMobile.classList.contains('_show')) {
         slowAnimation();
         setTimeout(() => {
+            header.classList.remove('no-fixed');
             modalMobile.classList.remove('_show');
             hamburger.classList.remove('_toggle');
         }, 1000);
     } else {
+        header.classList.add('no-fixed');
         modalMobile.classList.add('_show');
         hamburger.classList.add('_toggle');
     }
@@ -75,6 +77,7 @@ hamburger.addEventListener('click', () => {
         if (modalMobile && target.classList.contains('modal-mobile__wrapper')) {
             slowAnimation();
             setTimeout(() => {
+                header.classList.remove('no-fixed');
                 hamburger.classList.remove('_toggle');
                 modalMobile.classList.remove('_show')
                 body.classList.remove('_lock');
@@ -150,6 +153,125 @@ const reviewsSlider = new Swiper(sliderReviews, {
       prevEl: ".slider-reviews__prev",
     },
 });
+
+// Анимация для блока с кейсами при скролле
+if (window.matchMedia('(min-width: 992px)').matches) {
+    let flage = false;
+    let ulList = document.querySelector('.cases__list');
+    let elementObserver = document.querySelector('.promo__text');
+    ulList.insertAdjacentHTML('beforebegin', '<ul class="cases__list-preview"></ul>')
+    ulList.querySelectorAll('li').forEach((i, index) => {
+        if (index < 2) {
+            i.remove();
+            document.querySelector('.cases__list-preview').insertAdjacentHTML('afterbegin', i.outerHTML);
+        }
+    });
+    document.querySelectorAll('.cases__list-preview li > div').forEach(i => i.removeAttribute('class'));
+
+    let indent = 27;
+    let indicator = new WheelIndicator({
+        elem: document.querySelector('body'),
+        callback: function(e) {
+            if (e.direction === 'down') {
+                window.scrollTo({
+                    top: elementObserver.offsetTop - indent,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+                document.querySelector('.cases__list-preview').classList.add('_width');
+                indicator.turnOff();
+            }
+
+            if (e.direction === 'up') {
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+                document.querySelector('.cases__list-preview').classList.remove('_width');
+            }
+        }
+    });
+
+    window.addEventListener('scroll', function(e) {
+        if (elementObserver.offsetTop <= window.pageYOffset) {
+            flage = true;
+            indicator.turnOff();
+            document.querySelector('.cases__list-preview').classList.add('_width');
+        } else {
+            indicator.turnOn();
+
+            if (flage) {
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+                
+                flage = false;
+                document.querySelector('.cases__list-preview').classList.remove('_width');
+            }
+        }
+    });
+}
+
+// Прокрутка страницы вверх
+const scrollTop = find('.scroll-top');
+
+scrollTop.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    const id = scrollTop.getAttribute('href').substring(1);
+    const section = d.getElementById(id);
+
+    if (section) {
+        seamless.scrollIntoView(section, {
+            behavior: "smooth",
+            block: "start",
+            inline: "center",
+        });
+    }
+});
+
+/*
+const swiper = new Swiper('.swiper-container', {
+  
+  slidesPerView: 1, // Кол-во показываемых слайдов
+  spaceBetween: 0, // Расстояние между слайдами
+  loop: true, // Бесконечный слайдер
+  freeMode: true, // Слайдеры не зафиксированны
+  centeredSlides: false, // Размещать слайдеры по центру
+
+  autoplay: { // автопрокрутка
+      delay: 5000, // задержка
+  },
+
+  breakpoints: {
+    1200: {
+
+    },
+    700: {
+
+    },
+    400: {
+
+    }
+  },
+
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  navigation: {
+    nextEl: '.swiper__arrow-next',
+    prevEl: '.swiper__arrow-prev',
+  },
+
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+*/
 
 // Валидация формы
 function validationForm() {
@@ -247,46 +369,6 @@ function menu() {
 		bodyLock()
 	})
 }
-
-/*
-const swiper = new Swiper('.swiper-container', {
-  
-  slidesPerView: 1, // Кол-во показываемых слайдов
-  spaceBetween: 0, // Расстояние между слайдами
-  loop: true, // Бесконечный слайдер
-  freeMode: true, // Слайдеры не зафиксированны
-  centeredSlides: false, // Размещать слайдеры по центру
-
-  autoplay: { // автопрокрутка
-      delay: 5000, // задержка
-  },
-
-  breakpoints: {
-    1200: {
-
-    },
-    700: {
-
-    },
-    400: {
-
-    }
-  },
-
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  navigation: {
-    nextEl: '.swiper__arrow-next',
-    prevEl: '.swiper__arrow-prev',
-  },
-
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-*/
 
 // Функции для модальных окон
 modal()
@@ -390,65 +472,4 @@ function modal() {
         bodyLock(false)
         resetHash()
     }
-}
-
-// Анимация для блока с кейсами при скролле
-if (window.matchMedia('(min-width: 992px)').matches) {
-    let flage = false;
-    let ulList = document.querySelector('.cases__list');
-    let elementObserver = document.querySelector('.promo__text');
-    ulList.insertAdjacentHTML('beforebegin', '<ul class="cases__list-preview"></ul>')
-    ulList.querySelectorAll('li').forEach((i, index) => {
-        if (index < 2) {
-            i.remove();
-            document.querySelector('.cases__list-preview').insertAdjacentHTML('afterbegin', i.outerHTML);
-        }
-    });
-    document.querySelectorAll('.cases__list-preview li > div').forEach(i => i.removeAttribute('class'));
-
-    let indent = 27;
-    let indicator = new WheelIndicator({
-        elem: document.querySelector('body'),
-        callback: function(e) {
-            if (e.direction === 'down') {
-                window.scrollTo({
-                    top: elementObserver.offsetTop - indent,
-                    left: 0,
-                    behavior: 'smooth'
-                });
-                document.querySelector('.cases__list-preview').classList.add('_width');
-                indicator.turnOff();
-            }
-
-            if (e.direction === 'up') {
-                window.scrollTo({
-                    top: 0,
-                    left: 0,
-                    behavior: 'smooth'
-                });
-                document.querySelector('.cases__list-preview').classList.remove('_width');
-            }
-        }
-    });
-
-    window.addEventListener('scroll', function(e) {
-        if (elementObserver.offsetTop <= window.pageYOffset) {
-            flage = true;
-            indicator.turnOff();
-            document.querySelector('.cases__list-preview').classList.add('_width');
-        } else {
-            indicator.turnOn();
-
-            if (flage) {
-                window.scrollTo({
-                    top: 0,
-                    left: 0,
-                    behavior: 'smooth'
-                });
-                
-                flage = false;
-                document.querySelector('.cases__list-preview').classList.remove('_width');
-            }
-        }
-    });
 }

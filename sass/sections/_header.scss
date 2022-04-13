@@ -1,10 +1,21 @@
 .header {
   @media (max-width: 992px) {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+
       border-bottom: 1px solid #DCE4E7;
       .send-request {
           display: none;
       }
   }
+}
+
+.header.no-fixed {
+  position: static;
 }
 
 .header__wrapper {
@@ -103,10 +114,17 @@
   position: relative;
   transform: translate(-2px, 1px);
   position: relative;
-  z-index: 2;
+  z-index: 15;
+  
   @media (max-width: 992px) {
       display: block;
   }
+}
+
+.hamburger._toggle {
+  position: fixed;
+  top: 10px;
+  right: 8px;
 }
 
 .hamburger._toggle .hamburger__line {
@@ -160,7 +178,7 @@
 
 .modal-mobile {
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   top: 0;
   left: 0;
   width: 100%;

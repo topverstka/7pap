@@ -21,6 +21,10 @@
   max-width: 1826px;
   margin: 0 auto;
   padding: 0 15px;
+
+  @media (max-width: 992px) {
+    padding: 49px 15px 0;
+  }
 }
 
 .promo__content {
