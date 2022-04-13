@@ -1,7 +1,6 @@
 .header {
   @media (max-width: 992px) {
       border-bottom: 1px solid #DCE4E7;
-
       .send-request {
           display: none;
       }
@@ -16,7 +15,6 @@
   margin: 0 auto;
   min-height: 120px;
   padding: 0 15px;
-
   @media (max-width: 992px) {
       min-height: 48px;
   }
@@ -27,11 +25,9 @@
   width: 69px;
   height: 35px;
   margin-right: 243px;
-
   @media (max-width: 1200px) {
       margin-right: 60px;
   }
-
   @media (max-width: 992px) {
       width: 47px;
       height: 25px;
@@ -49,7 +45,7 @@
   flex-wrap: wrap;
 }
 
-.main-nav__list li + li {
+.main-nav__list li+li {
   margin-left: 48px;
 }
 
@@ -87,7 +83,6 @@
   margin-left: auto;
   margin-right: 30px;
   transform: translateY(2px);
-
   @media (max-width: 992px) {
       display: block;
   }
@@ -109,7 +104,6 @@
   transform: translate(-2px, 1px);
   position: relative;
   z-index: 2;
-
   @media (max-width: 992px) {
       display: block;
   }
@@ -175,7 +169,7 @@
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
-  transition: var(--tr);
+  transition: var(--tr) linear;
 }
 
 .modal-mobile._show {
@@ -186,8 +180,8 @@
 
 .modal-mobile__wrapper {
   height: 100%;
-  transform: translateX(100%);
-  transition: var(--tr);
+  transform: translateX(60%);
+  transition: var(--tr) linear;
 }
 
 .modal-mobile._show .modal-mobile__wrapper {
@@ -208,10 +202,10 @@
   border-bottom: 1px solid rgba(128, 128, 128, 0.5);
 }
 
-.modal-mobile._show .modal-mobile__body,
-.modal-mobile._show .modal-mobile__footer {
-  animation: opacity 4s linear both;
-  transition-delay: 1s;
+.modal-mobile._show .modal-mobile__menu,
+.modal-mobile._show .modal-mobile__footer-menu {
+  animation: opacity 1s linear both;
+  transition-delay: .4s;
 }
 
 .modal-mobile__body {
@@ -221,10 +215,10 @@
 
 .modal-mobile__menu-list {
   color: #ffffff;
-  animation: opacity 4s linear both, 1s;
+  animation: opacity 1s linear both, 1s;
 }
 
-.modal-mobile__menu-list li + li {
+.modal-mobile__menu-list li+li {
   margin-top: 21px;
 }
 
@@ -241,7 +235,7 @@
   padding: 29px 18px 45px 51px;
 }
 
-.modal-mobile__item + .modal-mobile__item {
+.modal-mobile__item+.modal-mobile__item {
   margin-top: 13px;
 }
 

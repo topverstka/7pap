@@ -871,7 +871,7 @@ body._lock {
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
-  transition: var(--tr);
+  transition: var(--tr) linear;
 }
 
 .modal-mobile._show {
@@ -882,8 +882,8 @@ body._lock {
 
 .modal-mobile__wrapper {
   height: 100%;
-  transform: translateX(100%);
-  transition: var(--tr);
+  transform: translateX(60%);
+  transition: var(--tr) linear;
 }
 
 .modal-mobile._show .modal-mobile__wrapper {
@@ -904,10 +904,10 @@ body._lock {
   border-bottom: 1px solid rgba(128, 128, 128, 0.5);
 }
 
-.modal-mobile._show .modal-mobile__body,
-.modal-mobile._show .modal-mobile__footer {
-  animation: opacity 4s linear both;
-  transition-delay: 1s;
+.modal-mobile._show .modal-mobile__menu,
+.modal-mobile._show .modal-mobile__footer-menu {
+  animation: opacity 1s linear both;
+  transition-delay: .4s;
 }
 
 .modal-mobile__body {
@@ -917,7 +917,7 @@ body._lock {
 
 .modal-mobile__menu-list {
   color: #ffffff;
-  animation: opacity 4s linear both, 1s;
+  animation: opacity 1s linear both, 1s;
 }
 
 .modal-mobile__menu-list li + li {
