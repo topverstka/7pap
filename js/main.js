@@ -64,10 +64,12 @@ hamburger.addEventListener('click', () => {
         setTimeout(() => {
             modalMobile.classList.remove('_show');
             // hamburger.classList.remove('_toggle');
+            hamburgerMobile.classList.remove('_toggle');
         }, 1000);
     } else {
         modalMobile.classList.add('_show');
         // hamburger.classList.add('_toggle');
+        hamburgerMobile.classList.add('_toggle');
     }
 
     document.addEventListener('click', (e) => {
@@ -90,11 +92,9 @@ hamburgerMobile.addEventListener('click', () => {
         slowAnimation();
         setTimeout(() => {
             modalMobile.classList.remove('_show');
-            hamburgerMobile.classList.remove('_toggle');
         }, 1000);
     } else {
         modalMobile.classList.add('_show');
-        hamburgerMobile.classList.add('_toggle');
     }
 });
 
