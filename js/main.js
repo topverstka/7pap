@@ -65,8 +65,8 @@ hamburger.addEventListener('click', () => {
     })
 });
 
-// Слайдер на главной
-const sliderOurServices = document.querySelector('.slider-our-services__slider');
+// Слайдер Наши услуги на главной
+const sliderOurServices = find('.slider-our-services__slider');
 
 let ourServicesSlider;
 
@@ -118,6 +118,20 @@ if (ourStrengthCounter && ourStrengthItemsHidden) {
         });
     });
 }
+
+// Слайдер с отзывами на главной
+const sliderReviews = find('.slider-reviews__slider');
+
+const reviewsSlider = new Swiper(sliderReviews, {
+    pagination: {
+      el: ".slider-reviews__pagination",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".slider-reviews__next",
+      prevEl: ".slider-reviews__prev",
+    },
+});
 
 // Анимацию про скролле
 // const casesItem1 = document.querySelector('.cases__list li:first-child');
