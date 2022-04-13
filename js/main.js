@@ -62,12 +62,10 @@ hamburger.addEventListener('click', () => {
     if (modalMobile.classList.contains('_show')) {
         slowAnimation();
         setTimeout(() => {
-            header.classList.remove('no-fixed');
             modalMobile.classList.remove('_show');
             hamburger.classList.remove('_toggle');
         }, 1000);
     } else {
-        header.classList.add('no-fixed');
         modalMobile.classList.add('_show');
         hamburger.classList.add('_toggle');
     }

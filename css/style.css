@@ -735,7 +735,7 @@ body._lock {
 @media (max-width: 992px) {
   .header {
     position: fixed;
-    z-index: 100;
+    z-index: 10;
     top: 0;
     left: 0;
     width: 100%;
@@ -745,11 +745,6 @@ body._lock {
   .header .send-request {
     display: none;
   }
-}
-
-.header.no-fixed {
-  position: static;
-  z-index: auto;
 }
 
 .header__wrapper {
@@ -867,12 +862,6 @@ body._lock {
   .hamburger {
     display: block;
   }
-}
-
-.hamburger._toggle {
-  position: fixed;
-  top: 10px;
-  right: 8px;
 }
 
 .hamburger._toggle .hamburger__line {
