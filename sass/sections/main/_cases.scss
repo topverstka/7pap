@@ -117,6 +117,12 @@
   &._width {
       max-width: 1172px;
   }
+
+  li {
+    .cases__text-white {
+      display: none;
+    }
+  }
   
   img {
       border-radius: 16px;
