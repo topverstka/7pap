@@ -47,20 +47,24 @@ const modalMobileWrapper = modalMobile.querySelector('.modal-mobile__wrapper');
 const modalMobileMenu = document.querySelector('.modal-mobile__menu');
 const modalMobileFooterMenu = document.querySelector('.modal-mobile__footer-menu');
 
+function slowAnimation() {
+    modalMobileMenu.style.animation = 'opacity_end 1s linear both';
+    modalMobileFooterMenu.style.animation = 'opacity_end 1s linear both';
+    setTimeout(() => {
+        modalMobileMenu.style = null;
+        modalMobileFooterMenu.style = null;
+    }, 1500);
+}
+
 hamburger.addEventListener('click', () => {
     body.classList.toggle('_lock');
 
     if (modalMobile.classList.contains('_show')) {
-        modalMobileMenu.style.animation = 'opacity_end 1s linear both';
-        modalMobileFooterMenu.style.animation = 'opacity_end 1s linear both';
+        slowAnimation();
         setTimeout(() => {
             modalMobile.classList.remove('_show');
             hamburger.classList.remove('_toggle');
         }, 1000);
-        setTimeout(() => {
-            modalMobileMenu.style = null;
-            modalMobileFooterMenu.style = null;
-        }, 1500);
     } else {
         modalMobile.classList.add('_show');
         hamburger.classList.add('_toggle');
@@ -69,9 +73,12 @@ hamburger.addEventListener('click', () => {
     document.addEventListener('click', (e) => {
         const target = e.target
         if (modalMobile && target.classList.contains('modal-mobile__wrapper')) {
-            hamburger.classList.remove('_toggle');
-            modalMobile.classList.remove('_show')
-            body.classList.remove('_lock');
+            slowAnimation();
+            setTimeout(() => {
+                hamburger.classList.remove('_toggle');
+                modalMobile.classList.remove('_show')
+                body.classList.remove('_lock');
+            }, 1000)
         };
     })
 });
