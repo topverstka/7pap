@@ -133,22 +133,6 @@ const reviewsSlider = new Swiper(sliderReviews, {
     },
 });
 
-// Анимацию про скролле
-// const casesItem1 = document.querySelector('.cases__list li:first-child');
-// const casesItem2 = document.querySelector('.cases__list li:nth-child(2)');
-// const casesSection = document.querySelector('.cases');
-
-// if (window.matchMedia('(min-width: 1220px)').matches) {
-//     window.addEventListener('scroll', () => {
-//         const heightWindows = window.scrollY;
-
-//         if (heightWindows > 100) {
-//             casesItem1.style.transform = 'translate(0) scale(1)';
-//             casesItem2.style.transform = 'translate(0) scale(1)';
-//         }
-//     });   
-// }
-
 // Валидация формы
 function validationForm() {
     const name = find('#user_name')
@@ -390,6 +374,7 @@ function modal() {
     }
 }
 
+// Анимация для блока с кейсами при скролле
 if (window.matchMedia('(min-width: 992px)').matches) {
     let flage = false;
     let ulList = document.querySelector('.cases__list');
@@ -408,7 +393,6 @@ if (window.matchMedia('(min-width: 992px)').matches) {
         elem: document.querySelector('body'),
         callback: function(e) {
             if (e.direction === 'down') {
-                //   console.log(e.direction)
                 window.scrollTo({
                     top: elementObserver.offsetTop - indent,
                     left: 0,
@@ -426,7 +410,6 @@ if (window.matchMedia('(min-width: 992px)').matches) {
                     behavior: 'smooth'
                 });
                 document.querySelector('.cases__list-preview').classList.remove('_width');
-                //indicator.turnOn();
             }
         }
     });
@@ -434,7 +417,6 @@ if (window.matchMedia('(min-width: 992px)').matches) {
 
 
     window.addEventListener('scroll', function(e) {
-
         if (elementObserver.offsetTop <= window.pageYOffset) {
             flage = true;
             indicator.turnOff();
@@ -452,7 +434,6 @@ if (window.matchMedia('(min-width: 992px)').matches) {
                 document.querySelector('.cases__list-preview').classList.remove('_width');
             }
         }
-
     });
 
 }

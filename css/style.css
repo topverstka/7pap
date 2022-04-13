@@ -1104,6 +1104,24 @@ body._lock {
   }
 }
 
+.cases__list-preview {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1792px;
+  margin: 0 auto 64px;
+  column-gap: 52px;
+  transition: max-width 0.7s;
+  flex-direction: row-reverse;
+}
+
+.cases__list-preview._width {
+  max-width: 1172px;
+}
+
+.cases__list-preview img {
+  border-radius: 16px;
+}
+
 .cases__content {
   position: relative;
   width: 356px;

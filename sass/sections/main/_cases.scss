@@ -42,13 +42,23 @@
   }
 }
 
-// .cases__list li:first-child {
-//   transform: translate(-151px, 124px) scale(1.4);
-// }
+.cases__list-preview {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1792px;
+  margin: 0 auto 64px;
+  column-gap: 52px;
+  transition: max-width 0.7s;
+  flex-direction: row-reverse;
 
-// .cases__list li:nth-child(2) {
-//   transform: translate(146px, 248px) scale(1.9);
-// }
+  &._width {
+      max-width: 1172px;
+  }
+  
+  img {
+      border-radius: 16px;
+  }
+}
 
 .cases__content {
   position: relative;
