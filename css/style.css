@@ -1106,6 +1106,10 @@ body._lock {
   transition: transform 0.6s ease;
 }
 
+.cases__list li:last-child {
+  display: none;
+}
+
 @media (max-width: 480px) {
   .cases__list li {
     width: 50%;
@@ -1121,6 +1125,51 @@ body._lock {
 @media (max-width: 568px) {
   .cases__list li {
     width: 48%;
+  }
+  .cases__list li:first-child {
+    width: 100%;
+    order: 3;
+  }
+  .cases__list li:nth-child(2) {
+    order: 1;
+  }
+  .cases__list li:nth-child(3) {
+    order: 14;
+  }
+  .cases__list li:nth-child(4) {
+    order: 2;
+  }
+  .cases__list li:nth-child(5) {
+    order: 7;
+  }
+  .cases__list li:nth-child(6) {
+    order: 5;
+  }
+  .cases__list li:nth-child(7) {
+    order: 4;
+  }
+  .cases__list li:nth-child(8) {
+    order: 6;
+  }
+  .cases__list li:nth-child(9) {
+    width: 100%;
+    order: 10;
+  }
+  .cases__list li:nth-child(10) {
+    order: 11;
+  }
+  .cases__list li:nth-child(11) {
+    order: 9;
+  }
+  .cases__list li:nth-child(12) {
+    order: 8;
+  }
+  .cases__list li:nth-child(13) {
+    order: 13;
+  }
+  .cases__list li:last-child {
+    display: block;
+    order: 12;
   }
 }
 
@@ -1237,6 +1286,12 @@ body._lock {
   padding-left: 54px;
 }
 
+@media (max-width: 768px) {
+  .cases__link {
+    font-size: 16px;
+  }
+}
+
 .cases__link::before {
   content: '';
   position: absolute;
@@ -1249,6 +1304,12 @@ body._lock {
   background-image: url("data:image/svg+xml,%3Csvg width='22' height='24' viewBox='0 0 22 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.84375 14.1569L0.84375 10.1569L13.501 10.1569L7.01563 3.67157L9.84405 0.843147L21.1578 12.1569L21.1577 12.1569L21.1578 12.157L9.84405 23.4707L7.01563 20.6423L13.501 14.1569L0.84375 14.1569Z' fill='white'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+@media (max-width: 768px) {
+  .cases__link::before {
+    top: -12px;
+  }
 }
 
 .brands {
@@ -1476,6 +1537,11 @@ body._lock {
   column-gap: 16px;
   margin-top: 72px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.our-strength__list::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 768px) {

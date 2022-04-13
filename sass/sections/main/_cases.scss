@@ -29,6 +29,10 @@
 .cases__list li {
   transition: transform 0.6s ease;
 
+  &:last-child {
+    display: none;
+  }
+
   @media (max-width: 480px) {
     width: 50%;
   }
@@ -39,6 +43,65 @@
 
   @media (max-width: 568px) {
     width: 48%;
+
+    &:first-child {
+      width: 100%;
+      order: 3;
+    }
+
+    &:nth-child(2) {
+      order: 1;
+    }
+
+    &:nth-child(3) {
+      order: 14;
+    }
+
+    &:nth-child(4) {
+      order: 2;
+    }
+
+    &:nth-child(5) {
+      order: 7;
+    }
+
+    &:nth-child(6) {
+      order: 5;
+    }
+
+    &:nth-child(7) {
+      order: 4;
+    }
+
+    &:nth-child(8) {
+      order: 6;
+    }
+
+    &:nth-child(9) {
+      width: 100%;
+      order: 10;
+    }
+
+    &:nth-child(10) {
+      order: 11;
+    }
+
+    &:nth-child(11) {
+      order: 9;
+    }
+
+    &:nth-child(12) {
+      order: 8;
+    }
+
+    &:nth-child(13) {
+      order: 13;
+    }
+
+    &:last-child {
+      display: block;
+      order: 12;
+    }
   }
 }
 
@@ -139,6 +202,10 @@
   font-size: 20px;
   line-height: 23px;
   padding-left: 54px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 }
 
 .cases__link::before {
@@ -153,4 +220,8 @@
   background-image: url("data:image/svg+xml,%3Csvg width='22' height='24' viewBox='0 0 22 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.84375 14.1569L0.84375 10.1569L13.501 10.1569L7.01563 3.67157L9.84405 0.843147L21.1578 12.1569L21.1577 12.1569L21.1578 12.157L9.84405 23.4707L7.01563 20.6423L13.501 14.1569L0.84375 14.1569Z' fill='white'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
+
+  @media (max-width: 768px) {
+    top: -12px;
+  }
 }
