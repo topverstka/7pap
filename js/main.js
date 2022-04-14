@@ -40,8 +40,8 @@ function bodyLock(con) {
 }
 
 // Мобильное меню
-const hamburger = document.querySelector('.header .hamburger');
-const hamburgerMobile = document.querySelector('.modal-mobile .hamburger');
+const header = document.querySelector('.header');
+const hamburger = document.querySelector('.hamburger');
 const modalMobile = document.querySelector('.modal-mobile');
 const modalMobileWrapper = modalMobile.querySelector('.modal-mobile__wrapper');
 const modalMobileMenu = document.querySelector('.modal-mobile__menu');
@@ -62,14 +62,14 @@ hamburger.addEventListener('click', () => {
     if (modalMobile.classList.contains('_show')) {
         slowAnimation();
         setTimeout(() => {
+            header.classList.remove('no-fixed');
             modalMobile.classList.remove('_show');
-            // hamburger.classList.remove('_toggle');
-            hamburgerMobile.classList.remove('_toggle');
+            hamburger.classList.remove('_toggle');
         }, 1000);
     } else {
+        header.classList.add('no-fixed');
         modalMobile.classList.add('_show');
-        // hamburger.classList.add('_toggle');
-        hamburgerMobile.classList.add('_toggle');
+        hamburger.classList.add('_toggle');
     }
 
     document.addEventListener('click', (e) => {
@@ -77,25 +77,13 @@ hamburger.addEventListener('click', () => {
         if (modalMobile && target.classList.contains('modal-mobile__wrapper')) {
             slowAnimation();
             setTimeout(() => {
-                // hamburger.classList.remove('_toggle');
+                header.classList.remove('no-fixed');
+                hamburger.classList.remove('_toggle');
                 modalMobile.classList.remove('_show')
                 body.classList.remove('_lock');
             }, 1000)
         };
     })
-});
-
-hamburgerMobile.addEventListener('click', () => {
-    body.classList.toggle('_lock');
-
-    if (modalMobile.classList.contains('_show')) {
-        slowAnimation();
-        setTimeout(() => {
-            modalMobile.classList.remove('_show');
-        }, 1000);
-    } else {
-        modalMobile.classList.add('_show');
-    }
 });
 
 // Слайдер Наши услуги на главной

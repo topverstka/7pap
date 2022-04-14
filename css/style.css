@@ -170,7 +170,7 @@ body._lock {
 
 .scroll-top {
   display: none;
-  position: fixed;
+  position: absolute;
   bottom: 144px;
   right: 18px;
   z-index: 10;
@@ -781,7 +781,7 @@ body._lock {
 @media (max-width: 992px) {
   .header {
     position: fixed;
-    z-index: 10;
+    z-index: 100;
     top: 0;
     left: 0;
     width: 100%;
@@ -791,6 +791,11 @@ body._lock {
   .header .send-request {
     display: none;
   }
+}
+
+.header.no-fixed {
+  background-color: transparent;
+  border-bottom-color: transparent;
 }
 
 .header__wrapper {
@@ -886,6 +891,10 @@ body._lock {
   }
 }
 
+.header.no-fixed .phone {
+  display: none;
+}
+
 .phone__icon {
   width: 24px;
   height: 24px;
@@ -908,6 +917,10 @@ body._lock {
   .hamburger {
     display: block;
   }
+}
+
+.header.no-fixed .hamburger {
+  margin-left: auto;
 }
 
 .hamburger._toggle .hamburger__line {
@@ -2109,6 +2122,10 @@ body._lock {
     padding-top: 80px;
     padding-bottom: 80px;
   }
+}
+
+.footer .container {
+  position: relative;
 }
 
 .footer__title {
