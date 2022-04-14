@@ -1024,7 +1024,7 @@ body._lock {
 .modal-mobile._show .modal-mobile__menu,
 .modal-mobile._show .modal-mobile__footer-menu {
   animation: opacity 1s linear both;
-  transition-delay: .4s;
+  transition-delay: .6s;
 }
 
 .modal-mobile__body {

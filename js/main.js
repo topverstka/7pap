@@ -54,7 +54,7 @@ function slowAnimation() {
     setTimeout(() => {
         modalMobileMenu.style = null;
         modalMobileFooterMenu.style = null;
-    }, 1000);
+    }, 1500);
 }
 
 hamburger.addEventListener('click', () => {
