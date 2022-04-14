@@ -45,6 +45,15 @@
   }
 }
 
+.brands__item:hover .tooltip {
+  z-index: 1;
+}
+
+.brands__item:hover .tooltip::before,
+.brands__item:hover .tooltip::after {
+  opacity: 1;
+}
+
 .brands__item:last-child {
   @media (max-width: 768px) {
     display: none;

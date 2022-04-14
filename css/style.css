@@ -193,6 +193,7 @@ body._lock {
 
 .tooltip {
   position: relative;
+  z-index: -1;
 }
 
 @media (max-width: 1400px) {
@@ -230,11 +231,6 @@ body._lock {
   background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='6' viewBox='0 0 12 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 6L0 0H12L6 6Z' fill='%23274B5D'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.tooltip:hover::before,
-.tooltip:hover::after {
-  opacity: 1;
 }
 
 .container {
@@ -1530,6 +1526,15 @@ body._lock {
   }
 }
 
+.brands__item:hover .tooltip {
+  z-index: 1;
+}
+
+.brands__item:hover .tooltip::before,
+.brands__item:hover .tooltip::after {
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
   .brands__item:last-child {
     display: none;
@@ -1785,6 +1790,15 @@ body._lock {
     width: 64px;
     height: 64px;
   }
+}
+
+.our-strength__item:hover .tooltip {
+  z-index: 1;
+}
+
+.our-strength__item:hover .tooltip::before,
+.our-strength__item:hover .tooltip::after {
+  opacity: 1;
 }
 
 .our-strength__item .tooltip::after {

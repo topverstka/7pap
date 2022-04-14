@@ -43,6 +43,15 @@
   }
 }
 
+.our-strength__item:hover .tooltip {
+  z-index: 1;
+}
+
+.our-strength__item:hover .tooltip::before,
+.our-strength__item:hover .tooltip::after {
+  opacity: 1;
+}
+
 .our-strength__item .tooltip::after {
   bottom: 75px;
 }
