@@ -119,7 +119,7 @@
   }
 
   li {
-    .cases__text-white {
+    p {
       display: none;
     }
   }
@@ -158,6 +158,10 @@
     height: 360px;
   }
 
+  @media (max-width: 568px) {
+    border-radius: 8px;
+  }
+
   @media (max-width: 480px) {
     height: 244px;
   }
@@ -170,6 +174,10 @@
 .cases__content a:hover img {
   transform: scale(1.2);
   border-radius: 16px;
+}
+
+.cases__content a:hover {
+  text-decoration: underline;
 }
 
 .cases__content--width {
