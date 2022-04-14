@@ -2,12 +2,12 @@
 @keyframes opacity {
     0% {
         opacity: 0;
-        transform: translateX(49px);
+        // transform: translateX(49px);
     }
 
     100% {
         opacity: 1;
-        transform: translateX(0);
+        // transform: translateX(0);
     }
 }
 
@@ -26,7 +26,7 @@
 @keyframes opacity_end {
     0% {
         opacity: 1;
-        transform: translateX(0);
+        // transform: translateX(0);
     }
     20% {
         opacity: .6;
@@ -36,7 +36,7 @@
     }
     100% {
         opacity: 0;
-        transform: translateX(49px);
+        // transform: translateX(49px);
     }
 }
 
@@ -44,7 +44,7 @@
 @-webkit-keyframes opacity_end {
     0% {
         opacity: 1;
-        transform: translateX(0);
+        // transform: translateX(0);
     }
     20% {
         opacity: .6;
@@ -54,7 +54,7 @@
     }
     100% {
         opacity: 0;
-        transform: translateX(49px);
+        // transform: translateX(49px);
     }
 }
 

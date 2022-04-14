@@ -254,11 +254,9 @@ body._lock {
 @keyframes opacity {
   0% {
     opacity: 0;
-    transform: translateX(49px);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
   }
 }
 
@@ -268,7 +266,6 @@ body._lock {
 @keyframes opacity_end {
   0% {
     opacity: 1;
-    transform: translateX(0);
   }
   20% {
     opacity: .6;
@@ -278,7 +275,6 @@ body._lock {
   }
   100% {
     opacity: 0;
-    transform: translateX(49px);
   }
 }
 
