@@ -194,6 +194,14 @@ if (window.matchMedia('(min-width: 992px)').matches) {
         }
     });
 
+    window.addEventListener('wheel', function(e) {
+        if (Math.sign(e.deltaY) === 1) {
+            if (window.pageYOffset >= elementObserver.offsetTop - indent) {
+                indicator.turnOff();
+            }
+        }
+    });
+
     window.addEventListener('scroll', function(e) {
         if (elementObserver.offsetTop <= window.pageYOffset) {
             flage = true;
