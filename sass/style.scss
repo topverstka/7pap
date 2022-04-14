@@ -95,7 +95,7 @@ body {
 }
   
 .tooltip::before {
-    content: attr(rel);
+    content: attr(data-tooltip);
     opacity: 0;
     padding: 12px;
     position: absolute;
@@ -107,7 +107,7 @@ body {
     color: #ffffff;
     border-radius: 8px;
     text-align: center;
-    transition: all 0.3s;
+    transition: opacity 0.3s;
 }
   
 .tooltip::after {
@@ -115,7 +115,7 @@ body {
     opacity: 0;
     padding: 12px;
     position: absolute;
-    bottom: 52px;
+    bottom: -29px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;

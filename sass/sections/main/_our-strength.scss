@@ -43,11 +43,11 @@
   }
 }
 
-.our-strength__item.tooltip::after {
+.our-strength__item .tooltip::after {
   bottom: 75px;
 }
 
-.our-strength__item.tooltip::before {
+.our-strength__item .tooltip::before {
   min-width: 200px;
   left: -60px;
 }
