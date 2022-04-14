@@ -1789,14 +1789,45 @@ body._lock {
 }
 
 .our-strength__item.counter {
+  position: relative;
   cursor: pointer;
   font-size: 20px;
+  border-radius: 50%;
+}
+
+.our-strength__item.counter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #E6E6E6;
+  transform: scale(0);
+  transition: transform 0.2s;
+}
+
+.our-strength__item.counter:after {
+  content: '+6';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 768px) {
   .our-strength__item.counter {
     display: none;
   }
+}
+
+.our-strength__item.counter:hover::before {
+  transform: scale(1);
 }
 
 .our-strength__item.hidden {
