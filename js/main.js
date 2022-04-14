@@ -41,7 +41,8 @@ function bodyLock(con) {
 
 // Мобильное меню
 const header = document.querySelector('.header');
-const hamburger = document.querySelector('.hamburger');
+const hamburger = document.querySelector('.menu-wrapper');
+const hamburgerLine = document.querySelector('.hamburger-menu');
 const modalMobile = document.querySelector('.modal-mobile');
 const modalMobileWrapper = modalMobile.querySelector('.modal-mobile__wrapper');
 const modalMobileMenu = document.querySelector('.modal-mobile__menu');
@@ -64,12 +65,12 @@ hamburger.addEventListener('click', () => {
         setTimeout(() => {
             header.classList.remove('no-fixed');
             modalMobile.classList.remove('_show');
-            hamburger.classList.remove('_toggle');
+            hamburgerLine.classList.remove('animate');
         }, 1000);
     } else {
         header.classList.add('no-fixed');
         modalMobile.classList.add('_show');
-        hamburger.classList.add('_toggle');
+        hamburgerLine.classList.add('animate');
     }
 
     document.addEventListener('click', (e) => {
@@ -78,7 +79,7 @@ hamburger.addEventListener('click', () => {
             slowAnimation();
             setTimeout(() => {
                 header.classList.remove('no-fixed');
-                hamburger.classList.remove('_toggle');
+                hamburgerLine.classList.remove('animate');
                 modalMobile.classList.remove('_show')
                 body.classList.remove('_lock');
             }, 1000)

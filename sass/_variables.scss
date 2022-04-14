@@ -39,6 +39,11 @@ $mobile-s: 320px;
     --gradient-pink: linear-gradient(157.34deg, #FFE9CC -0.64%, #EF629F 158.71%);
 }
 
+// Размеры для бургера
+$bar-width: 24px;
+$bar-height: 4px;
+$bar-spacing: 8px;
+
 $main: var(--main);
 $second: var(--second);
 $accent: var(--accent);
