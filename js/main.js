@@ -92,44 +92,44 @@ hamburger.addEventListener('click', () => {
 });
 
 // Слайдер Наши услуги на главной
-// const sliderOurServices = find('.slider-our-services__slider');
+const sliderOurServices = find('.slider-our-services__slider');
 
-// let ourServicesSlider;
+let ourServicesSlider;
 
-// function desktopSlider() {
-//     if (window.innerWidth > 767 && sliderOurServices.dataset.desktop === 'false') {
-//         ourServicesSlider = new Swiper(sliderOurServices, {
-//             slidesPerView: 3,
-//             spaceBetween: 52,
+function desktopSlider() {
+    if (window.innerWidth < 993 && sliderOurServices.dataset.desktop === 'false') {
+        ourServicesSlider = new Swiper(sliderOurServices, {
+            slidesPerView: 3,
+            spaceBetween: 52,
 
-//             breakpoints: {
-//                 1190: {
-//                     slidesPerView: 3
-//                 },
+            breakpoints: {
+                1190: {
+                    slidesPerView: 3
+                },
 
-//                 768: {
-//                     slidesPerView: 2
-//                 }
-//             },
-//         });
+                768: {
+                    slidesPerView: 2
+                }
+            },
+        });
 
-//         sliderOurServices.dataset.desktop = 'true';
-//     }
+        sliderOurServices.dataset.desktop = 'true';
+    }
 
-//     if (window.innerWidth < 768) {
-//         sliderOurServices.dataset.desktop = 'false';
+    if (window.innerWidth < 768) {
+        sliderOurServices.dataset.desktop = 'false';
 
-//         if (sliderOurServices.classList.contains('swiper-initialized')) {
-//             ourServicesSlider.destroy();
-//         }
-//     }
-// }
+        if (sliderOurServices.classList.contains('swiper-initialized')) {
+            ourServicesSlider.destroy();
+        }
+    }
+}
 
-// if (sliderOurServices) desktopSlider();
+if (sliderOurServices) desktopSlider();
 
-// window.addEventListener('resize', () => {
-//     desktopSlider();
-// });
+window.addEventListener('resize', () => {
+    desktopSlider();
+});
 
 const $scrollElem = $('.js-horizontal')
 
@@ -174,7 +174,10 @@ function horizontalBlocksScroll() {
   })
 }
 
-horizontalBlocksScroll();
+if (window.matchMedia('(min-width: 992px)').matches) {
+    horizontalBlocksScroll();
+}
+
 
 // Секция Наша сила
 const ourStrengthCounter = find('.our-strength__item.counter');

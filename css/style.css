@@ -1664,8 +1664,29 @@ body._lock {
   max-width: 356px;
 }
 
+@media (max-width: 992px) {
+  .slider-our-services__slider.swiper {
+    max-width: 764px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-our-services__slider.swiper {
+    max-width: 1203px;
+    width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+}
+
 .slider-our-services__slider .swiper-wrapper {
   column-gap: 50px;
+}
+
+@media (max-width: 992px) {
+  .slider-our-services__slider .swiper-wrapper {
+    column-gap: 0;
+  }
 }
 
 @media (max-width: 767px) {

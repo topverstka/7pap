@@ -1,11 +1,25 @@
 .slider-our-services__slider.swiper {
   overflow: visible;
   max-width: 356px;
-  // margin-right: 1218px;
+
+  @media (max-width: 992px) {
+    max-width: 764px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 1203px;
+    width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
 }
 
 .slider-our-services__slider .swiper-wrapper {
   column-gap: 50px;
+
+  @media (max-width: 992px) {
+    column-gap: 0;
+  }
 
   @media (max-width: 767px) {
     flex-wrap: wrap;
