@@ -128,17 +128,17 @@
 
 .footer__link::after {
     content: '';
-    display: none;
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 1px;
     background: linear-gradient(150deg, #D7F67E 13.4%, #7EE0F6 86.6%);
+    transition: width 0.2s;
 }
 
 .footer__link:hover::after {
-    display: block;
+   width: 100%;
 }
 
 .footer__socials {

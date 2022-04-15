@@ -116,7 +116,7 @@ function desktopSlider() {
         sliderOurServices.dataset.desktop = 'true';
     }
 
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 993) {
         sliderOurServices.dataset.desktop = 'false';
 
         if (sliderOurServices.classList.contains('swiper-initialized')) {
@@ -174,10 +174,9 @@ function horizontalBlocksScroll() {
   })
 }
 
-if (window.matchMedia('(min-width: 992px)').matches) {
+if (window.matchMedia('(min-width: 993px)').matches) {
     horizontalBlocksScroll();
 }
-
 
 // Секция Наша сила
 const ourStrengthCounterPlus = find('.our-strength__item.counter--plus');

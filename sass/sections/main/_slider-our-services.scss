@@ -3,7 +3,8 @@
   max-width: 356px;
 
   @media (max-width: 992px) {
-    max-width: 764px;
+    max-width: none;
+    padding: 0 15px;
   }
 
   @media (max-width: 768px) {
@@ -18,12 +19,18 @@
   column-gap: 50px;
 
   @media (max-width: 992px) {
-    column-gap: 0;
-  }
-
-  @media (max-width: 767px) {
     flex-wrap: wrap;
+    column-gap: 0;
     row-gap: 16px;
+    justify-content: space-between;
+  }
+}
+
+.slider-our-services__slider .swiper-slide {
+  width: 49%;
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 }
 
