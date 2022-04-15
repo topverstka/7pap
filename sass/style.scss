@@ -9,16 +9,12 @@
 
 // Общие стили для страниц
 // Стиль выделения элементов на странице
-// ::selection {
-//     // background: #CCF2E9;
-//     background: $accent-hover;
-//     color: #fff;
-// }
-// ::-moz-selection {
-//     // background: #CCF2E9;
-//     background: $accent-hover;
-//     color: #fff;
-// }
+::selection {
+    background-color: rgba(0, 0, 0, 0.15); 
+}
+::-moz-selection {
+    background-color: rgba(0, 0, 0, 0.15); 
+}
 
 // Стиль скроллбара
 // body::-webkit-scrollbar {

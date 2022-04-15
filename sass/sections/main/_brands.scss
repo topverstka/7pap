@@ -39,9 +39,21 @@
   flex-wrap: wrap;
   gap: 24px;
 
+  @media (max-width: 1200px) {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 992px) {
+    max-width: 734px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 515px;
+  }
+
   @media (max-width: 420px) {
     gap: 12px;
-    justify-content: flex-start;
   }
 }
 
@@ -52,12 +64,6 @@
 .brands__item:hover .tooltip::before,
 .brands__item:hover .tooltip::after {
   opacity: 1;
-}
-
-.brands__item:last-child {
-  @media (max-width: 768px) {
-    display: none;
-  }
 }
 
 .brands__item img {
