@@ -92,44 +92,89 @@ hamburger.addEventListener('click', () => {
 });
 
 // Слайдер Наши услуги на главной
-const sliderOurServices = find('.slider-our-services__slider');
+// const sliderOurServices = find('.slider-our-services__slider');
 
-let ourServicesSlider;
+// let ourServicesSlider;
 
-function desktopSlider() {
-    if (window.innerWidth > 767 && sliderOurServices.dataset.desktop === 'false') {
-        ourServicesSlider = new Swiper(sliderOurServices, {
-            slidesPerView: 3,
-            spaceBetween: 52,
+// function desktopSlider() {
+//     if (window.innerWidth > 767 && sliderOurServices.dataset.desktop === 'false') {
+//         ourServicesSlider = new Swiper(sliderOurServices, {
+//             slidesPerView: 3,
+//             spaceBetween: 52,
 
-            breakpoints: {
-                1190: {
-                    slidesPerView: 3
-                },
+//             breakpoints: {
+//                 1190: {
+//                     slidesPerView: 3
+//                 },
 
-                768: {
-                    slidesPerView: 2
-                }
-            },
-        });
+//                 768: {
+//                     slidesPerView: 2
+//                 }
+//             },
+//         });
 
-        sliderOurServices.dataset.desktop = 'true';
+//         sliderOurServices.dataset.desktop = 'true';
+//     }
+
+//     if (window.innerWidth < 768) {
+//         sliderOurServices.dataset.desktop = 'false';
+
+//         if (sliderOurServices.classList.contains('swiper-initialized')) {
+//             ourServicesSlider.destroy();
+//         }
+//     }
+// }
+
+// if (sliderOurServices) desktopSlider();
+
+// window.addEventListener('resize', () => {
+//     desktopSlider();
+// });
+
+const $scrollElem = $('.js-horizontal')
+
+const WINDOW_HEIGHT = $(window).height()
+const WINDOW_WIDTH = $(window).width()
+
+// export
+function horizontalBlocksScroll() {
+  if ($scrollElem.length === 0) return;
+
+  $scrollElem.each((i, scrollItem) => {
+    $(scrollItem).addClass('horizontal_initialized')
+    const $blocks = $(scrollItem).find('.js-horizontal-block')
+    const $track = $(scrollItem).find('.js-horizontal-track')
+
+    const length = $blocks.length
+    const itemWidth = 100 / length
+
+    $track.attr('id', `horizontal-track-${i}`)
+
+    // Ширина трэка и слайдов
+    $track.css('width', `${100 * length}%`)
+    $blocks.each((i, block) => $(block).css('width', `${itemWidth}%`))
+
+    let wipeAnimation = new TimelineMax()
+    for (let i = 1; i < length; i++) {
+      wipeAnimation.to($track, 0.2, { x: `-${itemWidth * i}%` })
     }
 
-    if (window.innerWidth < 768) {
-        sliderOurServices.dataset.desktop = 'false';
+    const controller = new ScrollMagic.Controller()
 
-        if (sliderOurServices.classList.contains('swiper-initialized')) {
-            ourServicesSlider.destroy();
-        }
-    }
+    // Инициализация сцены
+    new ScrollMagic.Scene({
+      triggerElement: scrollItem,
+      triggerHook: 'onLeave',
+      duration: '200%',
+      offset: 100,
+    })
+      .setPin(scrollItem)
+      .setTween(wipeAnimation)
+      .addTo(controller)
+  })
 }
 
-if (sliderOurServices) desktopSlider();
-
-window.addEventListener('resize', () => {
-    desktopSlider();
-});
+horizontalBlocksScroll();
 
 // Секция Наша сила
 const ourStrengthCounter = find('.our-strength__item.counter');

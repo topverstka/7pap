@@ -143,6 +143,12 @@
   border-radius: 16px;
 }
 
+@media (hover: hover) {
+  .cases__list-preview a:hover img {
+    transform: scale(1.2);
+  }
+}
+
 .cases__content {
   position: relative;
   width: 356px;
@@ -171,9 +177,10 @@
   transition: transform 0.2s linear;
 }
 
-.cases__content a:hover img {
-  transform: scale(1.2);
-  border-radius: 16px;
+@media (hover: hover) {
+  .cases__content a:hover img {
+    transform: scale(1.2);
+  }
 }
 
 .cases__content a:hover {

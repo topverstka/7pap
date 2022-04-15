@@ -1,8 +1,12 @@
 .slider-our-services__slider.swiper {
   overflow: visible;
+  max-width: 356px;
+  // margin-right: 1218px;
 }
 
 .slider-our-services__slider .swiper-wrapper {
+  column-gap: 50px;
+
   @media (max-width: 767px) {
     flex-wrap: wrap;
     row-gap: 16px;

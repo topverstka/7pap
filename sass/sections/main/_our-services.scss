@@ -1,9 +1,15 @@
 .our-services {
   padding-top: 144px;
-  padding-bottom: 120px;
 
   @media (max-width: 992px) {
     padding-top: 80px;
-    padding-bottom: 80px;
+  }
+}
+
+.our-services .info {
+  margin-bottom: 112px;
+
+  @media (max-width: 992px)  {
+    margin-bottom: 40px;
   }
 }
