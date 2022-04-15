@@ -27,9 +27,11 @@
     content: '';
     display: inline-block;
     width: 44px;
-    height: 40px;
+    height: 46px;
     margin-left: 27px;
     background-image: url('../img/footer/footer-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
 
     @media (max-width: 992px) {
       display: none;  
@@ -145,7 +147,7 @@
     justify-content: flex-end;
     column-gap: 12px;
     margin-bottom: 19px;
-    transform: translateY(-7px);
+    transform: translate(8px, -7px);
 
     @media (max-width: 1220px) {
         justify-content: flex-end;
@@ -153,10 +155,10 @@
 
     @media (max-width: 992px) {
         justify-content: flex-start;
+        transform: translateY(0);
     }
 
-    @media (max-width: 768px) {
-        transform: translateY(0);
+    @media (max-width: 768px) {        
         margin-bottom: 50px;
     }
 }
