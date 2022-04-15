@@ -47,7 +47,6 @@ const modalMobileWrapper = modalMobile.querySelector('.modal-mobile__wrapper');
 const modalMobileMenu = document.querySelector('.modal-mobile__menu');
 const modalMobileFooterMenu = document.querySelector('.modal-mobile__footer-menu');
 
-
 hamburger.addEventListener('click', () => {
     body.classList.toggle('_lock');
 
@@ -74,10 +73,18 @@ hamburger.addEventListener('click', () => {
     document.addEventListener('click', (e) => {
         const target = e.target
         if (modalMobile && target.classList.contains('modal-mobile__wrapper')) {
+            modalMobile.classList.remove('_show');
+            hamburgerLine.classList.remove('animate');
             setTimeout(() => {
                 header.classList.remove('no-fixed');
-                hamburgerLine.classList.remove('animate');
-                modalMobile.classList.remove('_show')
+                modalMobile.classList.add('opacity');
+            }, 350);
+
+            setTimeout(() => {
+                modalMobileWrapper.classList.add('active_wrap')
+            }, 450);
+            setTimeout(() => {
+
                 body.classList.remove('_lock');
             }, 10)
         };

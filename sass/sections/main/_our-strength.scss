@@ -11,7 +11,9 @@
 .our-strength__list {
   display: flex;
   align-items: center;
-  column-gap: 16px;
+  flex-wrap: wrap;
+  max-width: 760px;
+  gap: 16px;
   margin-top: 72px;
   -webkit-overflow-scrolling: touch;
 
@@ -19,10 +21,15 @@
     display: none;
   }
 
+  @media (max-width: 992px) {
+    max-width: none;
+  }
+
   @media (max-width: 768px) {
-    width: 106%;
-    margin-top: 40px;
+    flex-wrap: nowrap;
     column-gap: 8px;
+    margin-top: 40px;
+    width: 106%;
     overflow-x: auto;
   }
 }
@@ -53,12 +60,12 @@
 }
 
 .our-strength__item .tooltip::after {
-  bottom: 75px;
+  bottom: 100px;
 }
 
 .our-strength__item .tooltip::before {
-  min-width: 200px;
-  left: -60px;
+  min-width: 247px;
+  left: -80px;
 }
 
 .our-strength__item.counter {
