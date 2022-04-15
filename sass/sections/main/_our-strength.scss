@@ -88,7 +88,6 @@
   }
 
   &:after {
-    content: '+6';
     position: absolute;
     top: 0;
     left: 0;
@@ -102,6 +101,24 @@
   @media (max-width: 768px) {
     display: none;
   }
+}
+
+.our-strength__item.counter--plus {
+  &::after {
+    content: '+6';
+  }
+}
+
+.our-strength__item.counter--minus {
+  display: none;
+
+  &::after {
+    content: '—';
+  }
+}
+
+.our-strength__item.counter--minus.active {
+  display: block;
 }
 
 .our-strength__item.counter:hover::before {

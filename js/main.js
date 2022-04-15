@@ -180,12 +180,23 @@ if (window.matchMedia('(min-width: 992px)').matches) {
 
 
 // Секция Наша сила
-const ourStrengthCounter = find('.our-strength__item.counter');
+const ourStrengthCounterPlus = find('.our-strength__item.counter--plus');
+const ourStrengthCounterMinus = find('.our-strength__item.counter--minus');
 const ourStrengthItemsHidden = findAll('.our-strength__item.hidden');
 
-if (ourStrengthCounter && ourStrengthItemsHidden) {
-    ourStrengthCounter.addEventListener('click', () => {
-        ourStrengthCounter.style.display = 'none';
+if (ourStrengthCounterPlus && ourStrengthItemsHidden) {
+    ourStrengthCounterPlus.addEventListener('click', () => {
+        ourStrengthCounterPlus.style.display = 'none';
+        ourStrengthCounterMinus.classList.add('active');
+
+        ourStrengthCounterMinus.addEventListener('click', () => {
+            ourStrengthCounterMinus.classList.remove('active');
+            ourStrengthCounterPlus.style.display = 'block';
+
+            ourStrengthItemsHidden.forEach(item => {
+                item.classList.add('hidden');
+            });
+        });
 
         ourStrengthItemsHidden.forEach(item => {
             item.classList.remove('hidden');

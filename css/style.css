@@ -179,7 +179,7 @@ body._lock {
 .scroll-top {
   display: none;
   position: absolute;
-  bottom: 144px;
+  bottom: 71px;
   right: 18px;
   z-index: 10;
   width: 36px;
@@ -1979,7 +1979,6 @@ body._lock {
 }
 
 .our-strength__item.counter:after {
-  content: '+6';
   position: absolute;
   top: 0;
   left: 0;
@@ -1994,6 +1993,22 @@ body._lock {
   .our-strength__item.counter {
     display: none;
   }
+}
+
+.our-strength__item.counter--plus::after {
+  content: '+6';
+}
+
+.our-strength__item.counter--minus {
+  display: none;
+}
+
+.our-strength__item.counter--minus::after {
+  content: '—';
+}
+
+.our-strength__item.counter--minus.active {
+  display: block;
 }
 
 .our-strength__item.counter:hover::before {
