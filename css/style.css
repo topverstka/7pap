@@ -1485,6 +1485,7 @@ body._lock {
   line-height: 30px;
   padding-top: 24px;
   padding-left: 24px;
+  padding-right: 24px;
 }
 
 @media (max-width: 568px) {
