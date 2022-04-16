@@ -1816,6 +1816,12 @@ body._lock {
   }
 }
 
+@media (max-width: 360px) {
+  .slider-our-services__link {
+    font-size: 19px;
+  }
+}
+
 @media (max-width: 468px) {
   .slider-our-services__link {
     column-gap: 12px;

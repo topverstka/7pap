@@ -121,6 +121,10 @@
     transform: translate(0);
   }
 
+  @media (max-width: 360px) {
+    font-size: 19px;
+  }
+
   @media (max-width: 468px) {
     column-gap: 12px;
   }
