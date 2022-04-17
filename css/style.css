@@ -1908,6 +1908,7 @@ body._lock {
 }
 
 .our-strength__list {
+  position: relative;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -1939,13 +1940,14 @@ body._lock {
 }
 
 .our-strength__item {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   width: 80px;
   height: 80px;
-  transition: opacity 0.3s, visibility 0.3s;
+  transition: opacity 0.5s, visibility 0.5s;
 }
 
 @media (max-width: 768px) {
@@ -1974,10 +1976,10 @@ body._lock {
 }
 
 .our-strength__item.counter {
-  position: relative;
   cursor: pointer;
   font-size: 20px;
   border-radius: 50%;
+  transform: translateX(-191px);
 }
 
 .our-strength__item.counter::before {
@@ -2014,16 +2016,12 @@ body._lock {
   content: '+6';
 }
 
-.our-strength__item.counter--minus {
-  display: none;
+.our-strength__item.counter--plus.active {
+  transform: translateX(0);
 }
 
-.our-strength__item.counter--minus::after {
+.our-strength__item.counter--plus.active::after {
   content: '—';
-}
-
-.our-strength__item.counter--minus.active {
-  display: block;
 }
 
 .our-strength__item.counter:hover::before {
