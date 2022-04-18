@@ -129,11 +129,18 @@
   }
 }
 
-.cases__list-preview li {
+// .cases__list-preview li {
+//   position: relative;
+//   z-index: 2;
+//   overflow: hidden;
+//   border-radius: 16px;
+// }
+
+.cases__list-preview li div {
   position: relative;
   z-index: 2;
-  overflow: hidden;
   border-radius: 16px;
+  overflow: hidden;
 }
 
 .cases__list-preview li a {
