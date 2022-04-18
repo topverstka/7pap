@@ -1398,6 +1398,7 @@ body._lock {
 
 .cases__list-preview img {
   transition: transform 0.2s;
+  transform: translateZ(0);
 }
 
 @media (hover: hover) {
@@ -1436,16 +1437,6 @@ body._lock {
 @media (max-width: 480px) {
   .cases__content {
     height: 244px;
-  }
-}
-
-.cases__content a img {
-  transition: transform 0.2s linear;
-}
-
-@media (max-width: 568px) {
-  .cases__content a img {
-    border-radius: 8px;
   }
 }
 
@@ -1491,6 +1482,8 @@ body._lock {
   height: 100%;
   object-fit: cover;
   border-radius: 16px;
+  transform: translateZ(0);
+  transition: transform 0.2s linear;
 }
 
 @media (max-width: 568px) {

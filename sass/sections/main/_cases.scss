@@ -142,6 +142,7 @@
 
 .cases__list-preview img {
   transition: transform 0.2s;
+  transform: translateZ(0);
 }
 
 @media (hover: hover) {
@@ -172,14 +173,6 @@
 
   @media (max-width: 480px) {
     height: 244px;
-  }
-}
-
-.cases__content a img {
-  transition: transform 0.2s linear;
-
-  @media (max-width: 568px) {
-    border-radius: 8px;
   }
 }
 
@@ -221,6 +214,8 @@
   height: 100%;
   object-fit: cover;
   border-radius: 16px;
+  transform: translateZ(0);
+  transition: transform 0.2s linear;
 
   @media (max-width: 568px) {
       border-radius: 8px;
