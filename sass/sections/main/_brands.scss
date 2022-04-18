@@ -27,12 +27,17 @@
 }
 
 .brands__title a {
+  // background: linear-gradient(154.68deg, #D7F67E -3.92%, #54E0FF 139.84%);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  // border-bottom: 1px solid #8BCB03;
+}
+
+.brands__title a span {
   background: linear-gradient(154.68deg, #D7F67E -3.92%, #54E0FF 139.84%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-bottom: 1px solid #8BCB03;
-
-  white-space: nowrap;
 }
 
 .brands__list {
