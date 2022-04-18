@@ -1615,6 +1615,7 @@ body._lock {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-bottom: 1px solid #8BCB03;
+  white-space: nowrap;
 }
 
 .brands__list {
