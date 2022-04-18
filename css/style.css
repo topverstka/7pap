@@ -1386,17 +1386,18 @@ body._lock {
 }
 
 .cases__list-preview li {
+  position: relative;
+  z-index: 2;
   overflow: hidden;
+  border-radius: 16px;
+}
+
+.cases__list-preview li a {
   border-radius: 16px;
 }
 
 .cases__list-preview img {
   transition: transform 0.2s;
-}
-
-.cases__list-preview a:hover img {
-  transform: scale(1.2);
-  border-radius: 16px;
 }
 
 @media (hover: hover) {
@@ -1407,6 +1408,7 @@ body._lock {
 
 .cases__content {
   position: relative;
+  z-index: 2;
   width: 356px;
   height: 496px;
   border-radius: 16px;
@@ -1441,6 +1443,12 @@ body._lock {
   transition: transform 0.2s linear;
 }
 
+@media (max-width: 568px) {
+  .cases__content a img {
+    border-radius: 8px;
+  }
+}
+
 @media (hover: hover) {
   .cases__content a:hover img {
     transform: scale(1.2);
@@ -1472,6 +1480,7 @@ body._lock {
   display: block;
   width: 100%;
   height: 100%;
+  border-radius: 16px;
 }
 
 .cases__content img {
