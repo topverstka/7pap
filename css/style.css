@@ -872,8 +872,19 @@ body._lock {
 }
 
 .main-nav__list li a {
+  position: relative;
   font-size: 20px;
   line-height: 23px;
+}
+
+.main-nav__list li a.active::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--main);
 }
 
 .send-request {
@@ -1936,6 +1947,12 @@ body._lock {
     padding-right: 16px;
     width: 106%;
     overflow-x: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .our-strength__list {
+    margin-left: -16px;
   }
 }
 
