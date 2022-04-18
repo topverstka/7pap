@@ -301,3 +301,5 @@ scrollTop.addEventListener('click', (event) => {
         });
     }
 });
+
+polyfill();
