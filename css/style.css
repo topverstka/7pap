@@ -1378,11 +1378,11 @@ body._lock {
 }
 
 .cases__list-preview._width li:first-child {
-  width: 30%;
+  width: 32%;
 }
 
 .cases__list-preview._width li:last-child {
-  width: 67%;
+  width: 68%;
 }
 
 .cases__list-preview._width li p {
