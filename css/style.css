@@ -1402,6 +1402,11 @@ body._lock {
   overflow: hidden;
 }
 
+.cases__list-preview div a:hover p {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .cases__list-preview li div .cases__text-white {
   color: #ffffff;
 }
