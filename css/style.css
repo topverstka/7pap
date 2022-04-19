@@ -1377,18 +1377,38 @@ body._lock {
   max-width: 1172px;
 }
 
+.cases__list-preview._width li:first-child {
+  width: 30%;
+}
+
+.cases__list-preview._width li:last-child {
+  width: 67%;
+}
+
 .cases__list-preview._width li p {
+  position: absolute;
+  top: 24px;
+  left: 24px;
   opacity: 1;
+  font-size: 24px;
+  line-height: 30px;
+  transition: opacity 0.5s;
+}
+
+.cases__list-preview li {
+  transition: .6s ease;
+}
+
+.cases__list-preview li:first-child {
+  width: 37%;
+}
+
+.cases__list-preview li:last-child {
+  width: 60%;
 }
 
 .cases__list-preview li p {
   opacity: 0;
-  transition: opacity 0.5s;
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  font-size: 24px;
-  line-height: 30px;
 }
 
 .cases__list-preview img {
@@ -1402,26 +1422,24 @@ body._lock {
   overflow: hidden;
 }
 
-.cases__list-preview div a:hover p {
+.cases__list-preview li a {
+  border-radius: 16px;
+}
+
+.cases__list-preview li a:hover p {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.cases__list-preview li div .cases__text-white {
+.cases__list-preview li a.cases__text-white {
   color: #ffffff;
-}
-
-.cases__list-preview li a {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
 }
 
 .cases__list-preview img {
   transition: transform 0.2s;
   transform: translateZ(0);
+  height: 496px;
+  object-fit: cover;
 }
 
 @media (hover: hover) {
