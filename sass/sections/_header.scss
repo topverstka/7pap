@@ -26,6 +26,11 @@
     margin: 0 auto;
     min-height: 120px;
     padding: 0 15px;
+
+    @media (max-width: 1599px) {
+        max-width: 1205px;
+    }
+
     @media (max-width: 992px) {
         min-height: 48px;
     }
@@ -36,9 +41,15 @@
     width: 69px;
     height: 35px;
     margin-right: 243px;
+    
+    @media (max-width: 1599px) {
+        margin-right: 223px;
+    }
+
     @media (max-width: 1200px) {
         margin-right: 60px;
     }
+
     @media (max-width: 992px) {
         width: 47px;
         height: 25px;
