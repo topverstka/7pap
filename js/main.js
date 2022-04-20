@@ -205,6 +205,12 @@ if (ourStrengthCounterPlus && ourStrengthItemsHidden) {
 const sliderReviews = find('.slider-reviews__slider');
 
 const reviewsSlider = new Swiper(sliderReviews, {
+    effect: 'fade',
+
+    fadeEffect: {
+        crossFade: true
+    },
+
     pagination: {
         el: ".slider-reviews__pagination",
         type: "fraction",
