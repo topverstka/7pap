@@ -216,9 +216,11 @@ const reviewsSlider = new Swiper(sliderReviews, {
         crossFade: true
     },
 
+    autoHeight: true,
+
     pagination: {
         el: ".slider-reviews__pagination",
-        type: "fraction",
+        type: "fraction"
     },
     navigation: {
         nextEl: ".slider-reviews__next",
