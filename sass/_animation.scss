@@ -1,25 +1,3 @@
-/* Стили анимации плавной смены фонового цвета */
-@keyframes scale {
-    0% {
-        transform: scale(0);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Стили кроссбраузерной анимации плавной смены фонового цвета */
-@-webkit-keyframes scale {
-    0% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(0);
-    }
-}
-
 /* Стили анимации плавного появления текста */
 @keyframes opacity {
     0% {
