@@ -206,6 +206,7 @@ const sliderReviews = find('.slider-reviews__slider');
 
 const reviewsSlider = new Swiper(sliderReviews, {
     effect: 'fade',
+    speed: 1000,
 
     fadeEffect: {
         crossFade: true
@@ -213,8 +214,9 @@ const reviewsSlider = new Swiper(sliderReviews, {
 
     pagination: {
         el: ".slider-reviews__pagination",
-        type: "fraction",
+        type: "fraction"
     },
+    
     navigation: {
         nextEl: ".slider-reviews__next",
         prevEl: ".slider-reviews__prev",
