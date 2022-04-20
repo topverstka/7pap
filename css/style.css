@@ -224,7 +224,7 @@ body._lock {
   color: #ffffff;
   border-radius: 8px;
   text-align: center;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .tooltip::after {
@@ -239,6 +239,7 @@ body._lock {
   background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='6' viewBox='0 0 12 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 6L0 0H12L6 6Z' fill='%23274B5D'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-position: center;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .horizontal {
@@ -1329,7 +1330,7 @@ body._lock {
 
 @media (max-width: 568px) {
   .cases__list {
-    gap: 8px;
+    gap: 1%;
     margin-bottom: 48px;
   }
 }
@@ -1356,7 +1357,8 @@ body._lock {
 
 @media (max-width: 568px) {
   .cases__list li {
-    width: 48%;
+    width: 49%;
+    margin-bottom: 2%;
   }
   .cases__list li:first-child {
     width: 100%;
