@@ -150,15 +150,19 @@ function horizontalBlocksScroll() {
     const itemWidth = 100 / length;
 
     $track.attr('id', `horizontal-track-${i}`);
-
+            
     // Ширина трэка и слайдов
     $track.css('width', `${100 * length}%`);
     $blocks.each((i, block) => $(block).css('width', `${itemWidth}%`));
 
-    let wipeAnimation = new TimelineMax();
+    // Ширина промежутка между слайдами
+    const columnGap = $($track).css('column-gap');
+    const gap = parseInt(columnGap) / parseInt($($track).width()) * 100;
+    
+    let wipeAnimation = new TimelineMax();            
 
-    for (let i = 1; i < length; i++) {
-      wipeAnimation.to($track, 0.2, { x: `-${itemWidth * i}%` });
+    for (let i = 1; i < length - 1; i++) {
+      wipeAnimation.to($track, 0.2, { x: `-${(itemWidth + gap) * i}%` });
     }
 
     const controller = new ScrollMagic.Controller();
@@ -214,9 +218,8 @@ const reviewsSlider = new Swiper(sliderReviews, {
 
     pagination: {
         el: ".slider-reviews__pagination",
-        type: "fraction"
+        type: "fraction",
     },
-    
     navigation: {
         nextEl: ".slider-reviews__next",
         prevEl: ".slider-reviews__prev",
