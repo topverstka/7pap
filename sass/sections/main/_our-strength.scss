@@ -80,6 +80,7 @@
   font-size: 20px;
   border-radius: 50%;
   transform: translateX(-191px);
+  transition: 0.3s transform;
 
   &::before {
     content: '';
@@ -122,6 +123,10 @@
   &::after {
     content: '—';
   }
+}
+
+.our-strength__item.counter--plus.active::before {
+  animation: scale 0.5s linear;
 }
 
 .our-strength__item.counter:hover::before {

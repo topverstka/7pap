@@ -271,6 +271,18 @@ body._lock {
   }
 }
 
+/* Стили анимации плавной смены фонового цвета */
+@keyframes scale {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Стили кроссбраузерной анимации плавной смены фонового цвета */
+
 /* Стили анимации плавного появления текста */
 @keyframes opacity {
   0% {
@@ -2058,6 +2070,7 @@ body._lock {
   font-size: 20px;
   border-radius: 50%;
   transform: translateX(-191px);
+  transition: 0.3s transform;
 }
 
 .our-strength__item.counter::before {
@@ -2100,6 +2113,10 @@ body._lock {
 
 .our-strength__item.counter--plus.active::after {
   content: '—';
+}
+
+.our-strength__item.counter--plus.active::before {
+  animation: scale 0.5s linear;
 }
 
 .our-strength__item.counter:hover::before {
