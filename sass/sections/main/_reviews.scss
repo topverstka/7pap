@@ -80,6 +80,10 @@
   }
 }
 
+.slider-reviews__name.animation-for-name {
+  animation: opacity 1s linear both;
+}
+
 .slider-reviews__link {
   display: flex;
   align-items: center;
