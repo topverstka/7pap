@@ -6,6 +6,17 @@
     padding-top: 80px;
     padding-bottom: 80px;
   }
+
+  @media (max-width: 576px) {
+    .container {
+      padding: 0;
+    }
+
+    .info__title,
+    .text {
+      padding: 0 16px;
+    }
+  }
 }
 
 .our-strength__list {
@@ -36,8 +47,7 @@
   }
 
   @media (max-width: 420px) {
-    margin-left: -13px;
-    padding-left: 14px;
+    padding-left: 16px;
   }
 }
 
