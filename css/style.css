@@ -2213,6 +2213,10 @@ body._lock {
   }
 }
 
+.slider-reviews__name.add-animation {
+  animation: opacity 1s linear both;
+}
+
 .slider-reviews__link {
   display: flex;
   align-items: center;
@@ -2363,8 +2367,8 @@ body._lock {
   }
 }
 
-.slider-reviews__pagination.swiper-pagination-fraction .swiper-pagination-current {
-  animation: opacity 1s ease both;
+.slider-reviews__pagination.swiper-pagination-fraction .swiper-pagination-current.add-animation {
+  animation: opacity 1s linear both;
 }
 
 .slider-reviews__pagination.swiper-pagination-fraction .swiper-pagination-total {

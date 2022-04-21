@@ -226,6 +226,16 @@ const reviewsSlider = new Swiper(sliderReviews, {
         nextEl: ".slider-reviews__next",
         prevEl: ".slider-reviews__prev",
     },
+
+    on: {
+        slideChange: function(e) {
+            this.$el[0].querySelector('.swiper-pagination-current').classList.add('add-animation');
+        },
+
+        activeIndexChange: function() {
+            setTimeout(() => this.$el[0].querySelector('.swiper-pagination-current').classList.remove('add-animation'), 800)
+        }
+    }
 });
 
 // Анимация для блока с кейсами при скролле
