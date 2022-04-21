@@ -210,43 +210,55 @@ const sliderReviews = find('.slider-reviews__slider');
 const sliderReviewsName = document.querySelector('.slider-reviews__name');
 const sliderVideoReviewsLink = document.querySelector('.slider-reviews__link.video-reviews');
 const sliderReviewsLink = document.querySelector('.slider-reviews__link.read-more');
+const sliderReviewsNextBtn = document.querySelector('.slider-reviews__next-mobile');
+const sliderReviewsPrevBtn = document.querySelector('.slider-reviews__prev-mobile');
 
-const reviewsSlider = new Swiper(sliderReviews, {
-    effect: 'fade',
-    speed: 1000,
-
-    fadeEffect: {
-        crossFade: true
-    },
-
-    autoHeight: true,
-
-    pagination: {
-        el: ".slider-reviews__pagination",
-        type: "fraction"
-    },
-    navigation: {
-        nextEl: ".slider-reviews__next",
-        prevEl: ".slider-reviews__prev",
-    },
-
-    on: {
-        slideChange: function(e) {
-            this.$el[0].querySelector('.swiper-pagination-current').classList.add('add-animation');
-            const indexСurrentSlide = reviewsSlider.realIndex;
-            const dataName = reviewsSlider.slides[indexСurrentSlide].dataset.name;
-            const dataVideoLink = reviewsSlider.slides[indexСurrentSlide].dataset.videoLink;
-            const dataLink = reviewsSlider.slides[indexСurrentSlide].dataset.link;
-            sliderReviewsName.textContent = dataName;
-            sliderVideoReviewsLink.href = dataVideoLink;
-            sliderReviewsLink.href = dataLink;
+if (sliderReviews) {
+    const reviewsSlider = new Swiper(sliderReviews, {
+        effect: 'fade',
+        speed: 1000,
+    
+        fadeEffect: {
+            crossFade: true
         },
-
-        activeIndexChange: function() {
-            setTimeout(() => this.$el[0].querySelector('.swiper-pagination-current').classList.remove('add-animation'), 800);
+    
+        autoHeight: true,
+    
+        pagination: {
+            el: ".slider-reviews__pagination",
+            type: "fraction"
+        },
+        navigation: {
+            nextEl: ".slider-reviews__next",
+            prevEl: ".slider-reviews__prev",
+        },
+    
+        on: {
+            slideChange: function(e) {
+                this.$el[0].querySelector('.swiper-pagination-current').classList.add('add-animation');
+                const indexСurrentSlide = reviewsSlider.realIndex;
+                const dataName = reviewsSlider.slides[indexСurrentSlide].dataset.name;
+                const dataVideoLink = reviewsSlider.slides[indexСurrentSlide].dataset.videoLink;
+                const dataLink = reviewsSlider.slides[indexСurrentSlide].dataset.link;
+                sliderReviewsName.textContent = dataName;
+                sliderVideoReviewsLink.href = dataVideoLink;
+                sliderReviewsLink.href = dataLink;
+            },
+    
+            activeIndexChange: function() {
+                setTimeout(() => this.$el[0].querySelector('.swiper-pagination-current').classList.remove('add-animation'), 800);
+            }
         }
-    }
-});
+    });
+    
+    sliderReviewsPrevBtn.addEventListener('click', () => {
+        reviewsSlider.slidePrev();
+    });
+    
+    sliderReviewsNextBtn.addEventListener('click', () => {
+        reviewsSlider.slideNext();
+    });
+}
 
 // Анимация для блока с кейсами при скролле
 if (window.matchMedia('(min-width: 992px)').matches) {

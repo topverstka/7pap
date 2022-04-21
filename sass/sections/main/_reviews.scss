@@ -17,9 +17,7 @@
 }
 
 .slider-reviews__content {
-  @media (max-width: 1340px) {
-    padding: 0 60px;
-  }
+  padding-bottom: 88px;
 
   @media (max-width: 992px) {
     padding: 0;
@@ -28,18 +26,18 @@
 }
 
 .slider-reviews__title {
-  margin-bottom: 88px;
   color: #ffffff;
-
-  @media (max-width: 992px) {
-    margin-bottom: 24px;
-  }
 }
 
 .slider-reviews__step {
   @media (max-width: 992px) {
     display: flex;
     flex-direction: column;
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: 768px) {
+    padding-bottom: 50px;
   }
 }
 
@@ -64,6 +62,10 @@
 
 .slider-reviews__name {
   padding-left: 96px;
+
+  @media (max-width: 1340px) {
+    padding-left: 140px;
+  }
 
   @media (max-width: 992px) {
     padding-left: 0;
@@ -140,14 +142,6 @@
   @media (max-width: 1600px) {
     display: none;
   }
-
-  // @media (max-width: 992px) {
-  //   top: 87%;
-  // }
-
-  // @media (max-width: 992px) {
-  //   top: 89%;
-  // }
 }
 
 .slider-reviews__prev.swiper-button-prev.swiper-button-disabled,
@@ -216,3 +210,29 @@
 .slider-reviews__pagination.swiper-pagination-fraction .swiper-pagination-total {
   opacity: 0.6;
 }
+
+.slider-reviews__next-mobile,
+.slider-reviews__prev-mobile {
+  display: none;
+  position: absolute;
+  bottom: 18px;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.slider-reviews__next-mobile {
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.5'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.8441 8.84315L15.0156 11.6716L23.501 20.1569L15.0156 28.6423L17.8441 31.4707L29.1578 20.157L29.1577 20.1569L29.1578 20.1569L17.8441 8.84315Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.slider-reviews__prev-mobile {
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.5'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M22.1559 31.1568L24.9844 28.3284L16.499 19.843L24.9844 11.3577L22.1559 8.52923L10.8422 19.8429L10.8423 19.843L10.8422 19.8431L22.1559 31.1568Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+  right: 40px;
+}
+
