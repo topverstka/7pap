@@ -207,6 +207,9 @@ if (ourStrengthCounterPlus && ourStrengthItemsHidden) {
 
 // Слайдер с отзывами на главной
 const sliderReviews = find('.slider-reviews__slider');
+const sliderReviewsName = document.querySelector('.slider-reviews__name');
+const sliderVideoReviewsLink = document.querySelector('.slider-reviews__link video-reviews');
+const sliderReviewsLink = document.querySelector('.slider-reviews__link read-more');
 
 const reviewsSlider = new Swiper(sliderReviews, {
     effect: 'fade',
@@ -230,10 +233,17 @@ const reviewsSlider = new Swiper(sliderReviews, {
     on: {
         slideChange: function(e) {
             this.$el[0].querySelector('.swiper-pagination-current').classList.add('add-animation');
+            const indexСurrentSlide = reviewsSlider.realIndex;
+            const dataName = reviewsSlider.slides[indexСurrentSlide].dataset.name;
+            const dataVideoLink = reviewsSlider.slides[indexСurrentSlide].dataset.videoLink;
+            const dataLink = reviewsSlider.slides[indexСurrentSlide].dataset.link;
+            sliderReviewsName.textContent = dataName;
+            sliderVideoReviewsLink.href = dataVideoLink;
+            sliderReviewsLink.href = dataLink;
         },
 
         activeIndexChange: function() {
-            setTimeout(() => this.$el[0].querySelector('.swiper-pagination-current').classList.remove('add-animation'), 800)
+            setTimeout(() => this.$el[0].querySelector('.swiper-pagination-current').classList.remove('add-animation'), 800);
         }
     }
 });
