@@ -210,8 +210,6 @@ const sliderReviews = find('.slider-reviews__slider');
 const sliderReviewsName = document.querySelector('.slider-reviews__name');
 const sliderVideoReviewsLink = document.querySelector('.slider-reviews__link.video-reviews');
 const sliderReviewsLink = document.querySelector('.slider-reviews__link.read-more');
-// const sliderReviewsNextBtn = document.querySelector('.slider-reviews__next-mobile');
-// const sliderReviewsPrevBtn = document.querySelector('.slider-reviews__prev-mobile');
 
 if (sliderReviews) {
     const reviewsSlider = new Swiper(sliderReviews, {
@@ -250,14 +248,6 @@ if (sliderReviews) {
             }
         }
     });
-    
-    // sliderReviewsPrevBtn.addEventListener('click', () => {
-    //     reviewsSlider.slidePrev();
-    // });
-    
-    // sliderReviewsNextBtn.addEventListener('click', () => {
-    //     reviewsSlider.slideNext();
-    // });
 }
 
 // Анимация для блока с кейсами при скролле
