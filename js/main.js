@@ -234,7 +234,7 @@ if (sliderReviews) {
         on: {
             slideChange: function(e) {
                 this.$el[0].querySelector('.swiper-pagination-current').classList.add('add-animation');
-                sliderReviewsName.classList.add('animation-for-name');
+                sliderReviewsName.classList.add('add-animation');
                 const indexСurrentSlide = reviewsSlider.realIndex;
                 const dataName = reviewsSlider.slides[indexСurrentSlide].dataset.name;
                 const dataVideoLink = reviewsSlider.slides[indexСurrentSlide].dataset.videoLink;
@@ -247,10 +247,8 @@ if (sliderReviews) {
             activeIndexChange: function() {
                 setTimeout(() => {
                     this.$el[0].querySelector('.swiper-pagination-current').classList.remove('add-animation');
-                    sliderReviewsName.classList.remove('animation-for-name');
+                    sliderReviewsName.classList.remove('add-animation');
                 }, 800);
-
-                // setTimeout(() => this.$el[0].querySelector('.swiper-pagination-current').classList.remove('add-animation'), 800);
             }
         }
     });
