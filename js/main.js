@@ -208,8 +208,8 @@ if (ourStrengthCounterPlus && ourStrengthItemsHidden) {
 // Слайдер с отзывами на главной
 const sliderReviews = find('.slider-reviews__slider');
 const sliderReviewsName = document.querySelector('.slider-reviews__name');
-const sliderVideoReviewsLink = document.querySelector('.slider-reviews__link video-reviews');
-const sliderReviewsLink = document.querySelector('.slider-reviews__link read-more');
+const sliderVideoReviewsLink = document.querySelector('.slider-reviews__link.video-reviews');
+const sliderReviewsLink = document.querySelector('.slider-reviews__link.read-more');
 
 const reviewsSlider = new Swiper(sliderReviews, {
     effect: 'fade',
