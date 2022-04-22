@@ -27,10 +27,26 @@
 }
 
 .brands__title a span {
+  display: inline-block;
+  position: relative;
   background: linear-gradient(154.68deg, #D7F67E -3.92%, #54E0FF 139.84%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-bottom: 1px solid #8BCB03;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #8BCB03;
+    transition: width 0.5s;
+  }
+}
+
+.brands__title a:hover span::before {
+  width: 100%;
 }
 
 .brands__list {
