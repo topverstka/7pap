@@ -139,45 +139,45 @@ const WINDOW_HEIGHT = $(window).height();
 const WINDOW_WIDTH = $(window).width();
 
 function horizontalBlocksScroll() {
-  if ($scrollElem.length === 0) return;
+    if ($scrollElem.length === 0) return;
 
-  $scrollElem.each((i, scrollItem) => {
-    $(scrollItem).addClass('horizontal_initialized');
-    const $blocks = $(scrollItem).find('.js-horizontal-block');
-    const $track = $(scrollItem).find('.js-horizontal-track');
+    $scrollElem.each((i, scrollItem) => {
+        $(scrollItem).addClass('horizontal_initialized');
+        const $blocks = $(scrollItem).find('.js-horizontal-block');
+        const $track = $(scrollItem).find('.js-horizontal-track');
 
-    const length = $blocks.length;
-    const itemWidth = 100 / length;
+        const length = $blocks.length;
+        const itemWidth = 100 / length;
 
-    $track.attr('id', `horizontal-track-${i}`);
-            
-    // Ширина трэка и слайдов
-    $track.css('width', `${100 * length}%`);
-    $blocks.each((i, block) => $(block).css('width', `${itemWidth}%`));
+        $track.attr('id', `horizontal-track-${i}`);
 
-    // Ширина промежутка между слайдами
-    const columnGap = $($track).css('column-gap');
-    const gap = parseInt(columnGap) / parseInt($($track).width()) * 100;
-    
-    let wipeAnimation = new TimelineMax();            
+        // Ширина трэка и слайдов
+        $track.css('width', `${100 * length}%`);
+        $blocks.each((i, block) => $(block).css('width', `${itemWidth}%`));
 
-    for (let i = 1; i < length - 1; i++) {
-      wipeAnimation.to($track, 0.2, { x: `-${(itemWidth + gap) * i}%` });
-    }
+        // Ширина промежутка между слайдами
+        const columnGap = $($track).css('column-gap');
+        const gap = parseInt(columnGap) / parseInt($($track).width()) * 100;
 
-    const controller = new ScrollMagic.Controller();
+        let wipeAnimation = new TimelineMax();
 
-    // Инициализация сцены
-    new ScrollMagic.Scene({
-      triggerElement: scrollItem,
-      triggerHook: 'onLeave',
-      duration: '80%',
-      offset: 100,
-    })
-      .setPin(scrollItem)
-      .setTween(wipeAnimation)
-      .addTo(controller)
-  });
+        for (let i = 1; i < length - 1; i++) {
+            wipeAnimation.to($track, 0.2, { x: `-${(itemWidth + gap) * i}%` });
+        }
+
+        const controller = new ScrollMagic.Controller();
+
+        // Инициализация сцены
+        new ScrollMagic.Scene({
+                triggerElement: scrollItem,
+                triggerHook: 'onLeave',
+                duration: '80%',
+                offset: 100,
+            })
+            .setPin(scrollItem)
+            .setTween(wipeAnimation)
+            .addTo(controller)
+    });
 }
 
 if (window.matchMedia('(min-width: 993px)').matches) {
@@ -201,7 +201,7 @@ if (ourStrengthCounterPlus && ourStrengthItemsHidden) {
                 item.classList.add('hidden');
             });
         }
-        
+
     });
 }
 
@@ -215,13 +215,13 @@ if (sliderReviews) {
     const reviewsSlider = new Swiper(sliderReviews, {
         // effect: 'fade',
         speed: 1000,
-    
+
         // fadeEffect: {
         //     crossFade: true
         // },
-    
+
         // autoHeight: true,
-    
+
         pagination: {
             el: ".slider-reviews__pagination",
             type: "fraction"
@@ -230,7 +230,7 @@ if (sliderReviews) {
             nextEl: ".slider-reviews__next",
             prevEl: ".slider-reviews__prev",
         },
-    
+
         on: {
             slideChange: function(e) {
                 this.$el[0].querySelector('.swiper-pagination-current').classList.add('add-animation');
@@ -243,7 +243,7 @@ if (sliderReviews) {
                 sliderVideoReviewsLink.href = dataVideoLink;
                 sliderReviewsLink.href = dataLink;
             },
-    
+
             activeIndexChange: function() {
                 setTimeout(() => {
                     this.$el[0].querySelector('.swiper-pagination-current').classList.remove('add-animation');
@@ -258,7 +258,7 @@ if (sliderReviews) {
 if (window.matchMedia('(min-width: 992px)').matches) {
     let flage = false;
     let ulList = document.querySelector('.cases__list');
-    let elementObserver = document.querySelector('.promo__text');
+    let elementObserver = document.querySelector('.cases');
     ulList.insertAdjacentHTML('beforebegin', '<ul class="cases__list-preview"></ul>')
     ulList.querySelectorAll('li').forEach((i, index) => {
         if (index < 2) {
