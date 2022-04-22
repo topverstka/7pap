@@ -171,7 +171,7 @@ function horizontalBlocksScroll() {
     new ScrollMagic.Scene({
       triggerElement: scrollItem,
       triggerHook: 'onLeave',
-      duration: '200%',
+      duration: '80%',
       offset: 100,
     })
       .setPin(scrollItem)
