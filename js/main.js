@@ -213,14 +213,7 @@ const sliderReviewsLink = document.querySelector('.slider-reviews__link.read-mor
 
 if (sliderReviews) {
     const reviewsSlider = new Swiper(sliderReviews, {
-        // effect: 'fade',
         speed: 1000,
-
-        // fadeEffect: {
-        //     crossFade: true
-        // },
-
-        // autoHeight: true,
 
         pagination: {
             el: ".slider-reviews__pagination",

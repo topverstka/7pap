@@ -19,7 +19,6 @@
     @media (max-width: 992px) {
         justify-content: space-between;
         gap: 10px;
-        // gap: 30px;
     }
     @media (max-width: 568px) {
         gap: 1%;
@@ -42,11 +41,8 @@
         width: 50%;
     }
     @media (max-width: 992px) {
-        // width: 47%;
         width: 32.4%;
-        // width: 66.2%;
         &:nth-child(7) {
-            // width: 66.2%;
             width: 32.4%;
         }
     }
