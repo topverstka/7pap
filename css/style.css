@@ -2359,7 +2359,7 @@ body._lock {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .slider-reviews__prev.swiper-button-prev,
   .slider-reviews__next.swiper-button-next {
     display: block;
