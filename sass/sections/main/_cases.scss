@@ -9,7 +9,7 @@
 .cases__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     gap: 64px 52px;
     max-width: 1172px;
     margin: 0 auto 96px;
@@ -33,9 +33,9 @@
         display: none;
     }
     @media (max-width: 1211px) {
-        width: 31%;
+        width: 31.9%;
         &:nth-child(7) {
-            width: 63.7%;
+            width: 66%;
         }
     }
     @media (max-width: 480px) {
@@ -46,10 +46,11 @@
         width: 32.4%;
         // width: 66.2%;
         &:nth-child(7) {
-            width: 66.2%;
+            // width: 66.2%;
+            width: 32.4%;
         }
     }
-    @media (max-width: 753px) {
+    @media (max-width: 768px) {
         width: 49%;
         margin-bottom: 2%;
         &:first-child {
@@ -117,14 +118,14 @@
         }
         li {
             &:first-child {
-                width: 31.6%;
+                width: 31.3%;
                 pointer-events: auto;
                 @media (max-width: 1211px) {
-                    width: 32.7%;
+                    width: 32%;
                 }
             }
             &:last-child {
-                width: 65.4%;
+                width: 67.5%;
                 pointer-events: auto;
                 @media (max-width: 1211px) {
                     width: 66%;
