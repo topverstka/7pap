@@ -1710,6 +1710,10 @@ body._lock {
   -webkit-text-fill-color: transparent;
 }
 
+.brands__title a span:last-child {
+  padding-left: 5px;
+}
+
 .brands__title a span::before {
   content: '';
   position: absolute;
