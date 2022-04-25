@@ -2102,10 +2102,11 @@ body._lock {
 }
 
 .our-strength__item .tooltip::after {
-  bottom: 100px;
+  bottom: 71px;
 }
 
 .our-strength__item .tooltip::before {
+  top: -102px;
   min-width: 247px;
   left: -80px;
 }
