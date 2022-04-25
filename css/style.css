@@ -1321,10 +1321,16 @@ body._lock {
   margin: 0 auto 96px;
 }
 
+@media (max-width: 1211px) {
+  .cases__list {
+    gap: 20px;
+  }
+}
+
 @media (max-width: 992px) {
   .cases__list {
     justify-content: space-between;
-    gap: 30px;
+    gap: 10px;
   }
 }
 
@@ -1343,6 +1349,15 @@ body._lock {
   display: none;
 }
 
+@media (max-width: 1211px) {
+  .cases__list li {
+    width: 31%;
+  }
+  .cases__list li:nth-child(7) {
+    width: 63.7%;
+  }
+}
+
 @media (max-width: 480px) {
   .cases__list li {
     width: 50%;
@@ -1351,7 +1366,10 @@ body._lock {
 
 @media (max-width: 992px) {
   .cases__list li {
-    width: 47%;
+    width: 32.4%;
+  }
+  .cases__list li:nth-child(7) {
+    width: 66.2%;
   }
 }
 
@@ -1421,14 +1439,33 @@ body._lock {
   max-width: 1172px;
 }
 
+@media (max-width: 1211px) {
+  .cases__list-preview._width {
+    margin-bottom: 20px;
+    column-gap: 20px;
+  }
+}
+
 .cases__list-preview._width li:first-child {
   width: 31.6%;
   pointer-events: auto;
 }
 
+@media (max-width: 1211px) {
+  .cases__list-preview._width li:first-child {
+    width: 32.7%;
+  }
+}
+
 .cases__list-preview._width li:last-child {
-  width: 68%;
+  width: 65.4%;
   pointer-events: auto;
+}
+
+@media (max-width: 1211px) {
+  .cases__list-preview._width li:last-child {
+    width: 66%;
+  }
 }
 
 .cases__list-preview._width li p {
@@ -1505,6 +1542,13 @@ body._lock {
   overflow: hidden;
 }
 
+@media (max-width: 1211px) {
+  .cases__content {
+    width: 100%;
+    min-height: 496px;
+  }
+}
+
 @media (max-width: 992px) {
   .cases__content {
     width: 100%;
@@ -1544,9 +1588,9 @@ body._lock {
   width: 764px;
 }
 
-@media (max-width: 1220px) {
+@media (max-width: 1211px) {
   .cases__content--width {
-    width: 356px;
+    width: 100%;
   }
 }
 
