@@ -185,7 +185,7 @@ body._lock {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #E6E6E6;
   background-image: url("data:image/svg+xml,%0A%3Csvg width='24' height='21' viewBox='0 0 24 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.5' d='M14.0012 21H10.0012L10.0012 8.34312L3.51593 14.8284L0.6875 12L12.0012 0.686279L23.3149 12L20.4865 14.8284L14.0012 8.34312L14.0012 21Z' fill='%23E6E6E6'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-position: 5px 5px;
