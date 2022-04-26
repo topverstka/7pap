@@ -964,6 +964,11 @@ body._lock {
   cursor: pointer;
 }
 
+.menu-wrapper:active .hamburger-menu.animate::before,
+.menu-wrapper:active .hamburger-menu.animate::after {
+  background: linear-gradient(150deg, #D7F67E 13.4%, #7EE0F6 86.6%);
+}
+
 @media (max-width: 992px) {
   .menu-wrapper {
     display: block;
@@ -998,7 +1003,7 @@ body._lock {
   left: 0;
   bottom: 8px;
   background-color: #000000;
-  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), background-color 0.5s;
 }
 
 .hamburger-menu:after {
@@ -1007,12 +1012,12 @@ body._lock {
   left: 0;
   top: 8px;
   background-color: #000000;
-  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), background-color 0.5s;
 }
 
 .hamburger-menu.animate::before,
 .hamburger-menu.animate::after {
-  background-color: #ffffff;
+  background: #ffffff;
 }
 
 .hamburger-menu.animate:after {
@@ -1109,6 +1114,10 @@ body._lock {
   line-height: 23px;
 }
 
+.modal-mobile__menu-list li a:active .modal-mobile__menu-line::after {
+  width: 100%;
+}
+
 .modal-mobile__menu-list li a::before {
   display: none;
   content: '';
@@ -1124,8 +1133,23 @@ body._lock {
   display: block;
 }
 
-.modal-mobile__menu-list li a span {
+.modal-mobile__menu-dash {
   margin-right: 2px;
+}
+
+.modal-mobile__menu-line {
+  position: relative;
+}
+
+.modal-mobile__menu-line::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #ffffff;
+  transition: width 0.5s;
 }
 
 .modal-mobile__footer {
@@ -1138,6 +1162,7 @@ body._lock {
 }
 
 .modal-mobile__link {
+  position: relative;
   display: inline-block;
   color: #D7F67E;
   background: linear-gradient(150deg, #D7F67E 13.4%, #7EE0F6 86.6%);
@@ -1147,6 +1172,21 @@ body._lock {
   text-fill-color: transparent;
   font-size: 14px;
   line-height: 16px;
+}
+
+.modal-mobile__link:active::after {
+  width: 100%;
+}
+
+.modal-mobile__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 1px;
+  width: 0;
+  background: linear-gradient(150deg, #D7F67E 13.4%, #7EE0F6 86.6%);
+  transition: width 0.5s;
 }
 
 .opacity {

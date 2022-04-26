@@ -151,6 +151,14 @@
     height: $bar-height + $bar-spacing * 2;
     transform: translate(-2px, 1px);
     cursor: pointer;
+
+    &:active {
+        .hamburger-menu.animate::before, 
+        .hamburger-menu.animate::after {
+            background: linear-gradient(150deg, #D7F67E 13.4%, #7EE0F6 86.6%);
+        }
+    }
+
     @media (max-width: 992px) {
         display: block;
     }
@@ -183,7 +191,7 @@
     left: 0;
     bottom: $bar-spacing;
     background-color: #000000;
-    transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), background-color 0.5s;
 }
 
 .hamburger-menu:after {
@@ -192,12 +200,12 @@
     left: 0;
     top: $bar-spacing;
     background-color: #000000;
-    transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), background-color 0.5s;
 }
 
 .hamburger-menu.animate::before,
 .hamburger-menu.animate::after {
-    background-color: #ffffff;
+    background: #ffffff;
 }
 
 .hamburger-menu.animate:after {
@@ -291,6 +299,12 @@
     position: relative;
     font-size: 20px;
     line-height: 23px;
+
+    &:active {
+        .modal-mobile__menu-line::after {
+            width: 100%;
+        }
+    }
 }
 
 .modal-mobile__menu-list li a::before {
@@ -308,8 +322,23 @@
     display: block;
 }
 
-.modal-mobile__menu-list li a span {
+.modal-mobile__menu-dash {
     margin-right: 2px;
+}
+
+.modal-mobile__menu-line {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: #ffffff;
+        transition: width 0.5s;
+    }
 }
 
 .modal-mobile__footer {
@@ -322,6 +351,7 @@
 }
 
 .modal-mobile__link {
+    position: relative;
     display: inline-block;
     color: #D7F67E;
     background: linear-gradient(150deg, #D7F67E 13.4%, #7EE0F6 86.6%);
@@ -331,6 +361,23 @@
     text-fill-color: transparent;
     font-size: 14px;
     line-height: 16px;
+
+    &:active {
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        height: 1px;
+        width: 0;
+        background: linear-gradient(150deg, #D7F67E 13.4%, #7EE0F6 86.6%);
+        transition: width 0.5s;
+    }
 }
 
 .opacity {
