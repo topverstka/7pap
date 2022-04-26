@@ -17,7 +17,9 @@
 }
 
 .our-strength__container {
-    overflow-y: auto
+    @media (max-width: 576px) {
+        overflow-y: auto;
+    }
 }
 
 .our-strength__list {
