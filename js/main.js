@@ -213,8 +213,6 @@ const sliderReviewsLink = document.querySelector('.slider-reviews__link.read-mor
 
 if (sliderReviews) {
     const reviewsSlider = new Swiper(sliderReviews, {
-        speed: 1000,
-
         pagination: {
             el: ".slider-reviews__pagination",
             type: "fraction"
