@@ -2126,6 +2126,14 @@ body._lock {
   }
 }
 
+.our-strength__container {
+  -webkit-overflow-scrolling: touch;
+}
+
+.our-strength__container::-webkit-scrollbar {
+  display: none;
+}
+
 @media (max-width: 576px) {
   .our-strength__container {
     overflow-y: auto;
@@ -2140,11 +2148,6 @@ body._lock {
   max-width: 760px;
   gap: 16px;
   margin-top: 72px;
-  -webkit-overflow-scrolling: touch;
-}
-
-.our-strength__list::-webkit-scrollbar {
-  display: none;
 }
 
 @media (max-width: 992px) {

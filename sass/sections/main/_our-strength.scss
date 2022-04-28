@@ -17,6 +17,11 @@
 }
 
 .our-strength__container {
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
     @media (max-width: 576px) {
         overflow-y: auto;
     }
@@ -30,10 +35,10 @@
     max-width: 760px;
     gap: 16px;
     margin-top: 72px;
-    -webkit-overflow-scrolling: touch;
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    // -webkit-overflow-scrolling: touch;
+    // &::-webkit-scrollbar {
+    //     display: none;
+    // }
     @media (max-width: 992px) {
         max-width: none;
     }
