@@ -910,6 +910,12 @@ body._lock {
   column-gap: 14px;
   font-size: 20px;
   line-height: 23px;
+  height: 36px;
+  overflow: hidden;
+}
+
+.send-request__text:hover .send-request__text-box {
+  transform: translateY(-17px);
 }
 
 .send-request__text.after::after {
@@ -932,6 +938,17 @@ body._lock {
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
+}
+
+.send-request__text-box {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(17px);
+  transition: transform 0.2s linear;
+}
+
+.send-request__text-box span:first-child {
+  margin-bottom: 10px;
 }
 
 .phone {
@@ -1695,6 +1712,8 @@ body._lock {
 }
 
 .cases__link {
+  height: 36px;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1704,10 +1723,25 @@ body._lock {
   line-height: 23px;
 }
 
+.cases__link:hover .cases__link-content {
+  transform: translateY(-17px);
+}
+
 @media (max-width: 768px) {
   .cases__link {
     font-size: 16px;
   }
+}
+
+.cases__link-content {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(17px);
+  transition: transform 0.2s linear;
+}
+
+.cases__link-content span:first-child {
+  margin-bottom: 10px;
 }
 
 .cases__icon {
@@ -1854,6 +1888,30 @@ body._lock {
 .brands__item:hover .tooltip::before,
 .brands__item:hover .tooltip::after {
   opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .brands__item {
+    width: 13%;
+  }
+}
+
+@media (max-width: 992px) {
+  .brands__item {
+    width: 19%;
+  }
+}
+
+@media (max-width: 768px) {
+  .brands__item {
+    width: 21%;
+  }
+}
+
+@media (max-width: 480px) {
+  .brands__item {
+    width: 28%;
+  }
 }
 
 .brands__item img {
@@ -2369,6 +2427,12 @@ body._lock {
   display: flex;
   align-items: center;
   column-gap: 10px;
+  height: 36px;
+  overflow: hidden;
+}
+
+.slider-reviews__link:hover .slider-reviews__link-box {
+  transform: translateY(-14px);
 }
 
 @media (max-width: 768px) {
@@ -2376,6 +2440,13 @@ body._lock {
     font-size: 16px;
     column-gap: 12px;
   }
+}
+
+.slider-reviews__link-box {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(17px);
+  transition: transform 0.2s linear;
 }
 
 .slider-reviews__link.video-reviews {

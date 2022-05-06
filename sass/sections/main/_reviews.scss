@@ -88,11 +88,26 @@
   display: flex;
   align-items: center;
   column-gap: 10px;
+  height: 36px;
+  overflow: hidden;
+
+  &:hover {
+    .slider-reviews__link-box {
+      transform: translateY(-14px);
+    }
+  }
 
   @media (max-width: 768px) {
     font-size: 16px;
     column-gap: 12px;
   }
+}
+
+.slider-reviews__link-box {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(17px);
+  transition: transform 0.2s linear;
 }
 
 .slider-reviews__link.video-reviews {

@@ -98,6 +98,15 @@
     column-gap: 14px;
     font-size: 20px;
     line-height: 23px;
+    
+    height: 36px;
+    overflow: hidden;
+
+    &:hover {
+        .send-request__text-box {
+            transform: translateY(-17px);
+        }
+    }
 }
 
 .send-request__text.after {
@@ -123,6 +132,17 @@
         background-repeat: no-repeat;
         background-position: center;
         border-radius: 50%;
+    }
+}
+
+.send-request__text-box {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(17px);
+    transition: transform 0.2s linear;
+
+    span:first-child {
+        margin-bottom: 10px;
     }
 }
 

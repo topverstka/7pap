@@ -233,10 +233,6 @@
     @media (max-width: 1211px) {
         width: 100%;
     }
-    @media (max-width: 1220px) {
-        // width: 356px;
-        // width: 100%;
-    }
     @media (max-width: 992px) {
         width: 100%;
     }
@@ -288,6 +284,8 @@
 }
 
 .cases__link {
+    height: 36px;
+    overflow: hidden;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -295,8 +293,26 @@
     position: relative;
     font-size: 20px;
     line-height: 23px;
+
+    &:hover {
+        .cases__link-content {
+            transform: translateY(-17px);
+        }
+    }
+
     @media (max-width: 768px) {
         font-size: 16px;
+    }
+}
+
+.cases__link-content {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(17px);
+    transition: transform 0.2s linear;
+
+    span:first-child {
+        margin-bottom: 10px;
     }
 }
 
