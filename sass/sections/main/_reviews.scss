@@ -2,7 +2,7 @@
   position: relative;
   padding-top: 144px;
   padding-bottom: 168px;
-  background: linear-gradient(145.48deg, #CEF461 5.97%, #2CB4D1 81.8%);
+  background: linear-gradient(145.48deg, #cef461 5.97%, #2cb4d1 81.8%);
   color: #ffffff;
 
   @media (max-width: 992px) {
@@ -140,7 +140,7 @@
 
 .slider-reviews__link.read-more::before,
 .slider-reviews__link.video-reviews::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 36px;
   height: 36px;
@@ -230,11 +230,13 @@
   }
 }
 
-.slider-reviews__pagination.swiper-pagination-fraction .swiper-pagination-current.add-animation {
+.slider-reviews__pagination.swiper-pagination-fraction
+  .swiper-pagination-current.add-animation {
   animation: opacity 1s linear both;
 }
 
-.slider-reviews__pagination.swiper-pagination-fraction .swiper-pagination-total {
+.slider-reviews__pagination.swiper-pagination-fraction
+  .swiper-pagination-total {
   opacity: 0.6;
 }
 
@@ -253,4 +255,3 @@
     display: block;
   }
 }
-

@@ -1,9 +1,9 @@
 // Пользовательские переменные
 :root {
-    --ffMain: 'Arial', sans-serif;
-    --ffHeader: sans-serif;
-    --tr: .3s;  // Плавность перехода
-    --radius: 16px; // border-radius
+  --ffMain: "Arial", sans-serif;
+  --ffHeader: sans-serif;
+  --tr: 0.3s; // Плавность перехода
+  --radius: 16px; // border-radius
 }
 
 $ffMain: var(--ffMain);
@@ -22,21 +22,25 @@ $mobile-s: 320px;
 
 // Цвета
 :root {
-    --main: #000000;
-    --second: #747474;
-    --accent: #399478;
-    --accent-hover: #44BD99;
-    --accent-active: #37866E;
-    --accent2: #DC8B2D;
-    --accent2-active: #C27B29;
-    --outline: #C0C0C0;
-    --bg-page: #FFF;
-    --bg-block: #F8F8F8;
-    --error: #E83D3D;
-    --gradient-green: linear-gradient(154.68deg, #D7F67E -3.92%, #54E0FF 139.84%);
-    --gradient-violet: linear-gradient(318.29deg, rgba(126, 174, 255, 0.7) -8.81%, rgba(252, 166, 233, 0.7) 96.7%);
-    --gradient-yellow: linear-gradient(135deg, #F7FFA0 2.88%, #FFC683 100%);
-    --gradient-pink: linear-gradient(157.34deg, #FFE9CC -0.64%, #EF629F 158.71%);
+  --main: #000000;
+  --second: #747474;
+  --accent: #399478;
+  --accent-hover: #44bd99;
+  --accent-active: #37866e;
+  --accent2: #dc8b2d;
+  --accent2-active: #c27b29;
+  --outline: #c0c0c0;
+  --bg-page: #fff;
+  --bg-block: #f8f8f8;
+  --error: #e83d3d;
+  --gradient-green: linear-gradient(154.68deg, #d7f67e -3.92%, #54e0ff 139.84%);
+  --gradient-violet: linear-gradient(
+    318.29deg,
+    rgba(126, 174, 255, 0.7) -8.81%,
+    rgba(252, 166, 233, 0.7) 96.7%
+  );
+  --gradient-yellow: linear-gradient(135deg, #f7ffa0 2.88%, #ffc683 100%);
+  --gradient-pink: linear-gradient(157.34deg, #ffe9cc -0.64%, #ef629f 158.71%);
 }
 
 // Размеры для бургера

@@ -1,14 +1,13 @@
 .container {
-    max-width: $container;
-    width: 100%;
-    padding: 0 15px;
-    margin: 0 auto;
+  max-width: $container;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
 
-    @media (max-width: 768px) {
-        padding: 0 16px;
-    }
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
 }
-
 
 // .section {
 //     margin: 62px 0;

@@ -1,19 +1,19 @@
-@import '_fonts'; // Шрифты
-@import '_variables'; // Переменные
-@import '_reset'; // Сброс css
+@import "_fonts"; // Шрифты
+@import "_variables"; // Переменные
+@import "_reset"; // Сброс css
 
 // Миксин для перевода px в vw
 @function vw($px) {
-    @return $px/(1920 / 100vw);
+  @return $px/(1920 / 100vw);
 }
 
 // Общие стили для страниц
 // Стиль выделения элементов на странице
 ::selection {
-    background-color: rgba(0, 0, 0, 0.15); 
+  background-color: rgba(0, 0, 0, 0.15);
 }
 ::-moz-selection {
-    background-color: rgba(0, 0, 0, 0.15); 
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 // Стиль скроллбара
@@ -34,139 +34,139 @@
 // }
 
 body {
-    font-family: $ffMain;
-    color: $main;
-    font-size: 16px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 1.5;
-    background: $bg-page;
+  font-family: $ffMain;
+  color: $main;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  background: $bg-page;
 
-    &._lock {
-        overflow: hidden;
-    }
+  &._lock {
+    overflow: hidden;
+  }
 }
 
 .wrapper {
-    position: relative;
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 // Стили для кнопки вверх
 .scroll-top {
-    display: none;
-    position: absolute;
-    bottom: 71px;
-    right: 18px;
-    z-index: 10;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid #E6E6E6;
-    background-image: url("data:image/svg+xml,%0A%3Csvg width='24' height='21' viewBox='0 0 24 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.5' d='M14.0012 21H10.0012L10.0012 8.34312L3.51593 14.8284L0.6875 12L12.0012 0.686279L23.3149 12L20.4865 14.8284L14.0012 8.34312L14.0012 21Z' fill='%23E6E6E6'/%3E%3C/svg%3E%0A");
-    background-repeat: no-repeat;
-    background-position: 5px 5px;
-    background-color: #000000;
+  display: none;
+  position: absolute;
+  bottom: 71px;
+  right: 18px;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #e6e6e6;
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='24' height='21' viewBox='0 0 24 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.5' d='M14.0012 21H10.0012L10.0012 8.34312L3.51593 14.8284L0.6875 12L12.0012 0.686279L23.3149 12L20.4865 14.8284L14.0012 8.34312L14.0012 21Z' fill='%23E6E6E6'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: 5px 5px;
+  background-color: #000000;
 
-    @media (max-width: 768px) {
-        display: block;
-    }
+  @media (max-width: 768px) {
+    display: block;
+  }
 }
 
 // Стили для тултипов
 .tooltip {
-    position: relative;
-    z-index: -1;
+  position: relative;
+  z-index: -1;
 }
-  
+
 .tooltip::before,
 .tooltip::after {
-    @media (max-width: 1400px) {
-        display: none;
-    }
+  @media (max-width: 1400px) {
+    display: none;
+  }
 }
-  
+
 .tooltip::before {
-    content: attr(data-tooltip);
-    opacity: 0;
-    padding: 12px;
-    position: absolute;
-    z-index: 1;
-    top: -130px;
-    left: -104px;
-    min-width: 350px;
-    background-color: #141212;
-    color: #ffffff;
-    border-radius: 8px;
-    text-align: center;
-    transition: opacity 0.3s ease-in-out;
+  content: attr(data-tooltip);
+  opacity: 0;
+  padding: 12px;
+  position: absolute;
+  z-index: 1;
+  top: -130px;
+  left: -104px;
+  min-width: 350px;
+  background-color: #141212;
+  color: #ffffff;
+  border-radius: 8px;
+  text-align: center;
+  transition: opacity 0.3s ease-in-out;
 }
-  
+
 .tooltip::after {
-    content: '';
-    opacity: 0;
-    padding: 12px;
-    position: absolute;
-    bottom: -29px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='6' viewBox='0 0 12 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 6L0 0H12L6 6Z' fill='%23274B5D'/%3E%3C/svg%3E%0A");
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: opacity 0.3s ease-in-out;
+  content: "";
+  opacity: 0;
+  padding: 12px;
+  position: absolute;
+  bottom: -29px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='6' viewBox='0 0 12 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 6L0 0H12L6 6Z' fill='%23274B5D'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity 0.3s ease-in-out;
 }
 
 // Стили для горизонтальной прокрутки
 .horizontal {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .horizontal_initialized .horizontal__block {
-    height: 100%;
-    float: left;
+  height: 100%;
+  float: left;
 }
 
 .horizontal__blocks {
-    overflow: hidden;
+  overflow: hidden;
 }
 
-@import '_grid'; // Сетка
+@import "_grid"; // Сетка
 
 // Анимация
-@import './_animation';
+@import "./_animation";
 
 // Компоненты
-@import './components/_buttons';
-@import './components/_forms';
-@import './components/_modal';
- 
+@import "./components/_buttons";
+@import "./components/_forms";
+@import "./components/_modal";
+
 // Текстовые компоненты
-@import './components/text/_text';
-@import './components/text/_titles';
-@import './components/text/_info';
+@import "./components/text/_text";
+@import "./components/text/_titles";
+@import "./components/text/_info";
 
 // Секции
-@import './sections/_header';
-@import './sections/main/_promo';
-@import './sections/main/_cases';
-@import './sections/main/_brands';
-@import './sections/main/_our-services';
-@import './sections/main/_slider-our-services';
-@import './sections/main/_our-strength';
-@import './sections/main/_reviews';
-@import './sections/_footer';
+@import "./sections/_header";
+@import "./sections/main/_promo";
+@import "./sections/main/_cases";
+@import "./sections/main/_brands";
+@import "./sections/main/_our-services";
+@import "./sections/main/_slider-our-services";
+@import "./sections/main/_our-strength";
+@import "./sections/main/_reviews";
+@import "./sections/_footer";
 
 // Страницы
 
 // Библиотеки
-@import './libs/_aos';
-@import './libs/_lightgallery';
-@import './libs/_swiper';
+@import "./libs/_aos";
+@import "./libs/_lightgallery";
+@import "./libs/_swiper";
