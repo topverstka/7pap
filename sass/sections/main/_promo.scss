@@ -21,6 +21,12 @@
     }
   }
 }
+.promo--only-title {
+  padding-bottom: 200px;
+  @media (max-width: 1599px) {
+    padding-bottom: 20px;
+  }
+}
 
 .promo__wrapper {
   max-width: 1826px;

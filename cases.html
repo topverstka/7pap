@@ -45,14 +45,10 @@
         </div>
       </header>
 
-      <section class="promo" id="promo">
+      <section class="promo promo--only-title" id="promo">
         <div class="promo__wrapper">
           <div class="promo__content">
             <h1 class="promo__title">Кейсы</h1>
-            <div class="promo__video"></div>
-          </div>
-          <div class="promo__texts">
-            <p class="promo__text"></p>
           </div>
           <div class="send-request">
             <a class="send-request__text before" href="#">
@@ -65,41 +61,54 @@
         </div>
       </section>
 
-      <div class="cases">
+      <div class="cases cases--no-padding-bottom">
         <div class="cases-filter">
           <div class="cases-filter__categories">
-            <button
-              class="cases-filter__category cases-filter__category--active"
-            >
-              Все
-            </button>
-            <button class="cases-filter__category">Брендинг</button>
-            <button class="cases-filter__category">Сайты</button>
+            <div class="cases-filter__category-wrap">
+              <button
+                class="cases-filter__category cases-filter__category--active"
+              >
+                Все
+              </button>
+            </div>
+            <div class="cases-filter__category-wrap">
+              <button class="cases-filter__category">Брендинг</button>
+            </div>
+            <div class="cases-filter__category-wrap">
+              <button class="cases-filter__category">Сайты</button>
+            </div>
           </div>
           <div class="cases-filter__industries">
-            <button
-              class="cases-filter__industry cases-filter__industry--active"
-            >
-              Все отрасли
-            </button>
-            <button class="cases-filter__industry">Недвижимость</button>
-            <button class="cases-filter__industry">
-              Промышленность и оборудование
-            </button>
-            <button class="cases-filter__industry">Еда</button>
-            <button class="cases-filter__industry">Госсектор</button>
-            <button class="cases-filter__industry">Медицина</button>
-            <button class="cases-filter__industry">Товары и услуги b2b</button>
-            <button class="cases-filter__industry">Недвижимость</button>
-            <button class="cases-filter__industry">Промышленность</button>
-            <button class="cases-filter__industry">Еда</button>
-            <button class="cases-filter__industry">Госсектор</button>
-            <button class="cases-filter__industry">Медицина</button>
-            <button class="cases-filter__industry">Недвижимость</button>
-            <button class="cases-filter__industry">Промышленность</button>
-            <button class="cases-filter__industry">Еда</button>
-            <button class="cases-filter__industry">Госсектор</button>
-            <button class="cases-filter__industry">Медицина</button>
+            <div class="cases-filter__industries-inner">
+              <button
+                class="cases-filter__industry cases-filter__industry--active"
+              >
+                Все отрасли
+              </button>
+            </div>
+            <button class="cases-filter__industries-more">Еще отрасли</button>
+            <div class="cases-filter__industries-dropdown">
+              <button class="cases-filter__industry">Недвижимость</button>
+              <button class="cases-filter__industry">
+                Промышленность и оборудование
+              </button>
+              <button class="cases-filter__industry">Еда</button>
+              <button class="cases-filter__industry">Госсектор</button>
+              <button class="cases-filter__industry">Медицина</button>
+              <button class="cases-filter__industry">
+                Товары и услуги b2b
+              </button>
+              <button class="cases-filter__industry">Недвижимость</button>
+              <button class="cases-filter__industry">Промышленность</button>
+              <button class="cases-filter__industry">Еда</button>
+              <button class="cases-filter__industry">Госсектор</button>
+              <button class="cases-filter__industry">Медицина</button>
+              <button class="cases-filter__industry">Недвижимость</button>
+              <button class="cases-filter__industry">Промышленность</button>
+              <button class="cases-filter__industry">Еда</button>
+              <button class="cases-filter__industry">Госсектор</button>
+              <button class="cases-filter__industry">Медицина</button>
+            </div>
           </div>
         </div>
 
@@ -589,10 +598,18 @@
 
     <!-- Подключение скриптов -->
     <script src="js/libs/jquery.js"></script>
-    <script src="https://scrollmagic.io/assets/js/lib/greensock/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="https://scrollmagic.io/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+
+    <!-- <script src="https://scrollmagic.io/assets/js/lib/greensock/TweenMax.min.js"></script> -->
+    <script src="js/libs/scrollmagic/TweenMax.min.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script> -->
+    <script src="js/libs/scrollmagic/ScrollMagic.min.js"></script>
+
+    <!-- <script src="https://scrollmagic.io/scrollmagic/uncompressed/plugins/animation.gsap.js"></script> -->
+    <script src="js/libs/scrollmagic/animation.gsap.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
+    <script src="js/libs/scrollmagic/debug.addIndicators.min.js"></script>
 
     <script src="js/libs/swiper-bundle.min.js"></script>
     <script src="js/libs/wheel-indicator.js"></script>

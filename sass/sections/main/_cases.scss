@@ -5,6 +5,190 @@
     padding: 0px 8px 48px;
   }
 }
+.cases--no-padding-bottom {
+  padding-bottom: 0;
+}
+
+.cases-filter {
+  position: relative;
+  z-index: 3;
+  max-width: 1826px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
+
+  @media (min-width: 1826px) {
+    padding: 0 25px;
+  }
+  @media (max-width: 1599px) {
+    max-width: 1205px;
+    padding: 0 15px;
+  }
+  @media (max-width: 1240px) {
+    padding: 0;
+  }
+  @media (max-width: 992px) {
+    margin-bottom: 24px;
+  }
+}
+.cases-filter__categories {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 42px;
+
+  @media (max-width: 992px) {
+    margin-bottom: 24px;
+  }
+  @media (max-width: 575px) {
+    -webkit-overflow-scrolling: touch;
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0.25) 9px,
+      rgba(0, 0, 0, 1) 18px,
+      rgba(0, 0, 0, 1) calc(100% - 18px),
+      rgba(0, 0, 0, 0.25) calc(100% - 9px),
+      rgba(0, 0, 0, 0)
+    );
+    mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0.25) 9px,
+      rgba(0, 0, 0, 1) 18px,
+      rgba(0, 0, 0, 1) calc(100% - 18px),
+      rgba(0, 0, 0, 0.25) calc(100% - 9px),
+      rgba(0, 0, 0, 0)
+    );
+    overflow-x: scroll;
+    padding-left: 15px;
+    margin-left: -5px;
+  }
+}
+.cases-filter__category-wrap,
+.cases-filter__category {
+  display: flex;
+  color: var(--third);
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 1.1;
+
+  @media (max-width: 992px) {
+    font-size: 38px;
+  }
+  @media (max-width: 575px) {
+    font-size: 28px;
+  }
+}
+.cases-filter__category-wrap::after {
+  content: "/";
+  margin-right: 16px;
+  margin-left: 16px;
+}
+.cases-filter__category-wrap:last-of-type::after {
+  content: none;
+}
+.cases-filter__category--active {
+  color: var(--main);
+}
+.cases-filter__industries {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  @media (max-width: 576px) {
+    -webkit-overflow-scrolling: touch;
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0.25) 9px,
+      rgba(0, 0, 0, 1) 18px,
+      rgba(0, 0, 0, 1) calc(100% - 18px),
+      rgba(0, 0, 0, 0.25) calc(100% - 9px),
+      rgba(0, 0, 0, 0)
+    );
+    mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0.25) 9px,
+      rgba(0, 0, 0, 1) 18px,
+      rgba(0, 0, 0, 1) calc(100% - 18px),
+      rgba(0, 0, 0, 0.25) calc(100% - 9px),
+      rgba(0, 0, 0, 0)
+    );
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 25px;
+    margin-left: -20px;
+  }
+}
+.cases-filter__industries-inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cases-filter__industry {
+  padding: 12px 16px;
+  margin-right: 8px;
+  background: #f1f1f1;
+  border-radius: 100px;
+  font-weight: 400;
+  font-size: 16px;
+  white-space: nowrap;
+  line-height: 18px;
+  color: #323232;
+}
+.cases-filter__industry--active {
+  background: linear-gradient(145.48deg, #cef461 5.97%, #2cb4d1 81.8%);
+  color: #fff;
+}
+
+.cases-filter__industries-more {
+  margin-left: auto;
+  margin-right: 16px;
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/icon/more.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (max-width: 575px) {
+    display: none;
+  }
+}
+.cases-filter__industries-dropdown {
+  transform-origin: top right;
+  transition: all 0.5s ease;
+  position: absolute;
+  right: 16px;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background: #fdfdfd;
+  padding: 16px;
+  border: 1px solid #f3f3f3;
+  box-shadow: 0px 3px 14px -2px rgba(6, 29, 40, 0.05),
+    0px 9px 26px -2px rgba(6, 29, 40, 0.12);
+  border-radius: 16px;
+  transform: scale(0.2);
+  opacity: 0;
+  pointer-events: none;
+  overflow-y: auto;
+  height: 285px;
+}
+.cases-filter__industries-dropdown--visible {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: initial;
+}
+.cases-filter__industries-dropdown .cases-filter__industry {
+  margin-right: 0;
+  margin-bottom: 8px;
+}
 
 .cases__list {
   display: flex;
@@ -17,7 +201,8 @@
     gap: 20px;
   }
   @media (max-width: 992px) {
-    justify-content: space-between;
+    // justify-content: space-between;
+    justify-content: flex-start;
     gap: 10px;
   }
   @media (max-width: 568px) {

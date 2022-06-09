@@ -1,3 +1,4 @@
+// #region library
 // Служебные переменные
 const d = document;
 const body = document.querySelector("body");
@@ -38,6 +39,16 @@ function bodyLock(con) {
     console.error("Неопределенный аргумент у функции bodyLock()");
   }
 }
+const debounce = (callback, wait) => {
+  let timeoutId = null;
+  return (...args) => {
+    window.clearTimeout(timeoutId);
+    timeoutId = window.setTimeout(() => {
+      callback.apply(null, args);
+    }, wait);
+  };
+};
+// #endregion library
 
 // Мобильное меню
 const header = document.querySelector(".header");
@@ -255,6 +266,110 @@ if (sliderReviews) {
     },
   });
 }
+
+// Фильтры в кейсах
+const casesFilterCategories = document.querySelectorAll(
+  ".cases-filter__category"
+);
+const casesFilterIndustriesInner = document.querySelector(
+  ".cases-filter__industries-inner"
+);
+const casesFilterIndustries = document.querySelectorAll(
+  ".cases-filter__industry"
+);
+const casesFilterMore = document.querySelector(
+  ".cases-filter__industries-more"
+);
+const casesFilterDropdown = document.querySelector(
+  ".cases-filter__industries-dropdown"
+);
+
+casesFilterCategories.forEach((category) => {
+  category.addEventListener("click", () => {
+    casesFilterCategories.forEach((item) => {
+      item.classList.remove("cases-filter__category--active");
+    });
+    category.classList.add("cases-filter__category--active");
+  });
+});
+casesFilterIndustries.forEach((industry) => {
+  industry.addEventListener("click", () => {
+    casesFilterIndustries.forEach((item) => {
+      item.classList.remove("cases-filter__industry--active");
+    });
+    industry.classList.add("cases-filter__industry--active");
+  });
+});
+
+function moveFiltersToDropdown() {
+  casesFilterIndustries.forEach((item, index) => {
+    if (index === 0) return;
+    casesFilterDropdown.appendChild(item);
+  });
+}
+function moveFiltersToScrollbar() {
+  casesFilterIndustries.forEach((item, index) => {
+    if (index === 0) return;
+    casesFilterIndustriesInner.appendChild(item);
+  });
+}
+
+// Перемещает фильтры между дропдауном и скроллбаром
+function relocateFilterItems() {
+  let filtersMaxWidth =
+    document.querySelector(".cases-filter__industries").getBoundingClientRect()
+      .width - 60;
+  let filtersWidth = document
+    .querySelector(".cases-filter__industries-inner")
+    .getBoundingClientRect().width;
+  let filtersToSkip = [];
+  casesFilterIndustries.forEach((item, index, arr) => {
+    // Чтобы убрать все большие кнопки, которые больше половины
+    if (item.innerText.length > 16) {
+      filtersToSkip.push(item);
+      console.log("Сразу убрать", item.innerText);
+    }
+  });
+  casesFilterIndustries.forEach((item, index, arr) => {
+    if (index === 0 || filtersToSkip.includes(item)) return;
+
+    if (filtersWidth <= filtersMaxWidth - 100) {
+      casesFilterIndustriesInner.appendChild(item);
+      filtersWidth += item.getBoundingClientRect().width;
+    }
+  });
+}
+
+function changeFiltersPosition() {
+  if (window.innerWidth < 576) {
+    moveFiltersToScrollbar();
+  } else {
+    moveFiltersToDropdown();
+  }
+  relocateFilterItems();
+}
+
+window.addEventListener("resize", () => {
+  debounce(changeFiltersPosition(), 200);
+});
+// FIX Поправь чтоб при загрузке с мобили не срабатывала перекидка, а все закидывалось в скроллбар
+changeFiltersPosition();
+
+casesFilterMore.addEventListener("click", () => {
+  casesFilterDropdown.classList.toggle(
+    "cases-filter__industries-dropdown--visible"
+  );
+});
+document.addEventListener("click", (e) => {
+  if (
+    !e.target.closest(".cases-filter__industries-dropdown") &&
+    !e.target.closest(".cases-filter__industries-more")
+  ) {
+    casesFilterDropdown.classList.remove(
+      "cases-filter__industries-dropdown--visible"
+    );
+  }
+});
 
 // Анимация для блока с кейсами при скролле
 if (window.matchMedia("(min-width: 992px)").matches) {
