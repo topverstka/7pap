@@ -318,7 +318,7 @@ function moveFiltersToScrollbar() {
 function relocateFilterItems() {
   let filtersMaxWidth =
     document.querySelector(".cases-filter__industries").getBoundingClientRect()
-      .width - 60;
+      .width - 160;
   let filtersWidth = document
     .querySelector(".cases-filter__industries-inner")
     .getBoundingClientRect().width;
