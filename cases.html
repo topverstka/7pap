@@ -517,7 +517,7 @@
       </div>
     </div>
 
-    <div class="modal modal--slide-left _show" id="modal-callback">
+    <div class="modal modal--slide-left" id="modal-callback">
       <div class="modal__body modal__body--right">
         <div class="modal__content modal-callback">
           <div class="modal-callback__inner">
@@ -583,43 +583,44 @@
                   <!-- js-скрипт гугл капчи -->
                   <script src="https://www.google.com/recaptcha/api.js"></script>
                 </div>
-                <div
+                <button
                   class="button button--icon-right button--icon-arrow-right form__submit"
                 >
                   <span class="button__icon"></span>
-                  <button class="button__text">
+                  <div class="button__text">
                     <div class="button__text-box">
                       <span>отправить</span>
                       <span>отправить</span>
                     </div>
-                  </button>
-                </div>
+                  </div>
+                </button>
+                <p class="form__privacy">
+                  Нажимая на кнопку “Отправить”, вы даете <br />
+                  <a href="#privacy" class="form__privacy-link">согласие</a> на
+                  обработку персональных данных
+                </p>
               </div>
-              <p class="form__privacy">
-                Нажимая на кнопку “Отправить”, вы даете <br />
-                <a href="#privacy" class="form__privacy-link">согласие</a> на
-                обработку персональных данных
-              </p>
             </form>
             <div class="form-thanks modal-callback__thanks">
-              <h2 class="modal-callback__title">Оставьте заявку</h2>
+              <h2 class="modal-callback__title">Сообщение <br />отправлено</h2>
               <div class="modal-message">
                 <p class="modal-message__desc">
                   Мы рассмотрим ваше обращение и свяжемся с вами <br />в
                   ближайшее время.
                 </p>
               </div>
-              <div
+              <button
                 class="button button--icon-left button--icon-arrow-right form__submit"
+                data-modal-close="modal-callback"
               >
                 <span class="button__icon"></span>
-                <button data-modal-close="modal-callback" class="button__text">
+                <div class="button__text">
                   <div class="button__text-box">
                     <span>понятно</span>
                     <span>понятно</span>
                   </div>
-                </button>
-              </div>
+                </div>
+              </button>
             </div>
           </div>
         </div>
