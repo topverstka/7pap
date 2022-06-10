@@ -190,6 +190,7 @@ body._lock {
 
 .wrapper {
   position: relative;
+  z-index: 1;
   width: 100%;
   min-height: 100%;
   display: -webkit-box;
@@ -962,8 +963,29 @@ body._lock {
   }
 }
 
+@media (max-width: 767px) {
+  .form-group--contacts {
+    display: block;
+    margin-bottom: 24px;
+  }
+}
+
 .form-group--submit {
   margin-bottom: 13px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  .form-group--submit {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .form__submit {
@@ -971,11 +993,46 @@ body._lock {
   font-size: 32px;
 }
 
+@media (max-width: 767px) {
+  .form__submit {
+    margin-right: auto;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+@media (max-width: 575px) {
+  .form__submit {
+    --icon-size: 40px;
+    font-size: 20px;
+  }
+}
+
 .form__privacy {
+  padding-top: 8px;
   margin-right: auto;
   font-size: 16px;
   line-height: 18px;
   color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .form__privacy {
+    text-align: center;
+    padding-top: 0;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .form__privacy {
+    text-align: initial;
+  }
+  .form__privacy br {
+    display: none;
+  }
 }
 
 .form__privacy-link {
@@ -989,7 +1046,7 @@ body._lock {
 
 .modal {
   position: fixed;
-  z-index: 100;
+  z-index: 11;
   top: 0;
   left: 0;
   width: 100%;
@@ -1040,9 +1097,21 @@ body._lock {
   transition: var(--transition-regular);
 }
 
+@media (max-width: 991px) {
+  .modal--slide-left {
+    top: unset;
+    bottom: 0;
+    height: calc(100% - 49px);
+  }
+}
+
 .modal--slide-left .modal__body {
   -webkit-transform: translateX(100vw);
           transform: translateX(100vw);
+}
+
+.modal--slide-left._show {
+  overflow: visible;
 }
 
 .modal--slide-left._show .modal__body {
@@ -1059,6 +1128,20 @@ body._lock {
   padding-bottom: 0;
   -webkit-transition: var(--transition-regular);
   transition: var(--transition-regular);
+}
+
+@media (max-width: 1599px) {
+  .modal__body--right {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .modal__body--right {
+    overflow-y: auto;
+    height: 100%;
+    display: block;
+  }
 }
 
 .modal__content {
@@ -1083,6 +1166,26 @@ body._lock {
   .modal__body--right .modal__content {
     padding-top: 62px;
     padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .modal__body--right .modal__content {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .modal__body--right .modal__content {
+    padding-top: 172px;
+  }
+}
+
+@media (max-width: 440px) {
+  .modal__body--right .modal__content {
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 64px;
   }
 }
 
@@ -1150,8 +1253,9 @@ body._lock {
 }
 
 .modal__close--big {
-  width: 80px;
-  height: 80px;
+  --close-size: 80px;
+  width: var(--close-size);
+  height: var(--close-size);
   border-radius: 100%;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.14);
@@ -1159,9 +1263,28 @@ body._lock {
   transition: var(--transition-regular);
 }
 
+@media (max-width: 991px) {
+  .modal__close--big {
+    --close-size: 40px;
+    top: -45px;
+    border: none;
+  }
+  .modal__close--big::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 200px;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    background-color: #fff;
+  }
+}
+
 .modal__close--big span {
-  width: 40px;
-  height: 8px;
+  width: 50%;
+  height: 10%;
   border-radius: 0;
   -webkit-transition: inherit;
   transition: inherit;
@@ -1209,6 +1332,21 @@ body._lock {
   }
 }
 
+@media (max-width: 767px) {
+  .modal .modal-callback__title,
+  .modal-callback__title {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 575px) {
+  .modal .modal-callback__title,
+  .modal-callback__title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+}
+
 .modal-callback__form {
   max-width: 764px;
   display: block;
@@ -1230,15 +1368,20 @@ body._lock {
 .modal-callback__thanks {
   -webkit-transition: var(--transition-regular);
   transition: var(--transition-regular);
-  -webkit-transform: translateY(150vh);
-          transform: translateY(150vh);
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
   position: absolute;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .modal-callback__thanks._sent {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   position: static;
+  opacity: 1;
+  pointer-events: initial;
 }
 
 .modal-message {
@@ -1252,6 +1395,13 @@ body._lock {
 @media (max-width: 1599px) {
   .modal-message {
     margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 575px) {
+  .modal-message {
+    padding: 24px 12px 24px 16px;
+    margin-bottom: 40px;
   }
 }
 
@@ -1269,6 +1419,19 @@ body._lock {
   }
 }
 
+@media (max-width: 992px) {
+  .modal-message__desc br {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .modal-message__desc {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+
 .modal-message__phone {
   font-size: 64px;
   line-height: 1.1;
@@ -1278,6 +1441,19 @@ body._lock {
 @media (max-width: 1599px) {
   .modal-message__phone {
     font-size: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .modal-message__phone {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 575px) {
+  .modal-message__phone {
+    font-size: 28px;
+    line-height: 1.2;
   }
 }
 
@@ -1297,6 +1473,17 @@ body._lock {
   font-size: 20px;
   line-height: 23px;
   color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 575px) {
+  .input {
+    padding-top: 23px;
+    padding-right: 16px;
+    padding-bottom: 23px;
+    padding-left: 16px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
 }
 
 .input--invalid {
@@ -1322,6 +1509,23 @@ body._lock {
 .input__wrap {
   margin-bottom: 8px;
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  .input__wrap:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.input--capcha {
+  margin-bottom: 0;
+  width: auto;
+}
+
+@media (max-width: 767px) {
+  .input--capcha {
+    margin-bottom: 24px;
+  }
 }
 
 .text {

@@ -111,21 +111,53 @@
   @media (max-width: 1599px) {
     margin-bottom: 16px;
   }
+  @media (max-width: 767px) {
+    display: block;
+    margin-bottom: 24px;
+  }
 }
 .form-group--submit {
   margin-bottom: 13px;
+  flex-wrap: wrap;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .form__submit {
   --icon-size: 80px;
   font-size: 32px;
+  @media (max-width: 767px) {
+    margin-right: auto;
+    order: 2;
+  }
+  @media (max-width: 575px) {
+    --icon-size: 40px;
+    font-size: 20px;
+  }
 }
 
 .form__privacy {
+  padding-top: 8px;
   margin-right: auto;
   font-size: 16px;
   line-height: 18px;
   color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+
+  @media (max-width: 767px) {
+    text-align: center;
+    padding-top: 0;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 420px) {
+    text-align: initial;
+    br {
+      display: none;
+    }
+  }
 }
 
 .form__privacy-link {
