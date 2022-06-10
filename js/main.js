@@ -4,6 +4,23 @@ const d = document;
 const body = document.querySelector("body");
 
 // Служебные функции
+
+function copyToClipboard(element) {
+  var clipboardStorage = document.createElement("input");
+  document.querySelector("body").appendChild(clipboardStorage);
+  clipboardStorage.setAttribute("value", element.innerText);
+  clipboardStorage.select();
+  document.execCommand("copy");
+  clipboardStorage.remove();
+}
+// Get os class for body. It used to fix macos scrollbar issue
+let os = "unknown";
+if (navigator.appVersion.indexOf("Win") != -1) os = "windows";
+if (navigator.appVersion.indexOf("Mac") != -1) os = "macos";
+if (navigator.appVersion.indexOf("X11") != -1) os = "unix";
+if (navigator.appVersion.indexOf("Linux") != -1) os = "linux";
+document.body.classList.add("os-" + os);
+
 function find(selector) {
   return document.querySelector(selector);
 }
@@ -49,6 +66,141 @@ const debounce = (callback, wait) => {
   };
 };
 // #endregion library
+
+// #region modal
+// Открытие модального окна, если в url указан его id
+openModalHash();
+function openModalHash() {
+  if (window.location.hash) {
+    const hash = window.location.hash.substring(1);
+    const modal = document.querySelector(`.modal#${hash}`);
+
+    if (modal) {
+      modal.classList.add("_show");
+      bodyLock(true);
+      closeWhenClickingOnBg(`#${hash} .modal__content`, modal);
+    }
+  }
+}
+
+// Закрытие модальных окон при клике по крестику
+closeModalWhenClickingOnCross();
+function closeModalWhenClickingOnCross() {
+  const modalElems = document.querySelectorAll(".modal");
+  for (let i = 0; i < modalElems.length; i++) {
+    const modal = modalElems[i];
+    const closeThisModal = modal.querySelector(".modal__close");
+
+    closeThisModal.addEventListener("click", () => {
+      modal.classList.remove("_show");
+      bodyLock(false);
+      resetHash();
+    });
+  }
+}
+
+// Закрытие модальных окон при нажатии по клавише ESC
+closeModalWhenClickingOnESC();
+function closeModalWhenClickingOnESC() {
+  const modalElems = document.querySelectorAll(".modal");
+  for (let i = 0; i < modalElems.length; i++) {
+    const modal = modalElems[i];
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        modal.classList.remove("_show");
+        bodyLock(false);
+        resetHash();
+      }
+    });
+  }
+}
+
+// Сброс id модального окна в url
+function resetHash() {
+  const windowTop = window.pageYOffset;
+  window.location.hash = "";
+  window.scrollTo(0, windowTop);
+}
+
+// Открытие модальных окон
+openModal();
+function openModal() {
+  const btnsOpenModal = document.querySelectorAll("[data-modal-open]");
+  const btnsCloseModal = document.querySelectorAll("[data-modal-close]");
+
+  for (let i = 0; i < btnsOpenModal.length; i++) {
+    const btn = btnsOpenModal[i];
+
+    btn.addEventListener("click", (e) => {
+      const dataBtn = btn.dataset.modalOpen;
+      const modalThatOpens = document.querySelector(`#${dataBtn}`);
+
+      btn.classList.add("modal-show");
+      modalThatOpens.classList.add("_show");
+      bodyLock(true);
+      closeWhenClickingOnBg(`#${dataBtn} .modal__content`, modalThatOpens);
+      window.location.hash = dataBtn;
+    });
+  }
+
+  btnsCloseModal.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const dataBtn = btn.dataset.modalClose;
+      const modalThatCloses = document.querySelector(`#${dataBtn}`);
+
+      btn.classList.remove("modal-show");
+      modalThatCloses.classList.remove("_show");
+      bodyLock(false);
+      resetHash();
+    });
+  });
+}
+
+// Закрытие модального окна при клике по заднему фону
+function closeWhenClickingOnBg(itemArray, itemParent, classShow = "_show") {
+  document.addEventListener("click", (e) => {
+    let itemElems = document.querySelectorAll(itemArray);
+
+    for (let i = 0; i < itemElems.length; i++) {
+      const item = itemElems[i];
+
+      const target = e.target,
+        itsItem = target == item || item.contains(target),
+        itemIsShow = item.classList.contains(classShow);
+
+      if (itemParent) {
+        const itsItemParent =
+            target == itemParent || itemParent.contains(target),
+          itemParentIsShow = itemParent.classList.contains(classShow);
+
+        if (!itsItem && itsItemParent && itemParentIsShow) {
+          itemParent.classList.remove(classShow);
+
+          if (body.classList.contains("_lock")) {
+            bodyLock(false);
+          }
+
+          if (window.location.hash === "#" + itemParent.getAttribute("id")) {
+            resetHash();
+          }
+        }
+      } else {
+        if (!itsItem && itemIsShow) {
+          item.classList.remove(classShow);
+          if (body.classList.contains("_lock")) {
+            bodyLock(false);
+          }
+
+          if (window.location.hash === "#" + itemParent.getAttribute("id")) {
+            resetHash();
+          }
+        }
+      }
+    }
+  });
+}
+// #endregion modal
 
 // Мобильное меню
 const header = document.querySelector(".header");
@@ -470,3 +622,148 @@ scrollTop.addEventListener("click", (event) => {
 });
 
 polyfill();
+
+// #region validators
+function validateInputText(input) {
+  if (input.value == "") {
+    return changeInutState(input, "invalid");
+  } else {
+    return changeInutState(input, "valid");
+  }
+}
+const textInputs = document.querySelectorAll('.input[type="text"]');
+textInputs.forEach((input) => {
+  input.addEventListener("input", () => {
+    validateInputText(input);
+  });
+});
+
+function validateCheckbox(checkbox) {
+  if (checkbox.checked) {
+    checkbox.parentElement.classList.remove("input--invalid");
+    return true;
+  } else {
+    checkbox.parentElement.classList.add("input--invalid");
+    return false;
+  }
+}
+document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+  checkbox.addEventListener("change", function () {
+    validateCheckbox(checkbox);
+  });
+});
+
+const telephoneInputs = document.querySelectorAll('input[type="tel"]');
+telephoneInputs.forEach((input) => {
+  input.addEventListener("input", () => {
+    if (input.value != "+") {
+      input.value = "+" + input.value.replace(/[^\d]/g, "");
+      if (input.value.length > 8) {
+        validatePhone(input);
+      }
+    } else if (input.value == "+") {
+      input.value = "";
+    }
+  });
+});
+
+function changeInutState(input, state) {
+  if (state == "invalid") {
+    input.classList.add("input--invalid");
+    if (input.parentElement.querySelector(".error-text")) {
+      input.parentElement
+        .querySelector(".error-text")
+        .classList.add("error-text--visible");
+    }
+    return false;
+  } else if (state == "valid") {
+    input.classList.remove("input--invalid");
+    if (input.parentElement.querySelector(".error-text")) {
+      input.parentElement
+        .querySelector(".error-text")
+        .classList.remove("error-text--visible");
+    }
+    return true;
+  }
+}
+function validatePhone(input) {
+  if (input.value == "" || input.value.length < 8 || input.value.length > 18) {
+    return changeInutState(input, "invalid");
+  } else {
+    return changeInutState(input, "valid");
+  }
+}
+function validateEmail(input) {
+  // regex validate email
+  if (
+    input.value == "" ||
+    !input.value.match(
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+    )
+  ) {
+    return changeInutState(input, "invalid");
+  } else {
+    return changeInutState(input, "valid");
+  }
+}
+
+const phones = document.querySelectorAll(".js-click-copy");
+phones.forEach((phone) => {
+  phone.addEventListener("click", (event) => {
+    if (window.innerWidth < 1024) return;
+    event.preventDefault();
+    copyToClipboard(phone);
+    let phoneNumber = phone.innerText;
+    // let copiedText = phone.dataset.clickedText;
+    let copiedText = "Скопировано!";
+    phone.innerText = copiedText;
+    setTimeout(() => {
+      phone.innerText = phoneNumber;
+    }, 5000);
+  });
+});
+
+function validateInput(input) {
+  if (input.disabled || !input.classList.contains("required")) return;
+
+  if (input.type === "tel") {
+    validatePhone(input);
+  }
+  if (input.type === "text") {
+    validateInputText(input);
+  }
+  if (input.type === "email") {
+    validateEmail(input);
+  }
+}
+
+// #endregion validators
+
+// #region form
+const forms = document.querySelectorAll(".form");
+forms.forEach((form) => {
+  // Validate on Blur
+  form.querySelectorAll("input").forEach((input) => {
+    input.addEventListener("blur", () => {
+      validateInput(input);
+    });
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    form.querySelectorAll("input").forEach((input) => {
+      validateInput(input);
+    });
+
+    let invalidInputs = [...form.querySelectorAll(".input--invalid")];
+    if (invalidInputs.length === 0) {
+      console.log("valid");
+      document.querySelector(".modal-callback__form").classList.add("_sent");
+      document.querySelector(".modal-callback__thanks").classList.add("_sent");
+    } else {
+      console.log("invalid");
+    }
+  });
+});
+// #endregion form

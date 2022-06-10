@@ -25,15 +25,18 @@
             </ul>
           </nav>
           <div class="send-request">
-            <a class="send-request__text after" href="#">
+            <button
+              class="send-request__text after"
+              data-modal-open="modal-callback"
+            >
               <div class="send-request__text-box">
                 <span>оставить заявку</span>
                 <span>оставить заявку</span>
               </div>
-            </a>
+            </button>
           </div>
           <div class="phone">
-            <a class="phone__link" href="tel:86757567567">
+            <a class="phone__link js-click-copy" href="tel:86757567567">
               <svg class="phone__icon">
                 <use xlink:href="img/sprite.svg#phone"></use>
               </svg>
@@ -419,7 +422,7 @@
             <p class="footer__text footer__text--copy">© Семьпап. 2022</p>
             <ul class="footer__list">
               <li class="footer__item">
-                <a class="footer__link" href="tel:+78412518140"
+                <a class="footer__link js-click-copy" href="tel:+78412518140"
                   >+7 (8412) 51-81-40</a
                 >
               </li>
@@ -514,90 +517,118 @@
       </div>
     </div>
 
-    <!-- <div class="modal" id="consultation">
-		<div class="modal__body">
-			<div class="modal__content">
-				<h2 class="modal__title">Запись на консультацию</h2>
-				<form action="#" method="POST" class="form modal__form" id="modal__form">
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="text" id="user_name" name="user_name" placeholder=" ">
-						<label class="form-elem__label" for="user_name">Имя</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="tel" id="user_phone" name="user_phone" placeholder=" ">
-						<label class="form-elem__label" for="user_phone">Номер телефона</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="email" id="user_email" name="user_email" placeholder=" ">
-						<label class="form-elem__label" for="user_email">E-mail</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area" type="text" id="user_company" name="user_company" placeholder=" ">
-						<label class="form-elem__label" for="user_company">Название вашей компании</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area" type="text" id="user_working_pos" name="user_working_pos" placeholder=" ">
-						<label class="form-elem__label" for="user_working_pos">Ваша должность</label>
-					</div>
-					<div class="form-elem">
-						<textarea class="form-elem__area" id="user_message" name="user_message" placeholder=" "></textarea>
-						<label class="form-elem__label" for="user_message">Комментарий</label>
-					</div>
-					<span class="modal__attention">Нажав на кнопку, вы соглашаетесь с обработкой персональных данных.</span>
-					<button class="btn modal__submit" type="submit">Проконсультироваться</button>
-				</form>
-				<button class="modal__close">
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-		</div>
-	</div> -->
+    <div class="modal modal--slide-left _show" id="modal-callback">
+      <div class="modal__body modal__body--right">
+        <div class="modal__content modal-callback">
+          <div class="modal-callback__inner">
+            <form class="form modal-callback__form">
+              <h2 class="modal-callback__title">Оставьте заявку</h2>
+              <div class="modal-message">
+                <p class="modal-message__desc">
+                  Или просто позвоните нам, мы обсудим ваш проект <br />
+                  и сами зададим нужные вопросы
+                </p>
+                <a
+                  href="tel:+78412518140"
+                  class="js-click-copy modal-message__phone"
+                  >+7 (8412) 51-81-40</a
+                >
+              </div>
+              <div class="input__wrap input__wrap--name">
+                <input
+                  class="input input--name required"
+                  name="user-name"
+                  type="text"
+                  placeholder="Имя"
+                  maxlength="50"
+                />
+              </div>
+              <div class="input__wrap input__wrap--company">
+                <input
+                  class="input input--company required"
+                  name="user_company"
+                  type="text"
+                  placeholder="Компания"
+                  maxlength="50"
+                />
+              </div>
+              <div class="form-group form-group--contacts">
+                <div class="input__wrap input__wrap--tel">
+                  <input
+                    class="input input--phone required"
+                    name="user_tel"
+                    type="tel"
+                    maxlength="25"
+                    minlength="10"
+                    inputmode="tel"
+                    placeholder="Телефон"
+                  />
+                </div>
+                <div class="input__wrap input__wrap--email">
+                  <input class="input input--email required name="user_email"
+                  type="email" placeholder="E-mail">
+                </div>
+              </div>
+              <div class="form-group form-group--submit">
+                <div class="input__wrap input--capcha">
+                  <!-- добавление элемента div -->
+                  <div
+                    class="g-recaptcha"
+                    data-sitekey="6KepjAsTFFFFFFMqccY0ZiGqc3TEd3YVxo8cHsGX"
+                  ></div>
 
-    <!-- <div class="modal" id="callback">
-		<div class="modal__body">
-			<div class="modal__content">
-				<h2 class="modal__title">Обратный звонок</h2>
-				<form action="#" method="POST" class="form modal__form" id="modal__form">
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="text" id="user_name" name="name" placeholder=" ">
-						<label class="form-elem__label" for="name">Имя</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="tel" id="user_phone" name="phone"
-							placeholder=" ">
-						<label class="form-elem__label" for="phone">Номер телефона</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="email" id="user_email" name="email"
-							placeholder=" ">
-						<label class="form-elem__label" for="email">E-mail</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area" type="text" id="user_company" name="company" placeholder=" ">
-						<label class="form-elem__label" for="company">Название вашей компании</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area" type="text" id="user_working_pos" name="working_pos"
-							placeholder=" ">
-						<label class="form-elem__label" for="working_pos">Ваша должность</label>
-					</div>
-					<div class="form-elem">
-						<textarea class="form-elem__area" type="text" id="user_message" name="message"
-							placeholder=" "></textarea>
-						<label class="form-elem__label" for="message">Комментарий</label>
-					</div>
-					<span class="modal__attention">Нажав на кнопку, вы соглашаетесь с обработкой персональных
-						данных.</span>
-					<button class="btn modal__submit" type="submit">Проконсультироваться</button>
-				</form>
-				<button class="modal__close">
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-		</div>
-	</div> -->
+                  <!-- элемент для вывода ошибок -->
+                  <div class="text-danger" id="recaptchaError"></div>
+
+                  <!-- js-скрипт гугл капчи -->
+                  <script src="https://www.google.com/recaptcha/api.js"></script>
+                </div>
+                <div
+                  class="button button--icon-right button--icon-arrow-right form__submit"
+                >
+                  <span class="button__icon"></span>
+                  <button class="button__text">
+                    <div class="button__text-box">
+                      <span>отправить</span>
+                      <span>отправить</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <p class="form__privacy">
+                Нажимая на кнопку “Отправить”, вы даете <br />
+                <a href="#privacy" class="form__privacy-link">согласие</a> на
+                обработку персональных данных
+              </p>
+            </form>
+            <div class="form-thanks modal-callback__thanks">
+              <h2 class="modal-callback__title">Оставьте заявку</h2>
+              <div class="modal-message">
+                <p class="modal-message__desc">
+                  Мы рассмотрим ваше обращение и свяжемся с вами <br />в
+                  ближайшее время.
+                </p>
+              </div>
+              <div
+                class="button button--icon-left button--icon-arrow-right form__submit"
+              >
+                <span class="button__icon"></span>
+                <button data-modal-close="modal-callback" class="button__text">
+                  <div class="button__text-box">
+                    <span>понятно</span>
+                    <span>понятно</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="modal__close modal__close--big">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
 
     <!-- Подключение скриптов -->
     <script src="js/libs/jquery.js"></script>

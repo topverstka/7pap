@@ -1,0 +1,29 @@
+// @input
+.input {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  padding-top: 28px;
+  padding-right: 32px;
+  padding-bottom: 28px;
+  padding-left: 32px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius);
+  font-family: var(--ffMain);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: rgba(0, 0, 0, 0.3);
+}
+.input--invalid {
+  border-color: var(--error);
+}
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.input__wrap {
+  margin-bottom: 8px;
+  width: 100%;
+}

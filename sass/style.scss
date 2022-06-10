@@ -46,6 +46,11 @@ body {
     overflow: hidden;
   }
 }
+@media (min-width: 1200px) {
+  body._lock.os-macos {
+    padding: 0;
+  }
+}
 
 .wrapper {
   position: relative;
@@ -147,6 +152,7 @@ body {
 @import "./components/_buttons";
 @import "./components/_forms";
 @import "./components/_modal";
+@import "./components/_inputs";
 
 // Текстовые компоненты
 @import "./components/text/_text";
