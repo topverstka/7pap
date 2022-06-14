@@ -217,7 +217,7 @@ $margin-icon: 12px; // Отступ иконки от текста
   --button-color: #000;
   font-size: 20px;
   transform: translateX(-4px);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   cursor: pointer;
   transition: all var(--tr) ease-in-out;
@@ -227,7 +227,7 @@ $margin-icon: 12px; // Отступ иконки от текста
     .button__text-box {
       transform: translateY(calc(-50% - 0.3em));
     }
-    .button__icon::before {
+    .button__icon {
       transition: all var(--tr) ease-in-out;
       background-image: var(--gradient-green);
     }
@@ -249,11 +249,13 @@ $margin-icon: 12px; // Отступ иконки от текста
   width: var(--icon-size, 1.6em);
   height: var(--icon-size, 1.6em);
   position: relative;
+  background-color: var(--button-color);
   &::before,
   &::after {
     content: "";
     position: absolute;
     display: block;
+    display: none;
     width: 100%;
     height: 100%;
     border-radius: 100%;
@@ -264,54 +266,32 @@ $margin-icon: 12px; // Отступ иконки от текста
 }
 .button--icon-left .button__icon {
   order: -2;
+  margin-right: 0.5em;
 }
 .button--icon-right .button__icon {
   order: 2;
-}
-
-.button--icon-right .button__icon {
   margin-left: 0.5em;
 }
-.button--icon-left .button__icon {
-  margin-right: 0.5em;
+
+.button--icon-arrow-left .button__icon {
+  @include getmask("../img/icons/arrow-left-fill.svg");
 }
-.button--icon-arrow-right .button__icon::after {
-  content: "";
-  background-image: url(../img/icons/arrow-right.svg);
-  background-position: center;
-  background-size: 60%;
-  background-repeat: no-repeat;
+.button--icon-arrow-right .button__icon {
+  @include getmask("../img/icons/arrow-right.svg");
 }
-.button--icon-arrow-right-transparent .button__icon::after {
-  content: "";
-  background-image: url(../img/icons/arrow-right-transparent.svg);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+.button--icon-arrow-top-right .button__icon {
+  @include getmask("../img/icons/arrow-right-top.svg");
 }
-.button--icon-arrow-right-transparent .button__icon::before {
-  background-color: transparent;
+.button--icon-link .button__icon {
+  @include getmask("../img/icons/link-fill.svg");
 }
-.button--icon-arrow-top-right .button__icon::after {
-  content: "";
-  background-image: url(../img/icons/arrow-top-right.svg);
-  background-position: center;
-  background-size: 50%;
-  background-repeat: no-repeat;
+.button--icon-link .button__icon::before,
+.button--icon-link:hover .button__icon::before {
+  background: transparent;
 }
-.button--icon-link .button__icon::after {
-  content: "";
-  background-image: url(../img/icons/link.svg);
-  background-position: center;
-  background-size: 60%;
-  background-repeat: no-repeat;
-}
-.button--icon-plus .button__icon::after {
-  content: "";
-  background-image: url(../img/icons/plus.svg);
-  background-position: center;
-  background-size: 60%;
-  background-repeat: no-repeat;
+
+.button--icon-plus .button__icon {
+  @include getmask("../img/icons/plus.svg");
 }
 
 .button__text {

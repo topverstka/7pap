@@ -1,6 +1,7 @@
 @import "_fonts"; // Шрифты
 @import "_variables"; // Переменные
 @import "_reset"; // Сброс css
+@import "_mixins";
 
 // Миксин для перевода px в vw
 @function vw($px) {

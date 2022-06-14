@@ -1,0 +1,16 @@
+@mixin getmask($image_path: null, $size: contain) {
+  mask: url("#{$image_path}");
+  -webkit-mask: url("#{$image_path}");
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-size: #{$size};
+  -webkit-mask-size: #{$size};
+}
+
+@mixin bgset($image_path: null, $image_type: "jpg") {
+  background-image: url("#{$image_path}.#{$image_type}");
+  background-image: image-set(url("#{$image_path}.webp") 1x);
+  background-image: -webkit-image-set(url("#{$image_path}.webp") 1x);
+}

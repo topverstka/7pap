@@ -49,7 +49,8 @@
   transform: translateX(100vw);
 }
 .modal--slide-left._show {
-  overflow: visible;
+  // overflow: visible;
+  overflow: auto;
 }
 .modal--slide-left._show .modal__body {
   transform: translateX(0);
