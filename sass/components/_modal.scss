@@ -49,8 +49,10 @@
   transform: translateX(100vw);
 }
 .modal--slide-left._show {
-  // overflow: visible;
   overflow: auto;
+  @media (max-width: 991px) {
+    overflow: visible;
+  }
 }
 .modal--slide-left._show .modal__body {
   transform: translateX(0);
@@ -210,11 +212,13 @@
 // @modal-callback
 .modal-callback {
   overflow: hidden;
+  display: grid;
 }
 .modal-callback__inner {
   opacity: 0;
   transition: var(--transition-regular);
   transition-delay: 0.1s;
+  height: 100%;
 }
 ._show .modal-callback__inner {
   opacity: 1;
@@ -257,6 +261,12 @@
   top: 0;
   opacity: 0;
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .button {
+    margin-top: auto;
+  }
 }
 .modal-callback__thanks._sent {
   transform: translateY(0);
