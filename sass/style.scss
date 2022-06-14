@@ -144,6 +144,7 @@ body {
 .horizontal__blocks {
   overflow: hidden;
 }
+@import "./sections/_header";
 
 @import "_grid"; // Сетка
 
@@ -163,7 +164,6 @@ body {
 @import "./components/text/_info";
 
 // Секции
-@import "./sections/_header";
 @import "./sections/main/_promo";
 @import "./sections/main/_cases";
 @import "./sections/main/_brands";
