@@ -1,0 +1,13 @@
+.tab-buttons {
+  .tab-button:hover {
+    --tab-color: #141212;
+    background: var(--tab-color);
+    color: #fff;
+    border-color: var(--tab-color);
+  }
+}
+.tab-buttons--on-content {
+  .tab-button__inner {
+    background: transparent;
+  }
+}

@@ -12,6 +12,11 @@
   max-width: 100%;
   padding-left: 65px;
   padding-right: 65px;
+  @media (max-width: 1099px) {
+    padding-top: 0;
+    padding-left: 13px;
+    padding-right: 13px;
+  }
 }
 .container--full {
   max-width: 100%;

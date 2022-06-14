@@ -13,7 +13,7 @@
 
   <body>
     <div class="wrapper">
-      <header class="header">
+      <header class="header header--on-content">
         <div class="header__wrapper">
           <a class="logo" href="#">
             <img src="img/header/logo.svg" alt="logo" />
@@ -29,12 +29,15 @@
           </nav>
           <div class="send-request">
             <button
-              class="send-request__text after"
+              class="button button--icon-right button--icon-plus"
               data-modal-open="modal-callback"
             >
-              <div class="send-request__text-box">
-                <span>оставить заявку</span>
-                <span>оставить заявку</span>
+              <span class="button__icon"></span>
+              <div class="button__text">
+                <div class="button__text-box">
+                  <span>оставить заявку</span>
+                  <span>оставить заявку</span>
+                </div>
               </div>
             </button>
           </div>
@@ -51,58 +54,72 @@
         </div>
       </header>
 
-      <section class="case-hero case-hero--full">
-        <div class="container container--wide">
-          <button class="button-back"></button>
-          <div class="case-hero__categories cases-filter">
-            <div class="cases-filter__industries">
-              <div
-                class="cases-filter__industries-scrollarea scrollarea__horizontal"
-              >
-                <div class="cases-filter__industries-inner">
-                  <a href="#" class="cases-filter__industry">Еда</a>
-                  <a href="#" class="cases-filter__industry">Госсектор</a>
-                  <a href="#" class="cases-filter__industry">Медицина</a>
-                  <a href="#" class="cases-filter__industry">Недвижимость</a>
-                  <a href="#" class="cases-filter__industry">
-                    Промышленность и оборудование
-                  </a>
-                  <a href="#" class="cases-filter__industry">
-                    Товары и услуги b2b
-                  </a>
+      <div class="case-hero__wrap case-hero--full">
+        <section class="case-hero">
+          <div class="container container--wide">
+            <button class="button-back"></button>
+            <div
+              class="case-hero__categories cases-filter tab-buttons tab-buttons--on-content"
+            >
+              <div class="cases-filter__industries">
+                <div
+                  class="cases-filter__industries-scrollarea scrollarea__horizontal"
+                >
+                  <div class="cases-filter__industries-inner">
+                    <a href="#" class="cases-filter__industry tab-button">
+                      <span class="tab-button__inner">Недвижимость</span>
+                    </a>
+                    <a href="#" class="cases-filter__industry tab-button">
+                      <span class="tab-button__inner"
+                        >Промышленность и оборудование</span
+                      >
+                    </a>
+                    <a href="#" class="cases-filter__industry tab-button">
+                      <span class="tab-button__inner">Еда</span>
+                    </a>
+                    <a href="#" class="cases-filter__industry tab-button">
+                      <span class="tab-button__inner">Госсектор</span>
+                    </a>
+                    <a href="#" class="cases-filter__industry tab-button">
+                      <span class="tab-button__inner">Медицина</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <h1 class="case-hero__title">
-            Сайт для поставщика <br />
-            оборудования в нефтегазовой <br />
-            и энергетической отрасли
-          </h1>
+            <h1 class="case-hero__title title title--hero">
+              Сайт для поставщика <br />
+              оборудования в нефтегазовой <br />
+              и энергетической отрасли
+            </h1>
 
-          <a href="#case" class="button button--icon-left button--icon-link">
-            <span class="button__icon"></span>
-            <div class="button__text">
-              <div class="button__text-box">
-                <span>pgtas.ru</span>
-                <span>pgtas.ru</span>
+            <a href="#case" class="button button--icon-left button--icon-link">
+              <span class="button__icon"></span>
+              <div class="button__text">
+                <div class="button__text-box">
+                  <span>pgtas.ru</span>
+                  <span>pgtas.ru</span>
+                </div>
               </div>
-            </div>
-          </a>
-        </div>
-      </section>
+            </a>
+          </div>
+        </section>
 
-      <div class="container container--full">
-        <picture class="case__pic"
-          ><img src="./img/pages/case/hero.jpg" alt="" class="case__img"
-        /></picture>
+        <div class="container container--full">
+          <picture class="case__pic"
+            ><img src="./img/pages/case/hero-2.jpg" alt="" class="case__img"
+          /></picture>
+        </div>
       </div>
 
       <section class="case__story">
         <div class="container">
           <div class="case-note">
             <div class="case-note__area">
-              <h2 class="case-note__title">Клиент и задача</h2>
+              <h2 class="case-note__title title">
+                Клиент <br />
+                и задача
+              </h2>
             </div>
             <div class="case-note__area">
               <p class="case-note__desc">
@@ -112,6 +129,17 @@
                 т.п. и еще несколько деталей. С нуля и в кратчайшие сроки
                 разработать фирменный стиль для компании
               </p>
+              <button
+                class="button button--icon-left button--icon-arrow-top-right"
+              >
+                <span class="button__icon"></span>
+                <div class="button__text">
+                  <div class="button__text-box">
+                    <span>pgtas.ru</span>
+                    <span>pgtas.ru</span>
+                  </div>
+                </div>
+              </button>
             </div>
           </div>
           <picture class="case__pic"
@@ -120,7 +148,10 @@
 
           <div class="case-note">
             <div class="case-note__area">
-              <h2 class="case-note__title">Идея логотипа</h2>
+              <h2 class="case-note__title title">
+                Идея <br />
+                логотипа
+              </h2>
             </div>
             <div class="case-note__area">
               <p class="case-note__desc">
@@ -139,7 +170,7 @@
 
           <div class="case-note">
             <div class="case-note__area">
-              <h2 class="case-note__title">Стиль</h2>
+              <h2 class="case-note__title title">Стиль</h2>
             </div>
             <div class="case-note__area">
               <p class="case-note__desc">
@@ -164,7 +195,7 @@
 
           <div class="case-note">
             <div class="case-note__area">
-              <h2 class="case-note__title">Сайт на битрикс-шаблоне</h2>
+              <h2 class="case-note__title title">Сайт на битрикс-шаблоне</h2>
             </div>
             <div class="case-note__area">
               <p class="case-note__desc">
@@ -211,7 +242,10 @@
 
       <section class="case-gallery">
         <div class="container case-gallery__container">
-          <h2 class="case-gallery__tilte title">Следующие работы</h2>
+          <h2 class="case-gallery__title title">
+            Следующие <br />
+            работы
+          </h2>
           <a href="#" class="button button--icon-left button--icon-plus">
             <span class="button__icon"></span>
             <div class="button__text">
@@ -233,6 +267,20 @@
                     <img src="img/cases/preview-3.jpg" alt="Превью" />
                   </picture>
                   <p>Логотип ЖК «Сити-квартал»</p>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="cases__content">
+                <a href="#">
+                  <picture>
+                    <source
+                      srcset="img/cases/preview-4.webp"
+                      type="image/webp"
+                    />
+                    <img src="img/cases/preview-4.jpg" alt="Превью" />
+                  </picture>
+                  <p>Айдентика и сайт производителя кукурузного масла «ТСП»</p>
                 </a>
               </div>
             </li>
