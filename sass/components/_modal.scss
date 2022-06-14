@@ -212,6 +212,8 @@
 // @modal-callback
 .modal-callback {
   overflow: hidden;
+}
+.modal-callback._sent {
   display: grid;
 }
 .modal-callback__inner {

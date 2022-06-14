@@ -1437,6 +1437,9 @@ body._lock {
 
 .modal-callback {
   overflow: hidden;
+}
+
+.modal-callback._sent {
   display: -ms-grid;
   display: grid;
 }
@@ -4694,7 +4697,7 @@ body._lock {
 }
 
 @media (max-width: 768px) {
-  .cases__list li:first-child {
+  .case-gallery .cases__list li:first-child {
     width: 49%;
   }
 }

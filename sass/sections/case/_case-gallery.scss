@@ -24,7 +24,7 @@
     display: block;
   }
 }
-.cases__list li:first-child {
+.case-gallery .cases__list li:first-child {
   @media (max-width: 768px) {
     width: 49%;
   }

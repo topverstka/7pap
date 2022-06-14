@@ -768,6 +768,7 @@ forms.forEach((form) => {
       console.log("valid");
       document.querySelector(".modal-callback__form").classList.add("_sent");
       document.querySelector(".modal-callback__thanks").classList.add("_sent");
+      document.querySelector(".modal-callback").classList.add("_sent");
     } else {
       console.log("invalid");
     }
