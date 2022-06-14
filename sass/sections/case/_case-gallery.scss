@@ -1,0 +1,12 @@
+.case-gallery__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.case-gallery .cases__list {
+  padding-top: 58px;
+}
+.case-gallery .cases__list li:last-child {
+  display: block;
+}

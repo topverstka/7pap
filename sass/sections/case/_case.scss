@@ -1,0 +1,44 @@
+.case-hero {
+  margin-bottom: 50px;
+}
+.case-hero__title {
+  margin-bottom: 64px;
+  font-size: 80px;
+  line-height: 99.99%;
+  letter-spacing: -0.02em;
+}
+.case-hero .cases-filter__industries-inner {
+  flex-wrap: wrap;
+}
+.case-hero .cases-filter__industry {
+  margin-bottom: 8px;
+}
+
+.case__pic {
+  display: block;
+  width: 100%;
+  margin-bottom: 144px;
+}
+.case__pic + .case__pic {
+  margin-top: -32px;
+}
+
+.case-note {
+  margin-bottom: 112px;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 356px auto;
+  column-gap: 52px;
+}
+
+.case-note__title {
+  font-size: 64px;
+  line-height: 1.1;
+  color: #000000;
+}
+.case-note__desc {
+  margin-bottom: 32px;
+  font-size: 24px;
+  line-height: 1.42;
+  color: #000000;
+}

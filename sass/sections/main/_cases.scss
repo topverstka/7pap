@@ -34,6 +34,11 @@
     width: calc(100% + 8px);
   }
 }
+.container--wide .cases-filter {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
 .cases-filter__categories {
   display: flex;
   align-items: center;

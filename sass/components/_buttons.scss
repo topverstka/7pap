@@ -214,9 +214,9 @@ $margin-icon: 12px; // Отступ иконки от текста
 */
 
 .button {
+  --button-color: #000;
   font-size: 20px;
   transform: translateX(-4px);
-  margin-left: auto;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -232,6 +232,16 @@ $margin-icon: 12px; // Отступ иконки от текста
       background-image: var(--gradient-green);
     }
   }
+}
+.button--left {
+  margin-right: auto;
+}
+.button--right {
+  margin-left: auto;
+}
+.button--center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button__icon {
@@ -249,7 +259,7 @@ $margin-icon: 12px; // Отступ иконки от текста
     border-radius: 100%;
   }
   &::before {
-    background-color: #000;
+    background-color: var(--button-color);
   }
 }
 .button--icon-left .button__icon {
@@ -272,12 +282,44 @@ $margin-icon: 12px; // Отступ иконки от текста
   background-size: 60%;
   background-repeat: no-repeat;
 }
+.button--icon-arrow-right-transparent .button__icon::after {
+  content: "";
+  background-image: url(../img/icons/arrow-right-transparent.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.button--icon-arrow-right-transparent .button__icon::before {
+  background-color: transparent;
+}
+.button--icon-arrow-top-right .button__icon::after {
+  content: "";
+  background-image: url(../img/icons/arrow-top-right.svg);
+  background-position: center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+.button--icon-link .button__icon::after {
+  content: "";
+  background-image: url(../img/icons/link.svg);
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+.button--icon-plus .button__icon::after {
+  content: "";
+  background-image: url(../img/icons/plus.svg);
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
 
 .button__text {
   font-size: inherit;
   line-height: 1.6em;
   height: 1.6em;
   overflow: hidden;
+  color: var(--button-color);
 }
 
 .button__text-box {
@@ -288,5 +330,22 @@ $margin-icon: 12px; // Отступ иконки от текста
 
   span:first-child {
     margin-bottom: 0.5em;
+  }
+}
+
+.button-back {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 66px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background-color: #ffffff;
+  background-image: url(../img/icons/arrow-left-black.svg);
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+
+  @media (max-width: 767px) {
+    margin-bottom: 38px;
   }
 }

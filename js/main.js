@@ -427,7 +427,7 @@ const casesFilterIndustriesInner = document.querySelector(
   ".cases-filter__industries-inner"
 );
 const casesFilterIndustries = document.querySelectorAll(
-  ".cases-filter__industry"
+  ".cases-filter__industries--clickable .cases-filter__industry"
 );
 const casesFilterMore = document.querySelector(
   ".cases-filter__industries-more"
@@ -527,85 +527,89 @@ if ([...casesFilterIndustries].length > 0) {
 }
 
 // Анимация для блока с кейсами при скролле
-if (window.matchMedia("(min-width: 992px)").matches) {
-  let flage = false;
-  let ulList = document.querySelector(".cases__list");
-  let elementObserver = document.querySelector(".cases");
-  ulList.insertAdjacentHTML(
-    "beforebegin",
-    '<ul class="cases__list-preview"></ul>'
-  );
-  ulList.querySelectorAll("li").forEach((i, index) => {
-    if (index < 2) {
-      i.remove();
-      document
-        .querySelector(".cases__list-preview")
-        .insertAdjacentHTML("afterbegin", i.outerHTML);
-    }
-  });
-  document
-    .querySelectorAll(".cases__list-preview li > div")
-    .forEach((i) => i.removeAttribute("class"));
+const casesScrollBlock = document.querySelector(".cases");
+if (casesScrollBlock) {
+  if (window.matchMedia("(min-width: 992px)").matches) {
+    let flage = false;
+    let ulList = document.querySelector(".cases__list");
+    let elementObserver = document.querySelector(".cases");
+    ulList.insertAdjacentHTML(
+      "beforebegin",
+      '<ul class="cases__list-preview"></ul>'
+    );
+    ulList.querySelectorAll("li").forEach((i, index) => {
+      if (index < 2) {
+        i.remove();
+        document
+          .querySelector(".cases__list-preview")
+          .insertAdjacentHTML("afterbegin", i.outerHTML);
+      }
+    });
+    document
+      .querySelectorAll(".cases__list-preview li > div")
+      .forEach((i) => i.removeAttribute("class"));
 
-  let indent = 27;
-  let indicator = new WheelIndicator({
-    elem: document.querySelector("body"),
-    callback: function (e) {
-      if (e.direction === "down") {
-        window.scrollTo({
-          top: elementObserver.offsetTop - indent,
-          left: 0,
-          behavior: "smooth",
-        });
+    let indent = 27;
+    let indicator = new WheelIndicator({
+      elem: document.querySelector("body"),
+      callback: function (e) {
+        if (e.direction === "down") {
+          window.scrollTo({
+            top: elementObserver.offsetTop - indent,
+            left: 0,
+            behavior: "smooth",
+          });
+          document
+            .querySelector(".cases__list-preview")
+            .classList.add("_width");
+          indicator.turnOff();
+        }
+
+        if (e.direction === "up") {
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+          });
+          document
+            .querySelector(".cases__list-preview")
+            .classList.remove("_width");
+        }
+      },
+    });
+
+    window.addEventListener("wheel", function (e) {
+      if (Math.sign(e.deltaY) === 1) {
+        if (window.pageYOffset >= elementObserver.offsetTop - indent) {
+          indicator.turnOff();
+        }
+      }
+    });
+
+    window.addEventListener("scroll", function (e) {
+      if (elementObserver.offsetTop <= window.pageYOffset) {
+        flage = true;
+        indicator.turnOff();
         document.querySelector(".cases__list-preview").classList.add("_width");
-        indicator.turnOff();
+      } else {
+        indicator.turnOn();
+
+        if (flage) {
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+          });
+
+          flage = false;
+          document
+            .querySelector(".cases__list-preview")
+            .classList.remove("_width");
+        }
       }
-
-      if (e.direction === "up") {
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: "smooth",
-        });
-        document
-          .querySelector(".cases__list-preview")
-          .classList.remove("_width");
-      }
-    },
-  });
-
-  window.addEventListener("wheel", function (e) {
-    if (Math.sign(e.deltaY) === 1) {
-      if (window.pageYOffset >= elementObserver.offsetTop - indent) {
-        indicator.turnOff();
-      }
-    }
-  });
-
-  window.addEventListener("scroll", function (e) {
-    if (elementObserver.offsetTop <= window.pageYOffset) {
-      flage = true;
-      indicator.turnOff();
-      document.querySelector(".cases__list-preview").classList.add("_width");
-    } else {
-      indicator.turnOn();
-
-      if (flage) {
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: "smooth",
-        });
-
-        flage = false;
-        document
-          .querySelector(".cases__list-preview")
-          .classList.remove("_width");
-      }
-    }
-  });
+    });
+  }
 }
-
 // Прокрутка страницы вверх
 const scrollTop = find(".scroll-top");
 

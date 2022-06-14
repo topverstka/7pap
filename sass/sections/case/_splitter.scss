@@ -1,0 +1,29 @@
+.splitter {
+  margin-bottom: 144px;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  background: linear-gradient(
+    325.86deg,
+    rgba(84, 146, 252, 0.7) -4.77%,
+    rgba(227, 152, 211, 0.7) 116.4%
+  );
+
+  @media (max-width: 992px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 80px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .button {
+    --button-color: #fff;
+  }
+}
+
+.splitter__title {
+  margin-bottom: 32px;
+  color: #fff;
+}
