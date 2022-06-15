@@ -2128,7 +2128,7 @@ body._lock {
 @media (max-width: 575px) {
   .input {
     padding-right: 16px;
-    padding-bottom: 13px;
+    padding-bottom: 12px;
     border-radius: 8px;
     font-size: 16px;
   }
@@ -2210,7 +2210,7 @@ body._lock {
 
 @media (max-width: 575px) {
   .input__wrap {
-    --padding-top: 33px;
+    --padding-top: 32px;
     --padding-left: 16px;
   }
 }
@@ -3455,6 +3455,13 @@ body._lock {
   .our-services--last {
     padding-top: 48px;
     padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .our-services--last {
+    margin-top: -250px;
+    padding-top: 350px;
   }
 }
 

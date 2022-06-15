@@ -367,6 +367,10 @@ function horizontalBlocksScroll() {
     $(scrollItem).addClass("horizontal_initialized");
     const $blocks = $(scrollItem).find(".js-horizontal-block");
     const $track = $(scrollItem).find(".js-horizontal-track");
+    let trackOffset = +scrollItem.dataset.scrollOffset;
+    if (isNaN(trackOffset)) {
+      trackOffset = 100;
+    }
 
     const length = $blocks.length;
     const itemWidth = 100 / length;
@@ -394,7 +398,7 @@ function horizontalBlocksScroll() {
       triggerElement: scrollItem,
       triggerHook: "onLeave",
       duration: "80%",
-      offset: 100,
+      offset: trackOffset,
     })
       .setPin(scrollItem)
       .setTween(wipeAnimation)

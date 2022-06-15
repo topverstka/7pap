@@ -20,10 +20,10 @@
           </a>
           <nav class="main-nav">
             <ul class="main-nav__list">
-              <li><a class="active" href="#">о студии</a></li>
+              <li><a href="#">о студии</a></li>
               <li><a href="#">брендинг</a></li>
               <li><a href="#">сайты</a></li>
-              <li><a href="#">портфолио</a></li>
+              <li><a class="active" href="#">портфолио</a></li>
               <li><a href="#">контакты</a></li>
             </ul>
           </nav>
@@ -444,18 +444,18 @@
                   class="input input--name required"
                   name="user-name"
                   type="text"
-                  placeholder="Имя"
                   maxlength="50"
                 />
+                <label class="input__placeholder">Имя</label>
               </div>
               <div class="input__wrap input__wrap--company">
                 <input
                   class="input input--company required"
                   name="user_company"
                   type="text"
-                  placeholder="Компания"
                   maxlength="50"
                 />
+                <label class="input__placeholder">Компания</label>
               </div>
               <div class="form-group form-group--contacts">
                 <div class="input__wrap input__wrap--tel">
@@ -466,12 +466,13 @@
                     maxlength="25"
                     minlength="10"
                     inputmode="tel"
-                    placeholder="Телефон"
                   />
+                  <label class="input__placeholder">Телефон</label>
                 </div>
                 <div class="input__wrap input__wrap--email">
                   <input class="input input--email required name="user_email"
-                  type="email" placeholder="E-mail">
+                  type="email">
+                  <label class="input__placeholder">E-mail</label>
                 </div>
               </div>
               <div class="form-group form-group--submit">
@@ -486,7 +487,10 @@
                   <div class="text-danger" id="recaptchaError"></div>
 
                   <!-- js-скрипт гугл капчи -->
-                  <script src="https://www.google.com/recaptcha/api.js"></script>
+                  <script
+                    async
+                    src="https://www.google.com/recaptcha/api.js"
+                  ></script>
                 </div>
                 <button
                   class="button button--icon-right button--icon-arrow-right button--center form__submit"
