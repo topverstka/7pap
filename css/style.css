@@ -1896,7 +1896,7 @@ body._lock {
   .modal__close--big {
     --close-size: 40px;
     top: -45px;
-    top: 16px;
+    right: 6px;
     border: none;
   }
   .modal__close--big::after {
@@ -2111,26 +2111,24 @@ body._lock {
   display: block;
   max-width: 100%;
   width: 100%;
-  padding-top: 28px;
+  padding-top: var(--padding-top);
+  padding-left: var(--padding-left);
+  padding-bottom: 18px;
   padding-right: 32px;
-  padding-bottom: 28px;
-  padding-left: 32px;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: var(--radius);
   font-family: var(--ffMain);
   font-weight: 400;
   font-size: 20px;
-  line-height: 23px;
+  line-height: 1;
   color: #000;
 }
 
 @media (max-width: 575px) {
   .input {
-    padding-top: 23px;
     padding-right: 16px;
-    padding-bottom: 23px;
-    padding-left: 16px;
+    padding-bottom: 13px;
     border-radius: 8px;
     font-size: 16px;
   }
@@ -2139,26 +2137,44 @@ body._lock {
 .input:hover,
 .input:focus {
   border-color: var(--input-border-active);
+  background-color: var(--input-bg-focus);
 }
 
-.input::-webkit-input-placeholder {
+.input__placeholder {
+  position: absolute;
+  top: calc(var(--padding-top) - 6px);
+  left: calc(var(--padding-left));
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
   color: rgba(0, 0, 0, 0.3);
+  -webkit-transition: var(--transition-regular);
+  transition: var(--transition-regular);
 }
 
-.input:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+@media (max-width: 575px) {
+  .input__placeholder {
+    font-size: 16px;
+  }
 }
 
-.input::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+.input__placeholder.active {
+  top: calc(var(--padding-top) / 2);
+  font-size: 16px;
 }
 
-.input::placeholder {
-  color: rgba(0, 0, 0, 0.3);
+@media (max-width: 575px) {
+  .input__placeholder.active {
+    font-size: 12px;
+  }
 }
 
 .input--invalid {
   border-color: var(--invalid);
+  color: var(--invalid);
+}
+
+.input__wrap--invalid .input__placeholder {
   color: var(--invalid);
 }
 
@@ -2187,6 +2203,16 @@ body._lock {
 .input__wrap {
   margin-bottom: 8px;
   width: 100%;
+  position: relative;
+  --padding-top: 38px;
+  --padding-left: 32px;
+}
+
+@media (max-width: 575px) {
+  .input__wrap {
+    --padding-top: 33px;
+    --padding-left: 16px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2203,6 +2229,17 @@ body._lock {
 @media (max-width: 767px) {
   .input--capcha {
     margin-bottom: 24px;
+    padding-top: 74px;
+  }
+}
+
+@media (max-width: 767px) {
+  .g-recaptcha {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%) scale(0.95);
+            transform: translateX(-50%) scale(0.95);
   }
 }
 
