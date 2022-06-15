@@ -129,6 +129,7 @@
 .form__submit {
   --icon-size: 80px;
   font-size: 32px;
+  margin-right: 0;
   @media (max-width: 767px) {
     margin-right: auto;
     order: 2;

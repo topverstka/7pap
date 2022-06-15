@@ -448,9 +448,22 @@ if ([...casesFilterIndustries].length > 0) {
   casesFilterIndustries.forEach((industry) => {
     industry.addEventListener("click", () => {
       casesFilterIndustries.forEach((item) => {
-        item.classList.remove("cases-filter__industry--active");
+        // item.classList.remove("cases-filter__industry--active");
       });
-      industry.classList.add("cases-filter__industry--active");
+      industry.classList.toggle("cases-filter__industry--active");
+
+      if (industry.classList.contains("cases-filter__industry--total")) {
+        casesFilterIndustries.forEach((industry) => {
+          industry.classList.remove("cases-filter__industry--active");
+          if (industry.classList.contains("cases-filter__industry--total")) {
+            industry.classList.add("cases-filter__industry--active");
+          }
+        });
+      } else {
+        casesFilterIndustriesInner
+          .querySelector(".cases-filter__industry--total")
+          .classList.remove("cases-filter__industry--active");
+      }
     });
   });
 

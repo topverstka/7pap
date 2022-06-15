@@ -4,13 +4,33 @@
   justify-content: space-between;
   align-items: flex-end;
 
+  @media (max-width: 1099px) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
   @media (max-width: 768px) {
     margin-bottom: 48px;
     .button {
       order: 2;
       margin-left: auto;
       margin-right: auto;
+      font-size: 16px;
     }
+  }
+}
+.case-gallery__container .button__text {
+  @media (max-width: 1099px) {
+    margin-top: 2px;
+  }
+}
+.case-gallery__container .button__icon {
+  @media (min-width: 769px) {
+    margin-right: unset;
+    order: 2;
+    margin-left: 0.5em;
+  }
+  @media (max-width: 1099px) {
+    --icon-size: 36px;
   }
 }
 .case-gallery .cases__list {

@@ -14,7 +14,7 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
-  color: rgba(0, 0, 0, 0.3);
+  color: #000;
 
   @media (max-width: 575px) {
     padding-top: 23px;
@@ -25,11 +25,26 @@
     font-size: 16px;
   }
 }
-.input--invalid {
-  border-color: var(--error);
+
+.input:hover,
+.input:focus {
+  border-color: var(--input-border-active);
 }
 .input::placeholder {
   color: rgba(0, 0, 0, 0.3);
+}
+
+.input--invalid {
+  border-color: var(--invalid);
+  color: var(--invalid);
+}
+.input--invalid::placeholder {
+  color: var(--invalid);
+}
+.input--invalid:hover,
+.input--invalid:focus {
+  background-color: var(--invalid-bg-focus);
+  border-color: var(--invalid);
 }
 
 .input__wrap {
