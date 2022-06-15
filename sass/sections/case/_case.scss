@@ -1,5 +1,9 @@
 .case-hero {
   margin-bottom: 37px;
+  transition: var(--transition-regular);
+}
+.case-hero .container {
+  transition: inherit;
 }
 .case-hero--full {
   padding-top: 120px;
@@ -64,6 +68,9 @@
 }
 
 .case__story {
+  background-color: #fff;
+  transition: var(--transition-regular);
+  z-index: 2;
   @media (max-width: 991px) {
     margin-bottom: 40px;
   }

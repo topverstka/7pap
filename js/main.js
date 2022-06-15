@@ -579,7 +579,6 @@ if ([...casesFilterIndustries].length > 0) {
   window.addEventListener("resize", () => {
     debounce(changeFiltersPosition(), 200);
   });
-  // FIX Поправь чтоб при загрузке с мобили не срабатывала перекидка, а все закидывалось в скроллбар
   changeFiltersPosition();
 
   casesFilterMore.addEventListener("click", () => {
@@ -850,3 +849,23 @@ forms.forEach((form) => {
   });
 });
 // #endregion form
+
+const caseHeroFull = document.querySelector(".case-hero--full");
+if (caseHeroFull) {
+  const movableContainer = caseHeroFull.querySelector(".container");
+  const story = document.querySelector(".case__story");
+
+  // if current scroll less then height of the screen
+
+  function moveCaseHero() {
+    if (window.pageYOffset < story.offsetTop / 2) {
+      movableContainer.style.transform =
+        "translateY(" + window.pageYOffset / 10 + "px)";
+      story.style.transform = "translateY(-" + window.pageYOffset + "px)";
+    } else {
+      movableContainer.style.transform = "translateY(0)";
+    }
+  }
+
+  window.addEventListener("scroll", moveCaseHero);
+}

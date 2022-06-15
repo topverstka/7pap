@@ -4542,6 +4542,13 @@ body._lock {
 
 .case-hero {
   margin-bottom: 37px;
+  -webkit-transition: var(--transition-regular);
+  transition: var(--transition-regular);
+}
+
+.case-hero .container {
+  -webkit-transition: inherit;
+  transition: inherit;
 }
 
 .case-hero--full {
@@ -4619,6 +4626,13 @@ body._lock {
 
 .case-hero__categories {
   margin-bottom: 30px;
+}
+
+.case__story {
+  background-color: #fff;
+  -webkit-transition: var(--transition-regular);
+  transition: var(--transition-regular);
+  z-index: 2;
 }
 
 @media (max-width: 991px) {
