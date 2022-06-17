@@ -258,6 +258,20 @@ if (inputFields) {
 }
 // #endregion inputplaceholder
 
+// #region inputmask
+(() => {
+  var phoneInputs = document.querySelectorAll('.input[type="tel"]');
+  var maskOptions = {
+    mask: "+{7}(000) 000-00-00",
+    lazy: true,
+    placeholderChar: "#",
+  };
+  phoneInputs.forEach(function (input) {
+    var mask = IMask(input, maskOptions);
+  });
+})();
+// #endregion inputmask
+
 // Мобильное меню
 const header = document.querySelector(".header");
 const hamburger = document.querySelector(".menu-wrapper");
@@ -733,18 +747,18 @@ document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
 });
 
 const telephoneInputs = document.querySelectorAll('input[type="tel"]');
-telephoneInputs.forEach((input) => {
-  input.addEventListener("input", () => {
-    if (input.value != "+") {
-      input.value = "+" + input.value.replace(/[^\d]/g, "");
-      if (input.value.length > 8) {
-        validatePhone(input);
-      }
-    } else if (input.value == "+") {
-      input.value = "";
-    }
-  });
-});
+// telephoneInputs.forEach((input) => {
+//   input.addEventListener("input", () => {
+//     if (input.value != "+") {
+//       input.value = "+" + input.value.replace(/[^\d]/g, "");
+//       if (input.value.length > 8) {
+//         validatePhone(input);
+//       }
+//     } else if (input.value == "+") {
+//       input.value = "";
+//     }
+//   });
+// });
 
 function changeInutState(input, state) {
   if (state == "invalid") {
