@@ -1,6 +1,9 @@
 .case-hero {
-  margin-bottom: 37px;
+  margin-bottom: 112px;
   transition: var(--transition-regular);
+  @media (max-width: 1099px) {
+    margin-bottom: 48px;
+  }
 }
 .case-hero .container {
   transition: inherit;
@@ -99,9 +102,11 @@
 }
 .case-hero .button {
   margin-top: 60px;
+  margin-bottom: calc(0px - 64px);
   transform: none;
   @media (max-width: 991px) {
     margin-top: 40px;
+    margin-bottom: 0;
   }
 }
 .case-hero .button .button__icon {

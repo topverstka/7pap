@@ -1242,9 +1242,10 @@ body._lock {
 .button {
   --button-color: #000;
   font-size: 20px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -4541,9 +4542,15 @@ body._lock {
 }
 
 .case-hero {
-  margin-bottom: 37px;
+  margin-bottom: 112px;
   -webkit-transition: var(--transition-regular);
   transition: var(--transition-regular);
+}
+
+@media (max-width: 1099px) {
+  .case-hero {
+    margin-bottom: 48px;
+  }
 }
 
 .case-hero .container {
@@ -4669,6 +4676,7 @@ body._lock {
 
 .case-hero .button {
   margin-top: 60px;
+  margin-bottom: calc(0px - 64px);
   -webkit-transform: none;
           transform: none;
 }
@@ -4676,6 +4684,7 @@ body._lock {
 @media (max-width: 991px) {
   .case-hero .button {
     margin-top: 40px;
+    margin-bottom: 0;
   }
 }
 
