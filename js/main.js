@@ -284,7 +284,7 @@ function updateTelPlaceholder(input, mask, placeholderMask) {
   var phoneInputs = document.querySelectorAll('.input[type="tel"]');
   var maskOptions = {
     mask: "+{7}(000) 000-00-00",
-    lazy: true,
+    // lazy: true,
     placeholderChar: "x",
     lazy: false,
     // placeholder: {

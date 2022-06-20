@@ -2219,6 +2219,7 @@ body._lock {
 
 .input--phone {
   color: transparent;
+  caret-color: #000;
 }
 
 .input--tel-mask {
@@ -2700,6 +2701,7 @@ body._lock {
 
 @media (max-width: 575px) {
   .cases-filter__categories {
+    margin-bottom: 16px;
     -webkit-overflow-scrolling: touch;
     -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.25) 9px, black 18px, black calc(100% - 18px), rgba(0, 0, 0, 0.25) calc(100% - 9px), rgba(0, 0, 0, 0));
     mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.25) 9px, black 18px, black calc(100% - 18px), rgba(0, 0, 0, 0.25) calc(100% - 9px), rgba(0, 0, 0, 0));
