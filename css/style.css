@@ -1817,7 +1817,7 @@ body._lock {
 
 @media (max-width: 767px) {
   .modal__body--right .modal__content {
-    padding-top: 172px;
+    padding-top: 30vh;
   }
 }
 
