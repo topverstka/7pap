@@ -2382,6 +2382,17 @@ body._lock {
   }
 }
 
+.promo--branding .promo__text {
+  max-width: 1100px;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.promo--branding .promo__title {
+  max-width: 100%;
+  margin-bottom: 163px;
+}
+
 .promo__wrapper {
   max-width: 1826px;
   margin: 0 auto;
@@ -4936,6 +4947,22 @@ body._lock {
 .splitter__title {
   margin-bottom: 32px;
   color: #fff;
+}
+
+.cases__list--row {
+  max-width: 100%;
+}
+
+.cases__list--row .cases__list-slide {
+  width: auto;
+}
+
+.cases--rolling .cases__list:not(:last-child) {
+  margin-bottom: 64px;
+}
+
+.cases--rolling .cases__list:last-child {
+  margin-bottom: 144px;
 }
 
 [data-aos][data-aos][data-aos-duration="50"], body[data-aos-duration="50"] [data-aos] {

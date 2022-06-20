@@ -1,0 +1,12 @@
+.cases__list--row {
+  max-width: 100%;
+}
+.cases__list--row .cases__list-slide {
+  width: auto;
+}
+.cases--rolling .cases__list:not(:last-child) {
+  margin-bottom: 64px;
+}
+.cases--rolling .cases__list:last-child {
+  margin-bottom: 144px;
+}
