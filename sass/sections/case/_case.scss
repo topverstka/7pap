@@ -11,7 +11,7 @@
 .case-hero--full {
   padding-top: 120px;
   padding-bottom: 200px;
-  min-height: calc(1vh * 92);
+  min-height: calc(1vh * 92 + 20px);
   @media (max-width: 1099px) {
     padding-bottom: 0;
     min-height: initial;
@@ -68,6 +68,9 @@
 
 .case-hero__categories {
   margin-bottom: 30px;
+  @media (max-width: 575px) {
+    margin-bottom: 24px;
+  }
 }
 
 .case__story {

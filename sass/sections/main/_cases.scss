@@ -32,6 +32,7 @@
   }
   @media (max-width: 560px) {
     width: calc(100% + 8px);
+    margin-left: -5px;
   }
 }
 .container--wide .cases-filter {
@@ -73,6 +74,7 @@
     overflow-x: scroll;
     padding-left: 15px;
     margin-left: -5px;
+    overflow: hidden;
   }
 }
 .cases-filter__category-inner {
@@ -155,6 +157,10 @@
   line-height: 18px;
   color: #323232;
   padding: 1px 1px;
+
+  @media (max-width: 576px) {
+    font-size: 14px;
+  }
 }
 .tab-button__inner {
   padding: 11px 15px;

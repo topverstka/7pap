@@ -33,6 +33,11 @@
     padding-bottom: 85px;
   }
 }
+.promo--only-title .promo__title {
+  @media (max-width: 575px) {
+    margin-bottom: 40px;
+  }
+}
 .promo--branding .promo__text {
   max-width: 1100px;
   transform: none;
