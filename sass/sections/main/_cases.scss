@@ -7,6 +7,12 @@
 }
 .cases--no-padding-bottom {
   padding-bottom: 0;
+  margin-bottom: -70px;
+  position: relative;
+  z-index: 3;
+  @media (max-width: 1099px) {
+    margin-bottom: 0;
+  }
 }
 
 .cases-filter {
@@ -167,6 +173,10 @@
   display: block;
   background: #f1f1f1;
   border-radius: 100px;
+
+  @media (max-width: 768px) {
+    padding: 5px 15px;
+  }
 }
 
 .cases-filter__industry:hover {

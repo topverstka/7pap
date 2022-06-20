@@ -4,6 +4,10 @@
   padding: 0 15px;
   margin: 0 auto;
 
+  @media (max-width: 1365px) and (min-width: 769px) {
+    padding-left: 65px;
+    padding-right: 65px;
+  }
   @media (max-width: 768px) {
     padding: 0 16px;
   }

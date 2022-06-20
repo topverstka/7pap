@@ -29,7 +29,7 @@
   justify-content: center;
   align-items: center;
   padding: 30px 16px;
-  transition: $tr;
+  transition: all 0.6s ease-in-out;
 
   & h2 {
     margin: 0 0 8px 0;
@@ -37,7 +37,7 @@
 }
 
 .modal--slide-left {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.7s ease-in-out;
 
   @media (max-width: 991px) {
     top: unset;
@@ -63,7 +63,7 @@
   padding-top: 0;
   padding-right: 0;
   padding-bottom: 0;
-  transition: var(--transition-regular);
+  transition: all 0.7s ease-in-out;
 
   @media (max-width: 1599px) {
     padding-left: 0;
@@ -86,7 +86,8 @@
 .modal__body--right .modal__content {
   padding-top: 112px;
   padding-left: 52px;
-  padding-bottom: 114px;
+  // padding-bottom: 114px;
+  padding-bottom: 0;
   border-radius: calc(var(--radius) * 2) 0 0 0;
   min-height: calc(1vh * 100);
   max-width: 1190px;
@@ -96,7 +97,7 @@
     padding-top: 62px;
     padding-bottom: 20px;
   }
-  @media (max-width: 1366px) {
+  @media (max-width: 1440px) {
     max-width: 913px;
     display: flex;
     align-items: center;
@@ -240,7 +241,7 @@
 }
 .modal-callback__inner {
   opacity: 0;
-  transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.6s;
   height: 100%;
   transform: translateY(50px);
 }

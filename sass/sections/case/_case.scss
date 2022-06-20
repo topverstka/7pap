@@ -10,6 +10,10 @@
 }
 .case-hero .container {
   transition: inherit;
+  @media (max-width: 1365px) and (min-width: 768px) {
+    padding-left: 65px;
+    padding-right: 65px;
+  }
 }
 .case-hero--full {
   padding-top: 120px;
@@ -33,6 +37,8 @@
   top: 0;
   width: 100%;
   height: 100%;
+}
+.case-hero__wrap.case-hero--full .case__pic {
   border-radius: 0;
 }
 .case-hero--full .case__pic:first-child {
