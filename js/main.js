@@ -259,15 +259,48 @@ if (inputFields) {
 // #endregion inputplaceholder
 
 // #region inputmask
+
+function updateTelPlaceholder(input, mask, placeholderMask) {
+  const stringStart = "+7(";
+  const phoneCountryCode = 3;
+  const placeholderChar = "x";
+  const openDim = '<span class="input__placeholder-dimmed">';
+  const closeDim = "</span>";
+  const value = input.value.slice(phoneCountryCode);
+  let maskSymbols = value.split("");
+  let isDimOpened = false;
+
+  maskSymbols.forEach((symbol, index) => {
+    if (symbol === placeholderChar && !isDimOpened) {
+      isDimOpened = true;
+      maskSymbols[index] = openDim + placeholderChar;
+    }
+  });
+  maskSymbols.push(closeDim);
+
+  placeholderMask.innerHTML = stringStart + maskSymbols.join("");
+}
 (() => {
   var phoneInputs = document.querySelectorAll('.input[type="tel"]');
   var maskOptions = {
     mask: "+{7}(000) 000-00-00",
     lazy: true,
-    placeholderChar: "#",
+    placeholderChar: "x",
+    lazy: false,
+    // placeholder: {
+    // show: "always",
+    // },
   };
   phoneInputs.forEach(function (input) {
-    var mask = IMask(input, maskOptions);
+    var mask = new IMask(input, maskOptions);
+    let placeholderMask = document.createElement("div");
+    placeholderMask.classList.add("input--tel-mask");
+    input.parentElement.appendChild(placeholderMask);
+
+    input.addEventListener("input", () => {
+      updateTelPlaceholder(input, mask, placeholderMask);
+    });
+    updateTelPlaceholder(input, mask, placeholderMask);
   });
 })();
 // #endregion inputmask
