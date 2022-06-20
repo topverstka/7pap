@@ -96,6 +96,11 @@
     padding-top: 62px;
     padding-bottom: 20px;
   }
+  @media (max-width: 1366px) {
+    max-width: 913px;
+    display: flex;
+    align-items: center;
+  }
   @media (max-width: 1100px) {
     border-radius: 0;
   }

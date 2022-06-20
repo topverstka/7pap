@@ -328,6 +328,9 @@ $margin-icon: 12px; // Отступ иконки от текста
   --icon-outer: #000;
   --icon-fill: #fff;
 
+  @media (max-width: 1366px) {
+    margin-bottom: 24px;
+  }
   @media (max-width: 991px) {
     margin-bottom: 48px;
   }
