@@ -416,14 +416,8 @@ body._lock {
   line-height: 23px;
 }
 
-.main-nav__list li a.active::before {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: var(--main);
+.main-nav__list li a.active {
+  opacity: 0.3;
 }
 
 .send-request {
@@ -2267,6 +2261,22 @@ body._lock {
     font-size: 20px;
     line-height: 23px;
   }
+}
+
+.text--gradient-green {
+  background: linear-gradient(133.54deg, #cef461 4.02%, #2cb4d1 43.44%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.text--gradient-magenta {
+  background: linear-gradient(310.39deg, rgba(86, 149, 255, 0.7) 42.2%, rgba(255, 121, 225, 0.7) 70.06%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .title {

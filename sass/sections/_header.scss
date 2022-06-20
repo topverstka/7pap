@@ -94,15 +94,18 @@
   line-height: 23px;
 }
 
-.main-nav__list li a.active::before {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: $main;
+.main-nav__list li a.active {
+  opacity: 0.3;
 }
+// .main-nav__list li a.active::before {
+// content: "";
+// position: absolute;
+// bottom: -4px;
+// left: 0;
+// width: 100%;
+// height: 1px;
+// background-color: $main;
+// }
 
 .send-request {
   transform: translateX(-4px);

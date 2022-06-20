@@ -9,3 +9,23 @@
     line-height: 23px;
   }
 }
+
+.text--gradient-green {
+  background: linear-gradient(133.54deg, #cef461 4.02%, #2cb4d1 43.44%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.text--gradient-magenta {
+  background: linear-gradient(
+    310.39deg,
+    rgba(86, 149, 255, 0.7) 42.2%,
+    rgba(255, 121, 225, 0.7) 70.06%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
