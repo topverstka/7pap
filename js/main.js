@@ -909,6 +909,7 @@ if (caseHeroFull) {
       movableContainer.style.transform =
         "translateY(" + window.pageYOffset / 10 + "px)";
       story.style.transform = "translateY(-" + window.pageYOffset + "px)";
+      story.style.marginBottom = "-" + window.pageYOffset + "px";
     } else {
       movableContainer.style.transform = "translateY(0)";
     }
