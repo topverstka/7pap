@@ -2466,6 +2466,22 @@ body._lock {
   z-index: 1;
 }
 
+.b_service-card:nth-of-type(2n + 4):after {
+  background: linear-gradient(144.06deg, #d7f67e -21.73%, #7ee0f6 162.06%);
+}
+
+.b_service-card:nth-of-type(3n + 3):after {
+  background: linear-gradient(123.61deg, #d7f67e -42.97%, #7ee0f6 235.09%);
+}
+
+.b_service-card:nth-of-type(4n + 2):after {
+  background: linear-gradient(124.68deg, #d7f67e -110.85%, #7ee0f6 162.24%);
+}
+
+.b_service-card:nth-of-type(5n):after {
+  background: linear-gradient(123.44deg, #d7f67e -180.71%, #7ee0f6 100%);
+}
+
 .b_service-card__info,
 .b_service-card__pic {
   position: relative;
