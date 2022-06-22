@@ -11,5 +11,19 @@ let swiperOptions = {
   spaceBetween: 52,
 };
 
-let casesLtr = new Swiper(".cases__list--row-ltr", swiperOptions);
-let casesRtl = new Swiper(".cases__list--row-rtl", swiperOptions);
+const casesLtrClass = ".cases__list--row-ltr";
+const casesRtlClass = ".cases__list--row-rtl";
+const ltrWrapper = document
+  .querySelector(casesLtrClass)
+  .querySelector(".cases__list-wrapper");
+const rtlWrapper = document
+  .querySelector(casesRtlClass)
+  .querySelector(".cases__list-wrapper");
+
+if (window.innerWidth > 1099) {
+  let casesLtr = new Swiper(casesLtrClass, swiperOptions);
+  let casesRtl = new Swiper(casesRtlClass, swiperOptions);
+} else {
+  ltrWrapper.classList.remove("swiper-wrapper");
+  rtlWrapper.classList.remove("swiper-wrapper");
+}

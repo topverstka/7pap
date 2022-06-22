@@ -27,3 +27,14 @@
     margin-bottom: 40px;
   }
 }
+
+.our-services .b_note__title br {
+  @media (max-width: 756px) {
+    display: none;
+  }
+}
+.our-services .b_note__desc {
+  @media (max-width: 756px) {
+    font-size: 20px;
+  }
+}

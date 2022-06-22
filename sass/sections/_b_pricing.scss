@@ -1,0 +1,35 @@
+.b_pricing {
+  @media (max-width: 1099px) {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 40px;
+  }
+}
+.b_pricing .title br {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.b_pricing__container {
+  padding-top: 65px;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.b_pricing__gallery {
+  display: grid;
+  column-gap: 52px;
+  row-gap: 54px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 144px;
+
+  @media (max-width: 1099px) {
+    display: block;
+    margin-bottom: 80px;
+  }
+}
+.b_pricing__gallery .b_service-card:nth-child(5n - 3) {
+  grid-column: auto / span 2;
+}

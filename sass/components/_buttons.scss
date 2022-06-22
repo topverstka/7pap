@@ -294,6 +294,9 @@ $margin-icon: 12px; // Отступ иконки от текста
 .button--icon-plus .button__icon {
   @include getmask("../img/icons/plus.svg");
 }
+.button--icon-telegram .button__icon {
+  @include getmask("../img/icons/telegram.svg");
+}
 
 .button__text {
   font-size: inherit;

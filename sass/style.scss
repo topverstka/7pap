@@ -157,6 +157,8 @@ body {
 @import "./components/_modal";
 @import "./components/_inputs";
 @import "./components/_tabs";
+@import "./components/_b_note";
+@import "./components/_b_service-card";
 
 // Текстовые компоненты
 @import "./components/text/_text";
@@ -171,6 +173,9 @@ body {
 @import "./sections/main/_slider-our-services";
 @import "./sections/main/_our-strength";
 @import "./sections/main/_reviews";
+@import "./sections/_b_examples";
+@import "./sections/_b_pricing";
+@import "./sections/_b_why";
 @import "./sections/_footer";
 
 // Страницы

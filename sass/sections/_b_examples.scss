@@ -1,0 +1,49 @@
+// @use _text.scss
+// @use _titles.scss
+
+.b_examples {
+  padding-bottom: 144px;
+
+  @media (max-width: 1099px) {
+    padding-bottom: 91px;
+  }
+}
+.b_examples__title {
+  margin-bottom: 96px;
+  @media (max-width: 1099px) {
+    margin-bottom: 40px;
+  }
+}
+
+.b_examples-list {
+  column-count: 3;
+
+  @media (max-width: 575px) {
+    column-count: 1;
+  }
+}
+.b_examples-list__item {
+  margin-bottom: 18px;
+  font-size: 24px;
+  line-height: 125%;
+  color: #000000;
+  position: relative;
+
+  @media (max-width: 575px) {
+    padding-left: 32px;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+}
+.b_examples-list__item::before {
+  @media (max-width: 575px) {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    display: block;
+    width: 16px;
+    height: 1px;
+    background-color: #000;
+  }
+}

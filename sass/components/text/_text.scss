@@ -17,6 +17,16 @@
   background-clip: text;
   text-fill-color: transparent;
 }
+.text--gradient-green-2 {
+  background: linear-gradient(145.48deg, #cef461 5.97%, #2cb4d1 81.8%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.text--underline-dotted-green {
+  border-bottom: 2px dashed #89c53d;
+}
 
 .text--gradient-magenta {
   background: linear-gradient(
