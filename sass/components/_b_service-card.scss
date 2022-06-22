@@ -4,7 +4,7 @@
   border-radius: var(--brad);
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: flex-start;
 
   @media (max-width: 1099px) {
     margin-bottom: 16px;
@@ -50,8 +50,13 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 24px 55px 26px 24px;
-  max-width: 100%;
+  max-width: 350px;
   width: 100%;
+  height: 100%;
+
+  @media (max-width: 1099px) {
+    max-width: 100%;
+  }
 }
 
 .b_service-card__info-text {
@@ -63,6 +68,13 @@
 }
 .b_service-card:nth-child(3n + 1) .b_service-card__info-text {
   margin-bottom: 98px;
+
+  @media (max-width: 1099px) {
+    margin-bottom: 32px;
+  }
+}
+.b_service-card:first-child .b_service-card__info-text {
+  margin-bottom: 28px;
 
   @media (max-width: 1099px) {
     margin-bottom: 32px;
@@ -87,6 +99,7 @@
 .b_service-card__desc {
   margin-bottom: 25px;
   font-size: 20px;
+  line-height: 1.2;
 
   @media (max-width: 1099px) {
     font-size: 16px;
@@ -98,6 +111,7 @@
 
 .b_service-card__button {
   margin-bottom: 12px;
+  --icon-size: 36px;
 }
 .b_service-card__button:last-child,
 .b_service-card__button:only-child {

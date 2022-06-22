@@ -5,6 +5,15 @@
     margin-bottom: 40px;
   }
 }
+
+.b_pricing__container {
+  max-width: 1170px;
+}
+.b_pricing .b_note__desc {
+  line-height: 1.22;
+  font-size: 20px;
+}
+
 .b_pricing .title br {
   @media (max-width: 768px) {
     display: none;

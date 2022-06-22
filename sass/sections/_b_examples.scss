@@ -2,12 +2,13 @@
 // @use _titles.scss
 
 .b_examples {
-  padding-bottom: 144px;
+  padding-bottom: 126px;
 
   @media (max-width: 1099px) {
     padding-bottom: 91px;
   }
 }
+
 .b_examples__title {
   margin-bottom: 96px;
   @media (max-width: 1099px) {

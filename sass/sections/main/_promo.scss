@@ -52,6 +52,10 @@
   @media (max-width: 1099px) {
     flex-direction: row;
   }
+
+  @media (max-width: 575px) {
+    margin-bottom: 24px;
+  }
 }
 .promo--branding .promo__title {
   max-width: 100%;
@@ -62,19 +66,31 @@
     margin-bottom: 24px;
   }
 }
+.promo--branding .promo__texts {
+  @media (max-width: 575px) {
+    margin-bottom: 0;
+  }
+}
 .promo--branding .promo__text {
-  // max-width: 1100px;
+  max-width: 1080px;
   transform: none;
   font-size: 32px;
   line-height: 125%;
-  max-width: 900px;
+  padding-right: 90px;
+
+  @media (max-width: 1600px) {
+    max-width: 900px;
+    font-size: 24px;
+    padding-right: 0;
+  }
 
   @media (max-width: 1099px) {
     font-size: 16px;
   }
 }
+
 .promo--branding .promo__video {
-  height: 160px;
+  height: auto;
   background-position: left;
   transform: none;
 
