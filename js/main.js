@@ -401,6 +401,7 @@ window.addEventListener("resize", () => {
   if (sliderOurServices) desktopSlider();
 });
 
+// #region js-horizontal
 // Горизонтальная прокрутка колесиком мыши
 const $scrollElem = $(".js-horizontal");
 
@@ -456,6 +457,7 @@ function horizontalBlocksScroll() {
 if (window.matchMedia("(min-width: 993px)").matches) {
   horizontalBlocksScroll();
 }
+// #endregion js-horizontal
 
 // Секция Наша сила
 const ourStrengthCounterPlus = find(".our-strength__item.counter--plus");
@@ -648,7 +650,10 @@ if ([...casesFilterIndustries].length > 0) {
 // Анимация для блока с кейсами при скролле
 const casesScrollBlock = document.querySelector(".cases");
 if (casesScrollBlock) {
-  if (window.matchMedia("(min-width: 992px)").matches) {
+  if (
+    window.matchMedia("(min-width: 992px)").matches &&
+    !document.body.classList.contains("_lock")
+  ) {
     let flage = false;
     let ulList = document.querySelector(".cases__list");
     let elementObserver = document.querySelector(".cases");
