@@ -2778,7 +2778,8 @@ body._lock {
 
 @media (max-width: 1440px) {
   .promo--branding {
-    margin-bottom: 64px;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 }
 

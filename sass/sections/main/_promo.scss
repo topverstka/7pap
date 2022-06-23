@@ -42,7 +42,9 @@
   padding-bottom: 80px;
 
   @media (max-width: 1440px) {
-    margin-bottom: 64px;
+    // margin-bottom: 64px;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
   @media (max-width: 1099px) {
     padding-bottom: 24px;
