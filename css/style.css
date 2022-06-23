@@ -2391,6 +2391,10 @@ body._lock {
   margin-bottom: 0;
 }
 
+.b_note__desc + .b_note-list {
+  margin-top: -10px;
+}
+
 @media (min-width: 1100px) {
   .b_note__desc + .b_note-list {
     margin-top: -20px;
@@ -2406,7 +2410,7 @@ body._lock {
   padding-left: 56px;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 991px) {
   .b_note-list__item {
     padding-left: 32px;
     font-size: 20px;
@@ -2425,11 +2429,17 @@ body._lock {
   background-color: #000;
 }
 
+@media (max-width: 991px) {
+  .b_note-list__item::before {
+    top: 0.8rem;
+    width: 16px;
+    height: 1px;
+  }
+}
+
 @media (max-width: 575px) {
   .b_note-list__item::before {
     top: 10px;
-    width: 16px;
-    height: 1px;
   }
 }
 
@@ -4006,7 +4016,7 @@ body._lock {
   }
 }
 
-@media (max-width: 756px) {
+@media (max-width: 991px) {
   .our-services .b_note__desc {
     font-size: 20px;
   }
