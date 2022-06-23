@@ -41,8 +41,12 @@
 .promo--branding {
   padding-bottom: 80px;
 
+  @media (max-width: 1440px) {
+    margin-bottom: 64px;
+  }
   @media (max-width: 1099px) {
     padding-bottom: 24px;
+    margin-bottom: 0;
   }
 }
 .promo--branding .promo__content {
@@ -62,6 +66,9 @@
   margin-bottom: 163px;
   width: 100%;
 
+  @media (max-width: 1440px) {
+    margin-bottom: 96px;
+  }
   @media (max-width: 1099px) {
     margin-bottom: 24px;
   }

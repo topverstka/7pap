@@ -2393,13 +2393,13 @@ body._lock {
 
 @media (min-width: 1100px) {
   .b_note__desc + .b_note-list {
-    margin-top: -16px;
+    margin-top: -20px;
   }
 }
 
 .b_note-list__item {
   margin-bottom: 18px;
-  font-size: 24px;
+  font-size: 32px;
   line-height: 125%;
   color: #000000;
   position: relative;
@@ -2417,7 +2417,7 @@ body._lock {
 .b_note-list__item::before {
   content: "";
   position: absolute;
-  top: 1rem;
+  top: 1.3rem;
   left: 0;
   display: block;
   width: 32px;
@@ -2766,9 +2766,16 @@ body._lock {
   padding-bottom: 80px;
 }
 
+@media (max-width: 1440px) {
+  .promo--branding {
+    margin-bottom: 64px;
+  }
+}
+
 @media (max-width: 1099px) {
   .promo--branding {
     padding-bottom: 24px;
+    margin-bottom: 0;
   }
 }
 
@@ -2799,6 +2806,12 @@ body._lock {
   max-width: 100%;
   margin-bottom: 163px;
   width: 100%;
+}
+
+@media (max-width: 1440px) {
+  .promo--branding .promo__title {
+    margin-bottom: 96px;
+  }
 }
 
 @media (max-width: 1099px) {
@@ -4863,9 +4876,20 @@ body._lock {
   max-width: 1170px;
 }
 
+.b_pricing .b_note {
+  -ms-grid-columns: 346px auto;
+      grid-template-columns: 346px auto;
+}
+
 .b_pricing .b_note__desc {
   line-height: 1.22;
-  font-size: 20px;
+  font-size: 32px;
+}
+
+@media (max-width: 575px) {
+  .b_pricing .b_note__desc {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 768px) {

@@ -37,13 +37,13 @@
 
 .b_note__desc + .b_note-list {
   @media (min-width: 1100px) {
-    margin-top: -16px;
+    margin-top: -20px;
   }
 }
 
 .b_note-list__item {
   margin-bottom: 18px;
-  font-size: 24px;
+  font-size: 32px;
   line-height: 125%;
   color: #000000;
   position: relative;
@@ -58,7 +58,7 @@
 .b_note-list__item::before {
   content: "";
   position: absolute;
-  top: 1rem;
+  top: 1.3rem;
   left: 0;
   display: block;
   width: 32px;

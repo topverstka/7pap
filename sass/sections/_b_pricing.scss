@@ -9,9 +9,16 @@
 .b_pricing__container {
   max-width: 1170px;
 }
+.b_pricing .b_note {
+  grid-template-columns: 346px auto;
+}
 .b_pricing .b_note__desc {
   line-height: 1.22;
-  font-size: 20px;
+  font-size: 32px;
+
+  @media (max-width: 575px) {
+    font-size: 20px;
+  }
 }
 
 .b_pricing .title br {
