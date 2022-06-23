@@ -47,6 +47,10 @@
   @media (max-width: 1099px) {
     padding-bottom: 24px;
     margin-bottom: 0;
+    padding-top: 60px;
+  }
+  @media (max-width: 992px) and (min-width: 576px) {
+    padding-top: 50px;
   }
 }
 .promo--branding .promo__content {
@@ -101,10 +105,15 @@
   background-position: left;
   transform: none;
 
-  @media (max-width: 1099px) {
+  @media (max-width: 922px) {
     order: -1;
     height: 116px;
     margin-bottom: 34px;
+  }
+}
+.promo--branding .promo__button {
+  @media (min-width: 1100px) {
+    display: none;
   }
 }
 

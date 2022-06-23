@@ -2786,6 +2786,13 @@ body._lock {
   .promo--branding {
     padding-bottom: 24px;
     margin-bottom: 0;
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 576px) {
+  .promo--branding {
+    padding-top: 50px;
   }
 }
 
@@ -2866,13 +2873,19 @@ body._lock {
           transform: none;
 }
 
-@media (max-width: 1099px) {
+@media (max-width: 922px) {
   .promo--branding .promo__video {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
     height: 116px;
     margin-bottom: 34px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .promo--branding .promo__button {
+    display: none;
   }
 }
 
