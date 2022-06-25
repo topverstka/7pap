@@ -52,6 +52,12 @@
     line-height: 125%;
   }
 }
+
+.b_plan-card__body .button + .button {
+  @media (max-width: 575px) {
+    margin-top: 14px;
+  }
+}
 .b_plan-card__body .text:last-child {
   margin-bottom: 0;
 }
