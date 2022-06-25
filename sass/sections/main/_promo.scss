@@ -38,7 +38,7 @@
     margin-bottom: 40px;
   }
 }
-.promo--branding {
+.promo--long-title {
   padding-bottom: 80px;
 
   @media (max-width: 1440px) {
@@ -55,7 +55,7 @@
     padding-top: 50px;
   }
 }
-.promo--branding .promo__content {
+.promo--long-title .promo__content {
   display: flex;
   flex-wrap: wrap;
 
@@ -67,7 +67,7 @@
     margin-bottom: 24px;
   }
 }
-.promo--branding .promo__title {
+.promo--long-title .promo__title {
   max-width: 100%;
   margin-bottom: 163px;
   width: 100%;
@@ -79,12 +79,12 @@
     margin-bottom: 24px;
   }
 }
-.promo--branding .promo__texts {
+.promo--long-title .promo__texts {
   @media (max-width: 575px) {
     margin-bottom: 0;
   }
 }
-.promo--branding .promo__text {
+.promo--long-title .promo__text {
   max-width: 1080px;
   transform: none;
   font-size: 32px;
@@ -102,7 +102,7 @@
   }
 }
 
-.promo--branding .promo__video {
+.promo--long-title .promo__video {
   height: auto;
   background-position: left;
   transform: none;
@@ -114,7 +114,7 @@
   }
 }
 .promo .button,
-.promo--branding .promo__button {
+.promo--long-title .promo__button {
   @media (min-width: 1100px) {
     display: none;
   }
