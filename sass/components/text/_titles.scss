@@ -19,3 +19,11 @@
     font-size: 80px;
   }
 }
+
+.error-hero__title {
+  margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 32px;
+  }
+}

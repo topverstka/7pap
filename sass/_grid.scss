@@ -36,6 +36,17 @@
   padding-bottom: 0 !important;
 }
 
+.error-hero {
+  padding-top: 104px;
+}
+.error-hero .case__pic:first-child {
+  margin-bottom: 0;
+  border-radius: 0;
+  @media (max-width: 575px) {
+    margin-bottom: -5px;
+  }
+}
+
 // .section {
 //     margin: 62px 0;
 
