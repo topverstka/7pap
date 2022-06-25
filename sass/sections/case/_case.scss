@@ -88,7 +88,7 @@
 
 .case__story {
   background-color: #fff;
-  transition: var(--transition-regular);
+  transition: all 0.15s ease-out;
   z-index: 2;
   @media (max-width: 991px) {
     margin-bottom: 40px;

@@ -974,9 +974,13 @@ if (caseHeroFull) {
       story.style.transform = "translateY(-" + window.pageYOffset + "px)";
       story.style.marginBottom = "-" + window.pageYOffset + "px";
     } else {
-      movableContainer.style.transform = "translateY(0)";
+      // movableContainer.style.transform = "translateY(0)";
     }
+    console.log("scrooool");
   }
 
-  window.addEventListener("scroll", moveCaseHero);
+  window.addEventListener("scroll", moveCaseHero, {
+    capture: true,
+    passive: true,
+  });
 }

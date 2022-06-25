@@ -5941,8 +5941,8 @@ body._lock {
 
 .case__story {
   background-color: #fff;
-  -webkit-transition: var(--transition-regular);
-  transition: var(--transition-regular);
+  -webkit-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
   z-index: 2;
 }
 
