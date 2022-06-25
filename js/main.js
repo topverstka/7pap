@@ -401,7 +401,57 @@ window.addEventListener("resize", () => {
   if (sliderOurServices) desktopSlider();
 });
 
+// #region b_team
+let teamSlider = document.querySelector(".b_team");
+let teamSwiper;
+if (teamSlider) {
+  (() => {
+    function desktopSlider() {
+      if (
+        window.innerWidth > 992 &&
+        teamSlider.querySelector(".b_team-slider").dataset.desktop === "false"
+      ) {
+        teamSwiper = new Swiper(".b_team-slider", {
+          slidesPerView: "auto",
+          spaceBetween: 52,
+        });
+
+        const teamNext = document.querySelector(".b_team-slider__arrow--next");
+        const teamPrev = document.querySelector(".b_team-slider__arrow--prev");
+        teamNext.addEventListener("click", () => {
+          window.scrollTo({
+            top: window.pageYOffset + 600,
+            behavior: "smooth",
+          });
+        });
+        teamPrev.addEventListener("click", () => {
+          window.scrollTo({
+            top: window.pageYOffset - 600,
+            behavior: "smooth",
+          });
+        });
+      }
+      teamSlider.dataset.desktop = "true";
+
+      if (window.innerWidth < 993) {
+        teamSlider.dataset.desktop = "false";
+
+        if (teamSlider.classList.contains("swiper-initialized")) {
+          teamSwiper.destroy();
+        }
+      }
+    }
+    if (teamSlider) desktopSlider();
+
+    window.addEventListener("resize", () => {
+      if (teamSlider) desktopSlider();
+    });
+  })();
+}
+// #endregion b_team
+
 // #region js-horizontal
+
 // Горизонтальная прокрутка колесиком мыши
 const $scrollElem = $(".js-horizontal");
 
@@ -425,8 +475,15 @@ function horizontalBlocksScroll() {
 
     $track.attr("id", `horizontal-track-${i}`);
 
+    let scrollDuration;
     // Ширина трэка и слайдов
-    $track.css("width", `${100 * length}%`);
+    if (scrollItem.dataset.speed == "slow") {
+      $track.css("width", `${itemWidth * length + 2}%`);
+      scrollDuration = "360%";
+    } else {
+      $track.css("width", `${100 * length}%`);
+      scrollDuration = "80%";
+    }
     $blocks.each((i, block) => $(block).css("width", `${itemWidth}%`));
 
     // Ширина промежутка между слайдами
@@ -445,7 +502,8 @@ function horizontalBlocksScroll() {
     new ScrollMagic.Scene({
       triggerElement: scrollItem,
       triggerHook: "onLeave",
-      duration: "80%",
+      duration: scrollDuration,
+      // duration: length * itemWidth - 20 + "%",
       offset: trackOffset,
     })
       .setPin(scrollItem)

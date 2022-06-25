@@ -384,3 +384,11 @@ $margin-icon: 12px; // Отступ иконки от текста
   @include getmask("../img/icons/arrow-left.svg", 100%);
   transform: scale(1.2);
 }
+
+.buttons-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+.buttons-group .button {
+  margin-right: 64px;
+}

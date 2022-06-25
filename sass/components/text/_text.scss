@@ -1,7 +1,7 @@
 .text {
   font-weight: 400;
   font-size: 32px;
-  line-height: 40px;
+  line-height: 125%;
   color: #000000;
 
   @media (max-width: 768px) {
@@ -19,6 +19,17 @@
 }
 .text--gradient-green-2 {
   background: linear-gradient(145.48deg, #cef461 5.97%, #2cb4d1 81.8%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.text--gradient-blue {
+  background: linear-gradient(
+    310.39deg,
+    rgba(86, 149, 255, 0.7) 42.2%,
+    rgba(255, 121, 225, 0.7) 70.06%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
