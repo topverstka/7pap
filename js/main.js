@@ -911,8 +911,8 @@ if (caseHeroFull) {
 
   function moveCaseHero() {
     if (window.pageYOffset < story.offsetTop / 2) {
-      movableContainer.style.transform =
-        "translateY(" + window.pageYOffset / 10 + "px)";
+      // movableContainer.style.transform =
+      //   "translateY(" + window.pageYOffset / 10 + "px)";
       story.style.transform = "translateY(-" + window.pageYOffset + "px)";
       story.style.marginBottom = "-" + window.pageYOffset + "px";
     } else {

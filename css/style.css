@@ -309,9 +309,13 @@ body._lock {
     background-color: #ffffff;
     border-bottom: 1px solid #dce4e7;
   }
-  .header .send-request {
+  .header .button {
     display: none;
   }
+}
+
+.header .button__icon {
+  --icon-size: 36px;
 }
 
 @media (min-width: 1100px) {
@@ -322,6 +326,11 @@ body._lock {
     width: 100%;
     z-index: 3;
   }
+}
+
+.header--on-content .button:hover .button__icon {
+  -webkit-filter: invert(1);
+          filter: invert(1);
 }
 
 @media (min-width: 1099px) {
@@ -1251,7 +1260,7 @@ body._lock {
 
 */
 .button {
-  --button-color: #000;
+  --button-color: linear-gradient(14.48deg, #000 50.97%, #000 31.8%);
   font-size: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1261,13 +1270,13 @@ body._lock {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  -webkit-transition: all var(--tr) ease-in-out;
-  transition: all var(--tr) ease-in-out;
+  -webkit-transition: all var(--tr) ease-in;
+  transition: all var(--tr) ease-in;
 }
 
 .button:hover {
-  -webkit-transition: all var(--tr) ease-in-out;
-  transition: all var(--tr) ease-in-out;
+  -webkit-transition: all var(--tr) ease-in;
+  transition: all var(--tr) ease-in;
 }
 
 .button:hover .button__text-box {
@@ -1278,7 +1287,14 @@ body._lock {
 .button:hover .button__icon {
   -webkit-transition: all var(--tr) ease-in-out;
   transition: all var(--tr) ease-in-out;
-  background-image: var(--gradient-green);
+}
+
+.button:not(.button--no-bg-change):hover .button__icon::before {
+  opacity: 0;
+}
+
+.button--hover-white .button__icon {
+  background: #fff;
 }
 
 .button--left {
@@ -1299,21 +1315,31 @@ body._lock {
   width: var(--icon-size, 1.6em);
   height: var(--icon-size, 1.6em);
   position: relative;
-  background-color: var(--button-color);
+  background: var(--gradient-green);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
-.button__icon::before, .button__icon::after {
+@media (max-width: 1099px) {
+  .button__icon {
+    --icon-size: 1.8em;
+  }
+}
+
+.button__icon::before,
+.button__icon::after {
   content: "";
   position: absolute;
   display: block;
-  display: none;
   width: 100%;
   height: 100%;
   border-radius: 100%;
 }
 
 .button__icon::before {
-  background-color: var(--button-color);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background: var(--button-color);
 }
 
 .button--icon-left .button__icon {
@@ -1372,11 +1398,6 @@ body._lock {
   -webkit-mask-position: center;
   mask-size: contain;
   -webkit-mask-size: contain;
-}
-
-.button--icon-link .button__icon::before,
-.button--icon-link:hover .button__icon::before {
-  background: transparent;
 }
 
 .button--icon-plus .button__icon {
@@ -1439,7 +1460,11 @@ body._lock {
   background-size: 60%;
   background-repeat: no-repeat;
   border-radius: 100%;
-  --icon-outer: #000;
+  --icon-outer: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(188, 188, 188, 1) 100%
+  );
   --icon-fill: #fff;
 }
 
@@ -1467,7 +1492,10 @@ body._lock {
 }
 
 .button-back::before {
+  background: black;
   background: var(--icon-outer);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .button-back::after {
@@ -1478,8 +1506,10 @@ body._lock {
   -webkit-mask-repeat: no-repeat;
   mask-position: center;
   -webkit-mask-position: center;
-  mask-size: 120%;
-  -webkit-mask-size: 120%;
+  mask-size: 100%;
+  -webkit-mask-size: 100%;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .form {
@@ -2656,6 +2686,10 @@ body._lock {
   border-bottom: 2px dashed #89c53d;
 }
 
+.text--underline-dotted-green:hover {
+  border-bottom-color: transparent;
+}
+
 .text--gradient-magenta {
   background: linear-gradient(310.39deg, rgba(86, 149, 255, 0.7) 42.2%, rgba(255, 121, 225, 0.7) 70.06%);
   -webkit-background-clip: text;
@@ -2886,9 +2920,14 @@ body._lock {
 }
 
 @media (min-width: 1100px) {
+  .promo .button,
   .promo--branding .promo__button {
     display: none;
   }
+}
+
+.promo .button__icon {
+  --icon-size: 36px;
 }
 
 .promo__wrapper {
@@ -3237,7 +3276,7 @@ body._lock {
 .cases-filter__industry {
   position: relative;
   margin-right: 8px;
-  border: 1px solid #f1f1f1;
+  border: 1px solid #dbdbdb;
   background: #f1f1f1;
   border-radius: 100px;
   font-weight: 400;

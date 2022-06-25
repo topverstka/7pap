@@ -27,6 +27,9 @@
 .text--underline-dotted-green {
   border-bottom: 2px dashed #89c53d;
 }
+.text--underline-dotted-green:hover {
+  border-bottom-color: transparent;
+}
 
 .text--gradient-magenta {
   background: linear-gradient(
