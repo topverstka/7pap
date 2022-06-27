@@ -36,12 +36,15 @@
   padding-bottom: 0 !important;
 }
 
-.error-hero {
+.error-hero,
+.case-hero__wrap.error-hero {
   padding-top: 104px;
+  @media (max-width: 768px) {
+    padding-top: 155px;
+  }
 }
 .error-hero .case__pic:first-child {
   margin-bottom: 0;
-  border-radius: 0;
   @media (max-width: 575px) {
     margin-bottom: -5px;
   }
