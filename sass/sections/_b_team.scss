@@ -69,15 +69,10 @@
 }
 .b_team-card__pic {
   display: block;
-  width: 108px;
-  height: 108px;
+  width: 80px;
+  height: 80px;
   margin-bottom: 24px;
   border-radius: 100%;
-
-  @media (max-width: 576px) {
-    width: 80px;
-    height: 80px;
-  }
 }
 .b_team-card__img {
   display: block;
@@ -133,10 +128,12 @@
 }
 .b_team-slider__arrow--next {
   transform: rotate(135deg);
+  margin-left: -10px;
 }
 .b_team-slider__arrows {
   align-self: flex-end;
   margin-bottom: 88px;
+  margin-right: 51px;
 
   @media (max-width: 992px) {
     display: none;

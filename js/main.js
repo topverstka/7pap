@@ -466,8 +466,10 @@ function horizontalBlocksScroll() {
     const $blocks = $(scrollItem).find(".js-horizontal-block");
     const $track = $(scrollItem).find(".js-horizontal-track");
     let trackOffset = +scrollItem.dataset.scrollOffset;
+    let trackOffsetModifier = window.innerHeight / 3;
     if (isNaN(trackOffset)) {
       trackOffset = 100;
+      // trackOffset = -(window.innerHeight - trackOffsetModifier) / 2;
     }
 
     const length = $blocks.length;
