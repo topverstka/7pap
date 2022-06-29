@@ -12,6 +12,10 @@
 .b_team__title {
   color: #fff;
   margin-bottom: 64px;
+
+  @media (max-width: 575px) {
+    margin-bottom: 40px;
+  }
 }
 
 .swiper.b_team-slider {

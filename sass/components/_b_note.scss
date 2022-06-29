@@ -43,7 +43,6 @@
 }
 
 .b_note-list__item {
-  margin-bottom: 18px;
   font-size: 32px;
   line-height: 125%;
   color: #000000;
@@ -73,7 +72,4 @@
   @media (max-width: 575px) {
     top: 10px;
   }
-}
-.b_note-list__item:last-child {
-  margin-bottom: 0;
 }

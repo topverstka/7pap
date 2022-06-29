@@ -130,6 +130,12 @@
   --icon-size: 36px;
 }
 
+.promo--sites .promo__text {
+  @media (min-width: 1700px) {
+    padding-right: 200px;
+  }
+}
+
 .promo__wrapper {
   max-width: 1826px;
   margin: 0 auto;

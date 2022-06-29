@@ -413,7 +413,7 @@ if (teamSlider) {
       ) {
         teamSwiper = new Swiper(".b_team-slider", {
           slidesPerView: "auto",
-          spaceBetween: 52,
+          // spaceBetween: 52,
         });
 
         const teamNext = document.querySelector(".b_team-slider__arrow--next");

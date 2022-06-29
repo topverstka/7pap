@@ -73,3 +73,9 @@
 .b_document__content a:hover {
   border-bottom-color: transparent;
 }
+
+.b_document__content .container > *:first-child {
+  @media (min-width: 1440px) {
+    margin-top: 144px;
+  }
+}
