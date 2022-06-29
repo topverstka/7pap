@@ -468,25 +468,31 @@ function horizontalBlocksScroll() {
     let trackOffset = +scrollItem.dataset.scrollOffset;
     let trackOffsetModifier = window.innerHeight / 3;
 
-    if (window.innerHeight < 900) {
-      trackOffset = window.innerHeight / 3 + 120;
+    if (window.innerHeight > 900) {
+      trackOffset = window.innerHeight / 10 + 20;
     }
-    if (window.innerHeight < 700) {
-      trackOffset = window.innerHeight / 3 + 200;
+
+    if (window.innerHeight <= 600) {
+      trackOffset = window.innerHeight / 3 + 280;
+    } else if (window.innerHeight <= 700) {
+      trackOffset = window.innerHeight / 3 + 180;
+    } else if (window.innerHeight <= 900) {
+      trackOffset = window.innerHeight / 10 + 280;
     }
-    // if (isNaN(trackOffset) || window.innerHeight > 900) {
-    // trackOffset = 100;
-    // trackOffset = -(window.innerHeight - trackOffsetModifier) / 2;
-    // }
+
+    if (isNaN(trackOffset) || window.innerHeight > 900) {
+      trackOffset = 100;
+      // trackOffset = -(window.innerHeight - trackOffsetModifier) / 2;
+    }
     if (scrollItem.classList.contains("b_team")) {
       trackOffset = 0;
-      if (window.innerHeight < 900) {
+      if (window.innerHeight <= 600) {
+        trackOffset = 220;
+      } else if (window.innerHeight <= 700) {
         trackOffset = 120;
       }
-      if (window.innerHeight < 700) {
-        trackOffset = 220;
-      }
     }
+    console.log(trackOffset);
 
     const length = $blocks.length;
     const itemWidth = 100 / length;
