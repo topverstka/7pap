@@ -467,15 +467,25 @@ function horizontalBlocksScroll() {
     const $track = $(scrollItem).find(".js-horizontal-track");
     let trackOffset = +scrollItem.dataset.scrollOffset;
     let trackOffsetModifier = window.innerHeight / 3;
-    if (isNaN(trackOffset)) {
-      trackOffset = 100;
-      // trackOffset = -(window.innerHeight - trackOffsetModifier) / 2;
-    }
+
     if (window.innerHeight < 900) {
       trackOffset = window.innerHeight / 3 + 120;
     }
     if (window.innerHeight < 700) {
       trackOffset = window.innerHeight / 3 + 200;
+    }
+    // if (isNaN(trackOffset) || window.innerHeight > 900) {
+    // trackOffset = 100;
+    // trackOffset = -(window.innerHeight - trackOffsetModifier) / 2;
+    // }
+    if (scrollItem.classList.contains("b_team")) {
+      trackOffset = 0;
+      if (window.innerHeight < 900) {
+        trackOffset = 120;
+      }
+      if (window.innerHeight < 700) {
+        trackOffset = 220;
+      }
     }
 
     const length = $blocks.length;

@@ -4491,7 +4491,7 @@ body._lock {
   font-size: 32px;
   line-height: 1.15;
 }
-@media (max-width: 575px) {
+@media (max-width: 992px) {
   .b_plan-card__heading .text {
     font-size: 28px;
   }
@@ -4574,6 +4574,11 @@ body._lock {
     padding-top: 64px;
     padding-bottom: 40px;
     margin-bottom: 0;
+  }
+}
+@media (min-width: 1100px) {
+  .b_team {
+    min-height: 100vh;
   }
 }
 
