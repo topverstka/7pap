@@ -471,6 +471,12 @@ function horizontalBlocksScroll() {
       trackOffset = 100;
       // trackOffset = -(window.innerHeight - trackOffsetModifier) / 2;
     }
+    if (window.innerHeight < 900) {
+      trackOffset = window.innerHeight / 3 + 120;
+    }
+    if (window.innerHeight < 700) {
+      trackOffset = window.innerHeight / 3 + 200;
+    }
 
     const length = $blocks.length;
     const itemWidth = 100 / length;
