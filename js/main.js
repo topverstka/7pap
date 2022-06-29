@@ -497,7 +497,7 @@ function horizontalBlocksScroll() {
     // Ширина трэка и слайдов
     if (scrollItem.dataset.speed == "slow") {
       $track.css("width", `${itemWidth * length + 2}%`);
-      scrollDuration = "360%";
+      scrollDuration = "270%";
     } else {
       $track.css("width", `${100 * length}%`);
       scrollDuration = "80%";
