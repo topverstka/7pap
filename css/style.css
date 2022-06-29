@@ -1128,6 +1128,7 @@ body._lock {
 */
 .button {
   --button-color: linear-gradient(14.48deg, #000 50.97%, #000 31.8%);
+  --button-text: #000;
   font-size: 20px;
   display: flex;
   width: auto;
@@ -1281,7 +1282,7 @@ body._lock {
   line-height: 1.6em;
   height: 1.6em;
   overflow: hidden;
-  color: var(--button-color);
+  color: var(--button-text);
   display: block;
 }
 
@@ -1336,7 +1337,7 @@ body._lock {
 .button-back::before {
   background: rgb(0, 0, 0);
   background: var(--icon-outer);
-  transform: scale(1.2);
+  transform: scale(1.12);
 }
 
 .button-back::after {
@@ -1796,6 +1797,12 @@ body._lock {
 
 .modal-callback._sent {
   display: grid;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .modal-callback._sent {
+    min-height: 50vh;
+  }
 }
 
 .modal-callback__inner {
@@ -1865,8 +1872,11 @@ body._lock {
   flex-direction: column;
   height: 100%;
 }
-.modal-callback__thanks .button {
-  margin-top: auto;
+
+@media (max-width: 1099px) {
+  .modal-callback__thanks .button {
+    margin-top: auto;
+  }
 }
 
 .modal-callback__thanks._sent {
@@ -1895,6 +1905,12 @@ body._lock {
   }
 }
 
+@media (min-width: 1100px) {
+  .form-thanks .modal-message {
+    padding: 32px;
+  }
+}
+
 .modal-message__desc {
   font-weight: 400;
   font-size: 20px;
@@ -1917,6 +1933,10 @@ body._lock {
     font-size: 16px;
     margin-bottom: 16px;
   }
+}
+
+.modal-message__desc:only-child {
+  margin-bottom: 0;
 }
 
 .modal-message__phone {
@@ -2594,6 +2614,12 @@ body._lock {
 @media (max-width: 1099px) {
   .promo--long-title .promo__text {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 1099px) {
+  .promo--long-title .promo__text br {
+    display: none;
   }
 }
 
@@ -4225,11 +4251,17 @@ body._lock {
   }
 }
 
+@media (max-width: 1099px) {
+  .b_examples__title br {
+    display: none;
+  }
+}
+
 .b_examples-list {
   -moz-column-count: 3;
        column-count: 3;
 }
-@media (max-width: 575px) {
+@media (max-width: 992px) {
   .b_examples-list {
     -moz-column-count: 1;
          column-count: 1;
@@ -4243,7 +4275,7 @@ body._lock {
   color: #000000;
   position: relative;
 }
-@media (max-width: 575px) {
+@media (max-width: 992px) {
   .b_examples-list__item {
     padding-left: 32px;
     font-size: 16px;
@@ -4251,7 +4283,7 @@ body._lock {
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 992px) {
   .b_examples-list__item::before {
     content: "";
     position: absolute;
@@ -4291,7 +4323,8 @@ body._lock {
 }
 
 @media (max-width: 768px) {
-  .b_pricing .title br {
+  .b_pricing .b_note__desc br,
+.b_pricing .title br {
     display: none;
   }
 }
@@ -4456,11 +4489,11 @@ body._lock {
 
 .b_plan-card__heading .text {
   font-size: 32px;
+  line-height: 1.15;
 }
 @media (max-width: 575px) {
   .b_plan-card__heading .text {
     font-size: 28px;
-    line-height: 1.15;
   }
 }
 
@@ -5108,6 +5141,7 @@ body._lock {
 
 .case-hero--full .button {
   --button-color: #fff;
+  --button-text: #fff;
 }
 
 .case-hero .tab-button {
@@ -5407,6 +5441,7 @@ body._lock {
 }
 .splitter .button {
   --button-color: #fff;
+  --button-text: #fff;
 }
 @media (max-width: 575px) {
   .splitter .button {

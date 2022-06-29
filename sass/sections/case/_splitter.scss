@@ -20,6 +20,7 @@
   }
   .button {
     --button-color: #fff;
+    --button-text: #fff;
     @media (max-width: 575px) {
       font-size: 16px;
     }

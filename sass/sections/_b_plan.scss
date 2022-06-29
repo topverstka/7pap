@@ -41,10 +41,10 @@
 }
 .b_plan-card__heading .text {
   font-size: 32px;
+  line-height: 1.15;
 
   @media (max-width: 575px) {
     font-size: 28px;
-    line-height: 1.15;
   }
 }
 .b_plan-card__body .text {

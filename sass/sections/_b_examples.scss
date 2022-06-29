@@ -16,10 +16,15 @@
   }
 }
 
+.b_examples__title br {
+  @media (max-width: 1099px) {
+    display: none;
+  }
+}
 .b_examples-list {
   column-count: 3;
 
-  @media (max-width: 575px) {
+  @media (max-width: 992px) {
     column-count: 1;
   }
 }
@@ -30,14 +35,14 @@
   color: #000000;
   position: relative;
 
-  @media (max-width: 575px) {
+  @media (max-width: 992px) {
     padding-left: 32px;
     font-size: 16px;
     margin-bottom: 8px;
   }
 }
 .b_examples-list__item::before {
-  @media (max-width: 575px) {
+  @media (max-width: 992px) {
     content: "";
     position: absolute;
     top: 10px;

@@ -108,6 +108,11 @@
     font-size: 16px;
   }
 }
+.promo--long-title .promo__text br {
+  @media (max-width: 1099px) {
+    display: none;
+  }
+}
 
 .promo--long-title .promo__video {
   height: auto;
