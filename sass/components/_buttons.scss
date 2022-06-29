@@ -393,7 +393,7 @@ $margin-icon: 12px; // Отступ иконки от текста
   flex-wrap: wrap;
 }
 .buttons-group .button {
-  @media (min-width: 1100px) {
+  @media (min-width: 576px) {
     margin-right: 64px;
   }
 }
