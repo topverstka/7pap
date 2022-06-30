@@ -486,7 +486,9 @@ function horizontalBlocksScroll() {
     }
     if (scrollItem.classList.contains("b_team")) {
       trackOffset = 0;
-      if (window.innerHeight <= 600) {
+      if (window.innerHeight <= 500) {
+        trackOffset = 320;
+      } else if (window.innerHeight <= 600) {
         trackOffset = 220;
       } else if (window.innerHeight <= 700) {
         trackOffset = 120;
