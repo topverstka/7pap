@@ -498,11 +498,11 @@ function horizontalBlocksScroll() {
     if (scrollItem.classList.contains("our-services--last")) {
       trackOffset = 0;
       if (window.innerHeight <= 500) {
-        trackOffset = 320;
+        trackOffset = 180;
       } else if (window.innerHeight <= 600) {
-        trackOffset = 220;
+        trackOffset = 100;
       } else if (window.innerHeight <= 700) {
-        trackOffset = 120;
+        trackOffset = 60;
       }
     }
     console.log(trackOffset);
