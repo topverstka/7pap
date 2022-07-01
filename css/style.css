@@ -2941,7 +2941,7 @@ body._lock {
 .cases-filter__industry {
   position: relative;
   margin-right: 8px;
-  border: 1px solid #dbdbdb;
+  border: 1px solid #f1f1f1;
   background: #f1f1f1;
   border-radius: 100px;
   font-weight: 400;
@@ -3546,6 +3546,7 @@ body._lock {
 
 .our-services--last {
   padding-bottom: 144px;
+  overflow: hidden;
 }
 @media (max-width: 1099px) {
   .our-services--last {

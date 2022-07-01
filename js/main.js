@@ -494,6 +494,17 @@ function horizontalBlocksScroll() {
         trackOffset = 120;
       }
     }
+
+    if (scrollItem.classList.contains("our-services--last")) {
+      trackOffset = 0;
+      if (window.innerHeight <= 500) {
+        trackOffset = 320;
+      } else if (window.innerHeight <= 600) {
+        trackOffset = 220;
+      } else if (window.innerHeight <= 700) {
+        trackOffset = 120;
+      }
+    }
     console.log(trackOffset);
 
     const length = $blocks.length;
