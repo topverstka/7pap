@@ -412,24 +412,37 @@ if (teamSlider) {
         teamSlider.querySelector(".b_team-slider").dataset.desktop === "false"
       ) {
         teamSwiper = new Swiper(".b_team-slider", {
-          slidesPerView: "auto",
-          // spaceBetween: 52,
+          slidesPerView: 6,
+          slidesPerGroup: 6,
+          spaceBetween: 32,
+          navigation: {
+            prevEl: ".b_team-slider__arrow--prev",
+            nextEl: ".b_team-slider__arrow--next",
+          },
+          breakpoints: {
+            // when window width is >= 320px
+            1201: {
+              slidesPerView: 6,
+              slidesPerGroup: 6,
+              spaceBetween: 52,
+            },
+          },
         });
 
-        const teamNext = document.querySelector(".b_team-slider__arrow--next");
-        const teamPrev = document.querySelector(".b_team-slider__arrow--prev");
-        teamNext.addEventListener("click", () => {
-          window.scrollTo({
-            top: window.pageYOffset + 600,
-            behavior: "smooth",
-          });
-        });
-        teamPrev.addEventListener("click", () => {
-          window.scrollTo({
-            top: window.pageYOffset - 600,
-            behavior: "smooth",
-          });
-        });
+        // const teamNext = document.querySelector(".b_team-slider__arrow--next");
+        // const teamPrev = document.querySelector(".b_team-slider__arrow--prev");
+        // teamNext.addEventListener("click", () => {
+        //   window.scrollTo({
+        //     top: window.pageYOffset + 600,
+        //     behavior: "smooth",
+        //   });
+        // });
+        // teamPrev.addEventListener("click", () => {
+        //   window.scrollTo({
+        //     top: window.pageYOffset - 600,
+        //     behavior: "smooth",
+        //   });
+        // });
       }
       teamSlider.dataset.desktop = "true";
 

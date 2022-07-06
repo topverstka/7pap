@@ -4570,6 +4570,10 @@ body._lock {
     width: 362px;
   }
 }
+.b_plan .button .button__icon {
+  background: linear-gradient(318.29deg, rgba(126, 174, 255, 0.7) -8.81%, rgba(252, 166, 233, 0.7) 96.7%);
+}
+
 .b_team {
   background: #141212;
   padding-top: 144px;
@@ -4580,11 +4584,6 @@ body._lock {
     padding-top: 64px;
     padding-bottom: 40px;
     margin-bottom: 0;
-  }
-}
-@media (min-width: 1100px) {
-  .b_team {
-    min-height: 100vh;
   }
 }
 
@@ -4600,11 +4599,9 @@ body._lock {
 
 .swiper.b_team-slider {
   width: 100%;
-  padding-left: 20%;
   min-width: 280px;
   margin-left: auto;
   margin-right: 0;
-  overflow: visible;
 }
 @media (max-width: 992px) {
   .swiper.b_team-slider {
@@ -4620,10 +4617,6 @@ body._lock {
   }
 }
 
-.b_team-slider .swiper-wrapper {
-  -moz-column-gap: 52px;
-       column-gap: 52px;
-}
 @media (max-width: 992px) {
   .b_team-slider .swiper-wrapper {
     display: block;
@@ -4648,7 +4641,6 @@ body._lock {
 
 .b_team-slider .swiper-slide {
   min-width: 152px;
-  max-width: 152px;
   width: 100%;
 }
 @media (max-width: 992px) {
@@ -4715,6 +4707,11 @@ body._lock {
   height: var(--button-size);
   --arrow-color: #898888;
   position: relative;
+  cursor: pointer;
+}
+
+.b_team-slider__arrow.swiper-button-disabled {
+  opacity: 0.5;
 }
 
 .b_team-slider__arrow::before,
