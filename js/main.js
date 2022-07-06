@@ -401,6 +401,21 @@ window.addEventListener("resize", () => {
   if (sliderOurServices) desktopSlider();
 });
 
+var params = window.location.search
+  .replace("?", "")
+  .split("&")
+  .reduce(function (p, e) {
+    var a = e.split("=");
+    p[decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+    return p;
+  }, {});
+
+console.log(params);
+
+let sliderSpeed = 1000;
+if (params["team_slider"]) {
+  sliderSpeed = params["team_slider"];
+}
 // #region b_team
 let teamSlider = document.querySelector(".b_team");
 let teamSwiper;
@@ -415,6 +430,7 @@ if (teamSlider) {
           slidesPerView: 6,
           slidesPerGroup: 6,
           spaceBetween: 32,
+          speed: +sliderSpeed,
           navigation: {
             prevEl: ".b_team-slider__arrow--prev",
             nextEl: ".b_team-slider__arrow--next",
