@@ -2894,7 +2894,8 @@ body._lock {
   content: none;
 }
 
-.cases-filter__category--active {
+.cases-filter__category--active,
+.cases-filter__category--active:hover {
   color: var(--main);
 }
 

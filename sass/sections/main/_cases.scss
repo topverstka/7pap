@@ -113,7 +113,8 @@
 .cases-filter__category-wrap:last-of-type::after {
   content: none;
 }
-.cases-filter__category--active {
+.cases-filter__category--active,
+.cases-filter__category--active:hover {
   color: var(--main);
 }
 .cases-filter__industries {
