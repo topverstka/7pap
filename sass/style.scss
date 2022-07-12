@@ -92,7 +92,7 @@ body {
 
 .tooltip::before,
 .tooltip::after {
-  @media (max-width: 1400px) {
+  @media (max-width: 1099px) {
     display: none;
   }
 }

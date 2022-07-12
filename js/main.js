@@ -505,6 +505,8 @@ function horizontalBlocksScroll() {
       trackOffset = window.innerHeight / 3 + 280;
     } else if (window.innerHeight <= 700) {
       trackOffset = window.innerHeight / 3 + 180;
+    } else if (window.innerHeight <= 800) {
+      trackOffset = window.innerHeight / 10 + 340;
     } else if (window.innerHeight <= 900) {
       trackOffset = window.innerHeight / 10 + 280;
     }
