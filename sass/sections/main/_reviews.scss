@@ -184,7 +184,8 @@
     left: 0px;
   }
   @media (max-width: 992px) {
-    left: auto;
+    left: unset;
+    right: 60px;
   }
 }
 

@@ -4219,7 +4219,8 @@ body._lock {
 }
 @media (max-width: 992px) {
   .slider-reviews__prev.swiper-button-prev {
-    left: auto;
+    left: unset;
+    right: 60px;
   }
 }
 
