@@ -84,7 +84,8 @@
 }
 
 .our-strength__item .tooltip::before {
-  top: -102px;
+  top: unset;
+  bottom: 85px;
   min-width: 247px;
   left: -80px;
 }

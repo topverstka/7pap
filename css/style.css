@@ -238,7 +238,7 @@ body._lock {
   padding: 12px;
   position: absolute;
   z-index: 1;
-  top: -130px;
+  bottom: -14px;
   left: -104px;
   min-width: 350px;
   background-color: #141212;
@@ -3946,7 +3946,8 @@ body._lock {
 }
 
 .our-strength__item .tooltip::before {
-  top: -102px;
+  top: unset;
+  bottom: 85px;
   min-width: 247px;
   left: -80px;
 }
